@@ -15,6 +15,9 @@ enum Theme {
     static let yellow  = Color(hex: 0xFFE600)
     static let orange  = Color(hex: 0xFF7A00)
 
+    static let paper   = Color(hex: 0xF7F5F0)
+    static let ink     = Color(hex: 0x111111)
+
     static let blobs: [Color] = [pink, violet, cyan, lime, orange]
 
     static func party(_ p: Party) -> Color {

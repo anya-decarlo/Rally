@@ -9,11 +9,18 @@ enum FeedItem: Identifiable {
 
     static let factEvery = 3   // a fun fact after every N posts
 
+    // Every N posts: alternate a fun fact (bio) and a receipt (money / vote / record).
     static func interleave(posts: [Post], facts: [Fact], every n: Int = factEvery) -> [FeedItem] {
-        var out: [FeedItem] = [], f = facts.shuffled().makeIterator()
+        var out: [FeedItem] = []
+        var bio = facts.filter { ($0.category ?? "bio") == "bio" }.shuffled().makeIterator()
+        var receipts = facts.filter { $0.category != nil && $0.category != "bio" }.shuffled().makeIterator()
+        var turn = 0
         for (i, p) in posts.enumerated() {
             out.append(.post(p))
-            if (i + 1) % n == 0, let fact = f.next() { out.append(.fact(fact)) }
+            guard (i + 1) % n == 0 else { continue }
+            let pick = turn % 2 == 0 ? (receipts.next() ?? bio.next()) : (bio.next() ?? receipts.next())
+            if let pick { out.append(.fact(pick)) }
+            turn += 1
         }
         return out
     }
@@ -45,7 +52,9 @@ struct FeedView: View {
                             Group {
                                 switch item {
                                 case .post(let post): PostPage(post: post, color: Theme.party(candidate.party))
-                                case .fact(let fact): FactPage(fact: fact, candidate: candidate)
+                                case .fact(let fact):
+                                    if (fact.category ?? "bio") == "bio" { FactPage(fact: fact, candidate: candidate) }
+                                    else { ReceiptPage(fact: fact, candidate: candidate) }
                                 }
                             }
                             .containerRelativeFrame(.vertical)
@@ -170,6 +179,114 @@ struct FactPage: View {
     private func split(_ text: String) -> (String, String) {
         guard let r = text.range(of: #"(?<=[.!?])\s+"#, options: .regularExpression) else { return (text, "") }
         return (String(text[..<r.lowerBound]), String(text[r.upperBound...]))
+    }
+}
+
+// MARK: - 💸 Receipt (money / vote / record — from filings, always sourced)
+
+struct ReceiptPage: View {
+    let fact: Fact
+    let candidate: Candidate
+    @Environment(\.openURL) private var openURL
+    @State private var slam = false
+
+    private var kind: (label: String, emoji: String, color: Color) {
+        switch fact.category {
+        case "money": ("Follow the money", "💸", Theme.lime)
+        case "vote": ("On the record", "🗳️", Theme.pink)
+        default: ("Receipts", "🧾", Theme.cyan)
+        }
+    }
+
+    // pull every $ figure and % out of the text so the numbers can be HUGE
+    private var numbers: [String] {
+        let re = try! NSRegularExpression(pattern: #"\$[\d,.]+[MK]?|\d+(?:\.\d+)?%"#)
+        let ns = fact.text as NSString
+        return re.matches(in: fact.text, range: NSRange(location: 0, length: ns.length)).map { ns.substring(with: $0.range) }
+    }
+
+    var body: some View {
+        GeometryReader { geo in
+            ZStack {
+                // chaos layer: the numbers, enormous and faint, scattered behind
+                ForEach(Array(numbers.prefix(4).enumerated()), id: \.offset) { i, n in
+                    Text(n)
+                        .font(.system(size: 96, weight: .black, design: .rounded))
+                        .foregroundStyle(kind.color.opacity(0.14))
+                        .rotationEffect(.degrees([-14, 9, -6, 17][i % 4]))
+                        .offset(x: [-70, 90, -30, 60][i % 4] * (slam ? 1 : 1.6),
+                                y: [-geo.size.height * 0.32, -geo.size.height * 0.12, geo.size.height * 0.25, geo.size.height * 0.36][i % 4])
+                        .blur(radius: slam ? 0 : 12)
+                }
+
+                VStack(alignment: .leading, spacing: 18) {
+                    Spacer()
+                    HStack(spacing: 8) {
+                        Text(kind.emoji).font(.system(size: 30))
+                        Sticker(kind.label, color: kind.color)
+                            .rotationEffect(.degrees(slam ? -3 : 25))
+                            .scaleEffect(slam ? 1 : 2.2)
+                    }
+
+                    // the receipt itself: paper, ink — the serious thing inside the party
+                    VStack(alignment: .leading, spacing: 10) {
+                        ForEach(Array(numbers.prefix(3).enumerated()), id: \.offset) { _, n in
+                            Text(n)
+                                .font(.system(size: 40, weight: .black, design: .rounded))
+                                .foregroundStyle(Theme.ink)
+                                .shadow(color: kind.color, radius: 0, x: 3, y: 3)
+                        }
+                        Text(fact.text)
+                            .font(.system(size: 17, weight: .bold, design: .rounded))
+                            .foregroundStyle(Theme.ink)
+                            .lineSpacing(3)
+                            .fixedSize(horizontal: false, vertical: true)
+                        Rectangle().fill(Theme.ink.opacity(0.15)).frame(height: 1).padding(.vertical, 4)
+                        Button {
+                            Haptic.tap()
+                            openURL(fact.url)
+                        } label: {
+                            HStack(spacing: 6) {
+                                Image(systemName: "doc.text.magnifyingglass")
+                                Text("SOURCE: \(fact.source.uppercased())")
+                                Spacer()
+                                Image(systemName: "arrow.up.right")
+                            }
+                            .font(.system(size: 12, weight: .black, design: .monospaced))
+                            .foregroundStyle(Theme.ink)
+                        }
+                        .buttonStyle(SquishButton())
+                    }
+                    .padding(20)
+                    .background(Theme.paper, in: RoundedRectangle(cornerRadius: 6))
+                    .overlay(alignment: .top) {
+                        // torn-receipt edge
+                        HStack(spacing: 0) {
+                            ForEach(0..<22, id: \.self) { _ in
+                                Triangle().fill(Theme.paper).frame(width: 16, height: 8)
+                            }
+                        }
+                        .offset(y: -8)
+                    }
+                    .rotationEffect(.degrees(slam ? -1.5 : 6))
+                    .scaleEffect(slam ? 1 : 0.7)
+                    .shadow(color: kind.color.opacity(0.7), radius: slam ? 36 : 0, y: 12)
+                    .opacity(slam ? 1 : 0)
+                    Spacer()
+                }
+                .padding(22)
+            }
+        }
+        .onAppear { withAnimation(.bouncy(duration: 0.55, extraBounce: 0.25)) { slam = true } }
+        .onDisappear { slam = false }
+    }
+}
+
+struct Triangle: Shape {
+    func path(in r: CGRect) -> Path {
+        var p = Path()
+        p.move(to: CGPoint(x: r.minX, y: r.maxY)); p.addLine(to: CGPoint(x: r.midX, y: r.minY)); p.addLine(to: CGPoint(x: r.maxX, y: r.maxY)); p.closeSubpath()
+        return p
     }
 }
 
