@@ -12,6 +12,7 @@ struct CandidateView: View {
     private var posts: [Post] { store.posts(for: candidate) }
 
     var body: some View {
+        ScrollView(showsIndicators: false) {
         VStack(alignment: .leading, spacing: 22) {
             HStack(alignment: .top, spacing: 16) {
                 Text(initials)
@@ -105,10 +106,11 @@ struct CandidateView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Theme.bg.opacity(0.5), in: RoundedRectangle(cornerRadius: 22))
 
-            Spacer()
         }
         .padding(24)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .padding(.top, 8)
+        .frame(maxWidth: .infinity, alignment: .topLeading)
+        }
         .background(Theme.card)
         .fullScreenCoverCompat(isPresented: $showFeed) {
             FeedView(candidate: candidate, posts: posts, facts: extras.facts(for: candidate))

@@ -42,17 +42,23 @@ def post_url(handle, uri):
     return f"https://bsky.app/profile/{handle}/post/{rkey(uri)}"
 
 
+def alt(s):
+    """Verbatim, but trimmed; whitespace-only becomes null."""
+    s = (s or "").strip()
+    return s or None
+
+
 def media_from(embed):
     if not embed:
         return [], None
     t = embed.get("$type", "")
     media, quoted = [], None
     if t.startswith("app.bsky.embed.images"):
-        media += [{"type": "image", "url": i.get("fullsize"), "thumb": i.get("thumb"), "alt": i.get("alt") or None}
+        media += [{"type": "image", "url": i.get("fullsize"), "thumb": i.get("thumb"), "alt": alt(i.get("alt"))}
                   for i in embed.get("images", [])]
     elif t.startswith("app.bsky.embed.video"):
         media.append({"type": "video", "url": embed.get("playlist"), "thumb": embed.get("thumbnail"),
-                      "alt": embed.get("alt") or None})
+                      "alt": alt(embed.get("alt"))})
     elif t.startswith("app.bsky.embed.external"):
         ext = embed.get("external", {})
         media.append({"type": "link", "url": ext.get("uri"), "title": ext.get("title") or None,

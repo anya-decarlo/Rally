@@ -75,7 +75,8 @@ struct StoriesView: View {
         .background(Theme.bg)
         .sheet(item: $selected) { candidate in
             CandidateView(candidate: candidate)
-                .presentationDetents([.medium, .large])
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
                 .presentationBackground(Theme.card)
                 .presentationCornerRadius(32)
         }

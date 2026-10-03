@@ -9,6 +9,10 @@ xcuserdata/
 # macOS
 .DS_Store
 
+# Python
+__pycache__/
+*.pyc
+
 # Scratch files from data pulls (keep the CSVs, drop the session junk)
 data/**/jar
 data/**/*.html

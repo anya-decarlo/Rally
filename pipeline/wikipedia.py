@@ -72,7 +72,7 @@ def main():
         slug = re.sub(r"[^a-z0-9]+", "-", cand.lower()).strip("-")
         facts = facts_from(article_text(title))
         url = f"https://en.wikipedia.org/wiki/{title}"
-        out[cand] = {"facts": [{"text": f, "source": "Wikipedia", "url": url} for f in facts],
+        out[cand] = {"facts": [{"text": f, "source": "Wikipedia", "url": url, "category": "bio"} for f in facts],
                      "portrait": portrait(title, slug)}
         print(f"{cand}: {len(facts)} facts, portrait={bool(out[cand]['portrait'])}", file=sys.stderr)
     OUT.write_text(json.dumps({"generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

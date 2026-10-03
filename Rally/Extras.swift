@@ -17,6 +17,7 @@ struct Fact: Codable, Hashable, Identifiable {
     let text: String
     let source: String
     let url: URL
+    var category: String? = nil     // "bio" | "money" | "record" | "vote" — optional, missing is fine
 }
 
 struct Portrait: Codable, Hashable {
