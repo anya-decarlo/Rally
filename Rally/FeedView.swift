@@ -203,11 +203,16 @@ struct ReceiptPage: View {
         }
     }
 
-    // pull every $ figure and % out of the text so the numbers can be HUGE
+    private var isTable: Bool { fact.text.contains("\n") }
+    private var lines: [String] { fact.text.components(separatedBy: "\n") }
+
+    // pull $ figures and % out of the text so the numbers can be HUGE.
+    // For a table (multi-line), only the headline row's numbers — the rest stay in their rows.
     private var numbers: [String] {
+        let scan = isTable ? (lines.dropFirst().first ?? "") : fact.text
         let re = try! NSRegularExpression(pattern: #"\$[\d,.]+[MK]?|\d+(?:\.\d+)?%"#)
-        let ns = fact.text as NSString
-        return re.matches(in: fact.text, range: NSRange(location: 0, length: ns.length)).map { ns.substring(with: $0.range) }
+        let ns = scan as NSString
+        return re.matches(in: scan, range: NSRange(location: 0, length: ns.length)).map { ns.substring(with: $0.range) }
     }
 
     var body: some View {
@@ -235,17 +240,34 @@ struct ReceiptPage: View {
 
                     // the receipt itself: paper, ink — the serious thing inside the party
                     VStack(alignment: .leading, spacing: 10) {
-                        ForEach(Array(numbers.prefix(3).enumerated()), id: \.offset) { _, n in
+                        ForEach(Array(numbers.prefix(isTable ? 1 : 3).enumerated()), id: \.offset) { _, n in
                             Text(n)
                                 .font(.system(size: 40, weight: .black, design: .rounded))
                                 .foregroundStyle(Theme.ink)
                                 .shadow(color: kind.color, radius: 0, x: 3, y: 3)
                         }
-                        Text(fact.text)
-                            .font(.system(size: 17, weight: .bold, design: .rounded))
-                            .foregroundStyle(Theme.ink)
-                            .lineSpacing(3)
-                            .fixedSize(horizontal: false, vertical: true)
+                        if isTable {
+                            Text(lines[0])
+                                .font(.system(size: 15, weight: .black, design: .rounded))
+                                .foregroundStyle(Theme.ink.opacity(0.6))
+                            ForEach(Array(lines.dropFirst().enumerated()), id: \.offset) { i, row in
+                                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                                    Text(i == 0 ? "▶" : "·")
+                                        .font(.system(size: 11, weight: .black))
+                                        .foregroundStyle(i == 0 ? kind.color : Theme.ink.opacity(0.4))
+                                        .frame(width: 12)
+                                    Text(row)
+                                        .font(.system(size: i == 0 ? 18 : 15, weight: i == 0 ? .black : .semibold, design: .rounded))
+                                        .foregroundStyle(Theme.ink.opacity(i == 0 ? 1 : 0.75))
+                                }
+                            }
+                        } else {
+                            Text(fact.text)
+                                .font(.system(size: 17, weight: .bold, design: .rounded))
+                                .foregroundStyle(Theme.ink)
+                                .lineSpacing(3)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
                         Rectangle().fill(Theme.ink.opacity(0.15)).frame(height: 1).padding(.vertical, 4)
                         Button {
                             Haptic.tap()

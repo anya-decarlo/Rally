@@ -76,12 +76,13 @@ def cards(d):
     if oc:
         out.append(card("money", f"Claim: {oc['claim']} — {oc['framing']}", "NY Post", oc["source"]))
 
-    # primary — every row
+    # primary — a results table is one fact; every row kept, verbatim, together
     p = d.get("primary_2026") or {}
+    if p.get("results"):
+        rows = "\n".join(f"{r['candidate']} — {r['pct']}% ({r['votes']:,} votes)" for r in p["results"])
+        out.append(card("vote", f"Democratic primary for Delegate, {p['date']}\n{rows}", "AP via Wikipedia", p["sources"]["results_table"]))
     if p.get("note"):
         out.append(card("vote", f"{p['date']}: {p['note']}", "AP via Wikipedia", p["sources"]["results_table"]))
-    for r in p.get("results") or []:
-        out.append(card("vote", f"Primary, {p['date']}: {r['candidate']} — {r['pct']}% ({r['votes']:,} votes)", "AP via Wikipedia", p["sources"]["results_table"]))
 
     # record — every highlight, every vote, scorecard latest + each history year
     rec = d.get("record") or {}
@@ -94,9 +95,8 @@ def cards(d):
         side = "FOR" if v["white"] == "for" else "AGAINST"
         out.append(card("vote", f"Voted {side}: {v['title']} ({v['bill']}, {v['date']}) — {v['outcome']}", f"DC Council · JUFJ scorecard", v["link"]))
     if sc.get("latest"):
-        out.append(card("vote", f"JUFJ Campaign Fund scorecard, current term: {sc['latest']}", "JUFJ Campaign Fund (advocacy)", sc["source"]))
-    for yr, pct in (sc.get("history") or {}).items():
-        out.append(card("vote", f"JUFJ Campaign Fund scorecard, {yr}: {pct}", "JUFJ Campaign Fund (advocacy)", sc["source"]))
+        hist = "\n".join(f"{yr}: {pct}" for yr, pct in sorted((sc.get("history") or {}).items()))
+        out.append(card("vote", f"JUFJ Campaign Fund scorecard\nCurrent term: {sc['latest']}\n{hist}", "JUFJ Campaign Fund (advocacy)", sc["source"]))
 
     # voice — verbatim
     v = d.get("voice") or {}
