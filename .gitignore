@@ -6,7 +6,8 @@ xcuserdata/
 *.xcscmblueprint
 *.xccheckout
 
-# macOS
+# Secrets (FEC keys, etc.) — never commit
+.env
 .DS_Store
 
 # Scratch files from data pulls (keep the CSVs, drop the session junk)

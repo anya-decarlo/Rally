@@ -20,8 +20,16 @@ ever recreate it, update that field with the new id.
 cd backend
 npm run check                                    # tsc --noEmit, must be clean
 npx wrangler d1 migrations apply rally-db --remote   # pending migrations only
-npm run deploy                                   # deploys worker + cron (15 * * * *)
+npm run deploy                                   # deploys worker + both crons
 ```
+
+Secrets (one time; values never touch chat, config, or git):
+
+```sh
+npx wrangler secret put FEC_API_KEY   # interactive prompt — paste, hit enter
+```
+
+Without it, the FEC leg reports `skipped` and everything else still works.
 
 Verify:
 

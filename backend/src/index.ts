@@ -5,14 +5,18 @@
 // Contract: schema/feed.schema.json.
 
 import {
+  fetchBallot,
   fetchBluesky,
+  fetchUpstreamAccounts,
   fetchYoutube,
   resolveBlueskyProfile,
   resolveYoutubeChannel,
   type CandidateInput,
   type NormalizedItem,
   type Source,
+  type UpstreamAccount,
 } from "./crawl";
+import { refreshMoney } from "./refresh";
 
 interface ChannelRow {
   id: number;
@@ -144,20 +148,25 @@ async function getChannels(
 async function crawlCandidate(
   env: Env,
   c: CandidateInput,
+  accounts: UpstreamAccount[],
   only?: Source[],
 ): Promise<{ candidate_id: number; sources: SourceStatus[] }> {
   const want = (s: Source): boolean => !only || only.includes(s);
   const sources: SourceStatus[] = [];
+  // accounts.json (live from the repo) is the authority: unlisted handles
+  // are never crawled. Candidate match is by ballot-exact name.
+  const listed =
+    c.bsky_handle != null
+      ? accounts.find(
+          (a) =>
+            a.platform === "bluesky" &&
+            a.candidate === c.name &&
+            a.handle.toLowerCase() === (c.bsky_handle as string).toLowerCase(),
+        )
+      : undefined;
 
   if (want("bluesky") && c.bsky_handle) {
-    // pipeline/accounts.json (mirrored in allowed_accounts) is the single
-    // authority: unlisted handles are never crawled or served.
-    const allowed = await env.DB.prepare(
-      "SELECT kind FROM allowed_accounts WHERE platform = 'bluesky' AND handle = ?",
-    )
-      .bind(c.bsky_handle)
-      .first<{ kind: string }>();
-    if (!allowed) {
+    if (!listed) {
       sources.push({ source: "bluesky", status: "skipped", fetched: 0, stored: 0, note: "handle not in accounts.json" });
     } else {
       try {
@@ -171,7 +180,7 @@ async function crawlCandidate(
           {
             displayName: profile.displayName,
             avatar: profile.avatar,
-            kind: allowed.kind,
+            kind: listed.kind,
           },
         );
         sources.push({ source: "bluesky", status: "ok", fetched: items.length, stored });
@@ -247,10 +256,11 @@ async function handleFetch(request: Request, env: Env): Promise<Response> {
   }
 
   if (request.method === "POST" && pathname === "/api/candidates") {
+    // Ballot-exact names only: data/ballot.json is the join key the app
+    // filters on. Office/party/wikipedia come from the ballot, kind + handle
+    // validity from accounts.json. No redeploy needed for new candidates.
     let body: {
       name?: string;
-      party?: string;
-      office?: string;
       bsky_handle?: string;
       youtube?: string;
       youtube_role?: string;
@@ -261,29 +271,46 @@ async function handleFetch(request: Request, env: Env): Promise<Response> {
     } catch {
       return err("invalid JSON body", 400);
     }
-    if (!body.name) return err("name is required", 400);
+    if (!body.name) return err("name is required (ballot-exact)", 400);
     if (!body.bsky_handle && !body.youtube && !body.x_handle) {
       return err("at least one source (bsky_handle, youtube, x_handle) is required", 400);
     }
 
+    let ballot;
+    let accounts: UpstreamAccount[];
+    try {
+      [ballot, accounts] = await Promise.all([fetchBallot(), fetchUpstreamAccounts()]);
+    } catch {
+      return err("upstream ballot unreachable", 502);
+    }
+    const entry = ballot.find((b) => b.name === body.name);
+    if (!entry) return err("name must match data/ballot.json exactly", 422);
+    const forCandidate = (platform: string) =>
+      accounts.filter((a) => a.platform === platform && a.candidate === entry.name);
+
     let did: string | null = null;
     let handle: string | null = null;
-    let kind: string | null = null;
     if (body.bsky_handle) {
+      const listed = forCandidate("bluesky").find(
+        (a) => a.handle.toLowerCase() === (body.bsky_handle as string).toLowerCase(),
+      );
+      if (!listed) return err("bluesky handle not listed for this candidate in accounts.json", 422);
       try {
-        const p = await resolveBlueskyProfile(body.bsky_handle);
+        const p = await resolveBlueskyProfile(listed.handle);
         did = p.did;
         handle = p.handle;
       } catch {
         return err("bluesky handle not found", 422);
       }
-      const allowed = await env.DB.prepare(
-        "SELECT kind FROM allowed_accounts WHERE platform = 'bluesky' AND handle = ?",
-      )
-        .bind(handle)
-        .first<{ kind: string }>();
-      if (!allowed) return err("handle not in accounts.json — not served", 422);
-      kind = allowed.kind;
+    }
+
+    let xHandle: string | null = null;
+    if (body.x_handle) {
+      const listed = forCandidate("x").find(
+        (a) => a.handle.toLowerCase() === (body.x_handle as string).toLowerCase(),
+      );
+      if (!listed) return err("x handle not listed for this candidate in accounts.json", 422);
+      xHandle = listed.handle; // stored; crawl pending on both sides
     }
 
     let channelId: string | null = null;
@@ -295,17 +322,20 @@ async function handleFetch(request: Request, env: Env): Promise<Response> {
       }
     }
 
-    const bskyKind = kind ?? "personal";
-    if (!["official", "personal"].includes(bskyKind)) {
-      return err("bsky_kind must be official or personal", 400);
-    }
-
     try {
       const row = await env.DB.prepare(
-        `INSERT INTO candidates (name, party, office, bsky_handle, bsky_did, bsky_kind, x_handle)
+        `INSERT INTO candidates (name, party, office, bsky_handle, bsky_did, x_handle, wikipedia_title)
          VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING *`,
       )
-        .bind(body.name, body.party ?? null, body.office ?? null, handle, did, bskyKind, body.x_handle ?? null)
+        .bind(
+          entry.name,
+          entry.party ?? null,
+          entry.office,
+          handle,
+          did,
+          xHandle,
+          entry.wikipedia ?? null,
+        )
         .first();
       const candidateId = (row as { id: number }).id;
       if (channelId) {
@@ -513,9 +543,11 @@ async function handleFetch(request: Request, env: Env): Promise<Response> {
     const { results: committees } = await env.DB.prepare(
       "SELECT * FROM committees",
     ).all<CommitteeRow>();
+    // One upstream read per crawl run; kind checks below use this snapshot.
+    const accounts = await fetchUpstreamAccounts();
     const crawled = [];
     for (const c of results) {
-      crawled.push(await crawlCandidate(env, c, sources));
+      crawled.push(await crawlCandidate(env, c, accounts, sources));
     }
     if (candidateId == null) {
       for (const k of committees) {
@@ -527,6 +559,17 @@ async function handleFetch(request: Request, env: Env): Promise<Response> {
 
   // ---- App contract (pipeline/schema.md shapes) ----
   // Served for the iOS app. posts.json matches Posts.swift Decoders exactly.
+
+  if (request.method === "POST" && pathname === "/api/refresh/money") {
+    // Manual refresh always runs (bypasses the cadence gate).
+    let candidateId: number | undefined;
+    try {
+      candidateId = ((await request.json()) as { candidate_id?: number }).candidate_id;
+    } catch {
+      // Empty body = everyone.
+    }
+    return json({ refreshed: await refreshMoney(env, candidateId, true) });
+  }
 
   if (request.method === "GET" && pathname === "/rally/posts.json") {
     const { results } = await env.DB.prepare(
@@ -564,8 +607,8 @@ async function handleFetch(request: Request, env: Env): Promise<Response> {
 
   if (request.method === "GET" && pathname === "/rally/facts.json") {
     const { results } = await env.DB.prepare(
-      `SELECT candidate, text, source, url, category FROM facts ORDER BY candidate, sort`,
-    ).all<{ candidate: string; text: string; source: string; url: string; category: string | null }>();
+      `SELECT candidate, text, source, url, category, fetched_at FROM facts ORDER BY candidate, sort`,
+    ).all<{ candidate: string; text: string; source: string; url: string; category: string | null; fetched_at: string | null }>();
     const { results: portraits } = await env.DB.prepare(
       `SELECT candidate, file, source, license, credit, page FROM portraits`,
     ).all<Record<string, string>>();
@@ -576,6 +619,7 @@ async function handleFetch(request: Request, env: Env): Promise<Response> {
       const entry = (candidates[f.candidate] ??= { facts: [] });
       const fact: Record<string, unknown> = { text: f.text, source: f.source, url: f.url };
       if (f.category) fact["category"] = f.category;
+      if (f.fetched_at) fact["fetchedAt"] = f.fetched_at;
       entry.facts.push(fact);
     }
     for (const [name, p] of Object.entries(byCandidate)) {
@@ -616,6 +660,62 @@ async function handleFetch(request: Request, env: Env): Promise<Response> {
     return json({ generatedAt: new Date().toISOString(), videos });
   }
 
+  // ---- Votes / money / donors: app-pullable record layers ----
+
+  if (request.method === "GET" && pathname === "/rally/votes.json") {
+    const { results } = await env.DB.prepare(
+      `SELECT candidate, bill, title, date, outcome, position, link FROM votes ORDER BY candidate, sort`,
+    ).all();
+    const votes: Record<string, unknown[]> = {};
+    for (const v of results as Record<string, unknown>[]) {
+      ((votes[v["candidate"] as string] ??= []).push({
+        bill: v["bill"],
+        title: v["title"],
+        date: v["date"],
+        outcome: v["outcome"],
+        position: v["position"],
+        link: v["link"],
+      }));
+    }
+    return json({ generatedAt: new Date().toISOString(), votes });
+  }
+
+  if (request.method === "GET" && pathname === "/rally/money.json") {
+    const { results } = await env.DB.prepare(`SELECT * FROM money`).all<
+      Record<string, unknown>
+    >();
+    const money: Record<string, unknown[]> = {};
+    for (const m of results) {
+      const row: Record<string, unknown> = { source: m["source"] };
+      for (const k of ["raised", "spent", "cash", "small_dollar", "public_funds", "donor_count", "as_of", "fetched_at", "url"]) {
+        if (m[k] != null) row[k === "as_of" ? "asOf" : k === "fetched_at" ? "fetchedAt" : k === "small_dollar" ? "smallDollar" : k === "public_funds" ? "publicFunds" : k === "donor_count" ? "donorCount" : k] = m[k];
+      }
+      (money[m["candidate"] as string] ??= []).push(row);
+    }
+    return json({ generatedAt: new Date().toISOString(), money });
+  }
+
+  if (request.method === "GET" && pathname === "/rally/donors.json") {
+    // Feed-shaped: newest-first, filterable, paginated. Same grammar as posts.
+    const limit = Math.min(
+      Math.max(parseInt(url.searchParams.get("limit") ?? "20", 10) || 20, 1),
+      100,
+    );
+    const candidate = url.searchParams.get("candidate");
+    const before = url.searchParams.get("before");
+    const { results } = await env.DB.prepare(
+      `SELECT id, candidate, donor, amount, date, employer, occupation,
+              committee, source, url, fetched_at
+       FROM donors
+       WHERE (? IS NULL OR candidate = ?)
+         AND (? IS NULL OR date < ?)
+       ORDER BY date DESC, amount DESC LIMIT ?`,
+    )
+      .bind(candidate, candidate, before, before, limit)
+      .all();
+    return json({ generatedAt: new Date().toISOString(), donors: results });
+  }
+
   return err("not found", 404);
 }
 
@@ -629,11 +729,18 @@ export default {
     }
   },
 
-  async scheduled(_controller: ScheduledController, env: Env): Promise<void> {
+  async scheduled(controller: ScheduledController, env: Env): Promise<void> {
+    // Hourly social crawl vs daily money refresh, routed by cron string.
+    if (controller.cron === "30 10 * * *") {
+      const refreshed = await refreshMoney(env);
+      console.log(JSON.stringify({ msg: "cron money refresh done", refreshed }));
+      return;
+    }
     const { results } = await env.DB.prepare("SELECT * FROM candidates").all<CandidateInput>();
     const { results: committees } = await env.DB.prepare("SELECT * FROM committees").all<CommitteeRow>();
+    const accounts = await fetchUpstreamAccounts();
     const out = [];
-    for (const c of results) out.push(await crawlCandidate(env, c));
+    for (const c of results) out.push(await crawlCandidate(env, c, accounts));
     for (const k of committees) out.push(await crawlCommittee(env, k));
     console.log(JSON.stringify({ msg: "cron crawl done", crawled: out }));
   },

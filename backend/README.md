@@ -20,9 +20,13 @@ Social feed API for the iPhone app. Contract: `schema/feed.schema.json`.
 - `GET /rally/posts.json` — app contract shape (`pipeline/schema.md`): own posts only, rkey ids, media/quoted/avatar/kind captured.
 - `GET /rally/facts.json` — curated `{text, source, url}` facts per candidate.
 - `GET /rally/videos.json` — human-verified clips ONLY. Crawlers never write here.
+- `GET /rally/votes.json` — recorded votes per candidate (bill, title, date, outcome, position, link).
+- `GET /rally/money.json` — money snapshots per candidate per source (raised/spent/cash/small-dollar/public-funds, asOf + fetchedAt).
+- `GET /rally/donors.json?candidate=&limit=&before=` — feed-shaped itemized donors, newest-first.
 - `GET /api/committees` · `POST /api/committees` — `{name, kind: pac|super_pac|iec|…, candidate_id?, stance: support|oppose, fec_id?, ocf_name?}`. Committees attach to a candidate; their items carry both ids.
 - `POST /api/channels` — `{candidate_id|XOR committee_id, platform: 'youtube', input (@handle or channel id), label?, role?}`. One channel, exactly one owner.
-- Cron `15 * * * *` — crawls all candidates, all available sources.
+- `POST /api/refresh/money` — `{candidate_id?}`. FEC totals + Fair Elections per candidate → money facts with `fetchedAt`. Manual runs bypass the gate.
+- Cron `15 * * * *` — social crawl. Cron `30 10 * * *` — money refresh with cadence gate (weekly far out, daily inside 30 days to the race; `races` table holds election dates).
 
 ## Local dev
 

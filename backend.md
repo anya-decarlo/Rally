@@ -25,8 +25,11 @@ holds the verified money/record/vote material the cards render. Three jobs:
   outside voice stays queryable with the candidate.
 - `feed_items` — every crawled post/video, deduped on `source:source_id`.
   Carries account display data (name, avatar, kind), media/quoted JSON, counts.
-- `allowed_accounts` — mirrors `pipeline/accounts.json`. The single authority
-  for `account.kind`. Unlisted handles are never crawled or served, by code.
+- `allowed_accounts` (parked) — superseded by live reads. The ballot
+  (`data/ballot.json`, source of truth for names/office/party/wikipedia) and
+  `pipeline/accounts.json` (kind authority) are fetched from the Rally repo on
+  every crawl and intake. New candidate = repo commit, never a redeploy.
+  Unlisted handles are never crawled or served, by code.
 - `facts` — curated `{text, source, url, category}` rows: 85 bio (from a
   `pipeline/wikipedia.py` run) + money/record/vote from verified pulls.
 - `clips` — human-verified videos ONLY. No crawler path writes here, by
@@ -66,6 +69,19 @@ Working API: `GET /api/health`, `GET /api/candidates`,
   pipeline output: all 60 reference posts present, 84 deeper, zero missing.
 - Facts: 91 (85 bio / 3 record / 2 vote / 1 money). Videos: 2/2 human.
 - `tsc` clean, migrations validated in SQLite, `wrangler deploy --dry-run` green.
+
+## Refresh cadences (not just social anymore)
+
+| Data | Schedule | How |
+|---|---|---|
+| Social posts | Hourly `:15` + on demand | Cron → crawl all candidates + committees |
+| Money facts | Daily `10:30 UTC` + on demand | Cron → gate per race: weekly on Mondays far out, daily inside 30 days to election (`races` table: office → election date). Manual `POST /api/refresh/money` bypasses the gate. |
+| Votes, bio, clips | Manual / migration-gated | Council votes move weekly in session — next refresher to build |
+
+Money refresh pulls FEC totals (needs `FEC_API_KEY` secret, server-side only) and
+Fair Elections registrations (keyless), upserting `money` facts with
+`fetchedAt` so the app shows staleness. New race = one `races` row, never a
+config change.
 
 ## Deliberately not built yet
 

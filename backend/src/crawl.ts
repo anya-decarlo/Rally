@@ -55,6 +55,57 @@ const BSKY_PUBLIC = "https://public.api.bsky.app/xrpc";
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36";
 
+// Upstream truth: the Rally repo. accounts.json is generated from
+// data/ballot.json — the ballot is the source of truth, and candidate names
+// must match its strings exactly (the app filters on them).
+const ACCOUNTS_URL =
+  "https://raw.githubusercontent.com/anya-decarlo/Rally/main/pipeline/accounts.json";
+const BALLOT_URL =
+  "https://raw.githubusercontent.com/anya-decarlo/Rally/main/data/ballot.json";
+
+export interface UpstreamAccount {
+  candidate: string;
+  platform: string;
+  handle: string;
+  kind: string;
+}
+
+export interface BallotCandidate {
+  name: string;
+  party?: string;
+  office: string;
+  wikipedia?: string;
+  accounts: UpstreamAccount[];
+}
+
+export async function fetchUpstreamAccounts(): Promise<UpstreamAccount[]> {
+  const d = await getJson<{ accounts: UpstreamAccount[] }>(ACCOUNTS_URL);
+  return d.accounts ?? [];
+}
+
+export async function fetchBallot(): Promise<BallotCandidate[]> {
+  const d = await getJson<{
+    contests: Array<{
+      office: string;
+      candidates: Array<{
+        name: string;
+        party?: string;
+        wikipedia?: string;
+        accounts?: UpstreamAccount[];
+      }>;
+    }>;
+  }>(BALLOT_URL);
+  return (d.contests ?? []).flatMap((c) =>
+    (c.candidates ?? []).map((k) => ({
+      name: k.name,
+      party: k.party,
+      office: c.office,
+      wikipedia: k.wikipedia,
+      accounts: k.accounts ?? [],
+    })),
+  );
+}
+
 async function getJson<T>(url: string, headers?: Record<string, string>): Promise<T> {
   const res = await fetch(url, { headers: { accept: "application/json", ...headers } });
   if (!res.ok) throw new Error(`GET ${url} -> ${res.status}`);

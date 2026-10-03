@@ -42,7 +42,7 @@
       "operating_expenditures": 782826.27,
       "cash_on_hand": 40442.0,
       "source": "https://www.fec.gov/data/candidate/H6DC01079/?cycle=2026",
-      "api": "/v1/candidate/H6DC01079/totals/?cycle=2026 (server-side, FEC_API_KEY from head2head/.env — never shipped to clients)",
+      "api": "/v1/candidate/H6DC01079/totals/?cycle=2026 (server-side, FEC_API_KEY from head2head/.env — never shipped to clients)"
     },
     "federal_opponent_snapshot": {
       "as_of": "2026-03-31",
