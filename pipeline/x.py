@@ -4,15 +4,17 @@
     python3 pipeline/x.py https://x.com/RobertWhite_DC/status/1234567890 [more urls]
 
 Uses X's public syndication JSON (what embedded tweets load). No key, but unofficial —
-if it breaks, this file is the only thing that changes. The handle must be in accounts.json.
+if it breaks, this file is the only thing that changes. The handle must be on the ballot (data/ballot.json).
 """
 import json, re, sys, urllib.parse, urllib.request
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from candidates import accounts as ballot_accounts
+
 ROOT = Path(__file__).resolve().parent.parent
-ACCOUNTS = ROOT / "pipeline" / "accounts.json"
 OUT = ROOT / "data" / "posts.json"
 SYND = "https://cdn.syndication.twimg.com/tweet-result"
 UA = {"User-Agent": "Mozilla/5.0 (Rally/0.1; github.com/anya-decarlo/Rally)"}
@@ -86,7 +88,7 @@ def main():
     urls = sys.argv[1:]
     if not urls:
         sys.exit(__doc__)
-    accounts = {a["handle"].lower(): a for a in json.loads(ACCOUNTS.read_text())["accounts"] if a["platform"] == "x"}
+    accounts = {a["handle"].lower(): a for a in ballot_accounts("x")}
     existing = json.loads(OUT.read_text())["posts"] if OUT.exists() else []
     merged = {p["id"]: p for p in existing}
     for u in urls:

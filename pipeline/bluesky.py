@@ -8,8 +8,10 @@ import argparse, json, sys, urllib.parse, urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from candidates import accounts as ballot_accounts
+
 ROOT = Path(__file__).resolve().parent.parent
-ACCOUNTS = ROOT / "pipeline" / "accounts.json"
 OUT = ROOT / "data" / "posts.json"
 API = "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed"
 
@@ -106,7 +108,7 @@ def main():
     ap.add_argument("--limit", type=int, default=100)
     args = ap.parse_args()
 
-    accounts = [a for a in json.loads(ACCOUNTS.read_text())["accounts"] if a["platform"] == "bluesky"]
+    accounts = ballot_accounts("bluesky")
     existing = json.loads(OUT.read_text())["posts"] if OUT.exists() else []
     merged = {p["id"]: p for p in existing}
 

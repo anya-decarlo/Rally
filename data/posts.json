@@ -1,6 +1,1841 @@
 {
-  "generatedAt": "2026-10-03T18:42:36Z",
+  "generatedAt": "2026-10-03T19:01:04Z",
   "posts": [
+    {
+      "id": "bluesky:3mwt4wryyrf2q",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Utility bills are rising, and District residents deserve answers. I introduced the Public Trust in Utility Regulation Act to make utility companies show what they’re asking us to pay for.\n\nSubmit written testimony by Oct 15: lims.dccouncil.gov/Hearings/hea...\n\nTransparency shouldn't be optional.",
+      "createdAt": "2026-10-01T15:03:55.589Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mwt4wryyrf2q",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiflurn5nlybwr5oze6gcpxon6ajlovnuxqoso6wsf72ueakmnjaey",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiflurn5nlybwr5oze6gcpxon6ajlovnuxqoso6wsf72ueakmnjaey",
+          "alt": null
+        }
+      ],
+      "metrics": {
+        "likes": 7,
+        "reposts": 0,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3mwqx42ngzl2z",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Getting help shouldn’t be another hurdle.\n\nToday, I voted to advance the Automatic Enrollment for Utility Affordability Programs Act. If we already know a family qualifies for help with electric, gas, or water bills, we should connect them to it and not make them prove it all over again.",
+      "createdAt": "2026-09-30T18:14:10.495Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mwqx42ngzl2z",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreife64v6cztvhein6intvlwnzkx7mx46uebd5msvzj4rj4n756ygii",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreife64v6cztvhein6intvlwnzkx7mx46uebd5msvzj4rj4n756ygii",
+          "alt": null
+        }
+      ],
+      "metrics": {
+        "likes": 11,
+        "reposts": 2,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mwojab6iil2h",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Utility bills are rising. So I introduced a bill to make utility companies show their work.\n\nThe Council will hold a public hearing Thu., Oct. 1. Watch live: dccouncil.gov/hearings\n\nSubmit written testimony by Oct. 15: lims.dccouncil.gov/Hearings/hea...\n\nYour voice matters.",
+      "createdAt": "2026-09-29T19:00:39.708Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mwojab6iil2h",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihqn2ke7qykq5raprjvmo7catgasruejb62nw63vqa5zble3xsanu",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihqn2ke7qykq5raprjvmo7catgasruejb62nw63vqa5zble3xsanu",
+          "alt": null
+        }
+      ],
+      "metrics": {
+        "likes": 8,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mw4g2w2dem26",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "DC is mourning Allen “Uzikee” Nelson, a visionary sculptor whose work honoring Black history and culture shaped our city. In Ward 4, his Paul Robeson sculpture is part of the fabric of Petworth. My heart is with his wife, fellow artist Januwa, his family, and all who loved him. Rest in power.",
+      "createdAt": "2026-09-22T14:16:03.754Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mw4g2w2dem26",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiggbjx5ct47g2jeoewipvobpq2whidaiuyagxqfmw2z6ys6izb35a",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiggbjx5ct47g2jeoewipvobpq2whidaiuyagxqfmw2z6ys6izb35a",
+          "alt": "Black-and-white photograph of Allen “Uzikee” Nelson smiling in his workshop as he sits in front of a large metal face sculpture."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreicewrggdc3ohqzbtzxx2fxmaqyqekvgw5rzvnfhkbs3rnpl3vbe5e",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreicewrggdc3ohqzbtzxx2fxmaqyqekvgw5rzvnfhkbs3rnpl3vbe5e",
+          "alt": "Portrait of Allen “Uzikee” Nelson seated on concrete steps, wearing glasses, a light-colored pullover, and blue jeans."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreigkwlzzdu6hgm376wtfzlybkmgkubnkbszhy2lefhfbjoarhajsly",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreigkwlzzdu6hgm376wtfzlybkmgkubnkbszhy2lefhfbjoarhajsly",
+          "alt": "Artist Allen “Uzikee” Nelson sits outdoors beside one of his metal sculptures, an African-inspired face accented with red and green glass."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiaer6xih74r6setncjicjurl5zogt74xeq3fyqb4bxgzppjksjt54",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiaer6xih74r6setncjicjurl5zogt74xeq3fyqb4bxgzppjksjt54",
+          "alt": "Allen “Uzikee” Nelson stands beside one of his towering metal sculptures, wearing a black garment and cap decorated with bold white geometric patterns."
+        }
+      ],
+      "metrics": {
+        "likes": 20,
+        "reposts": 6,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3mvzzxaxz3a2k",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "To our Jewish neighbors across Ward 4 and DC observing Yom Kippur, I'm wishing you a meaningful fast and a sacred time of reflection, atonement, and renewal.\n\nMay this day strengthen our commitment to repair harm, extend grace, and care for one another. G'mar chatima tovah.",
+      "createdAt": "2026-09-21T15:33:56.607Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mvzzxaxz3a2k",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidqcg5blpmejpk436ypbjeb5tcq6q4m2eplb6h27jtwp5ik4wkmcy",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidqcg5blpmejpk436ypbjeb5tcq6q4m2eplb6h27jtwp5ik4wkmcy",
+          "alt": "Graphic on a warm beige background featuring the Janeese Lewis George DC Council Ward 4 logo. Large purple text reads, “Wishing you a meaningful Yom Kippur,” followed by “G’mar chatima tovah.” Three glowing gold candles are surrounded by white flowers and soft green leaves at the bottom."
+        }
+      ],
+      "metrics": {
+        "likes": 8,
+        "reposts": 2,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mvsg75kiyo2p",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Great meeting with DC Flight, our city's first professional women’s volleyball team! 🏐💜\n\nWe talked about the power of girls seeing women compete and lead at the highest level, and why every young person deserves the opportunity to play. See you at The Anthem in 2027!",
+      "createdAt": "2026-09-18T14:51:48.459Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mvsg75kiyo2p",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreib3mgck6vpb3ccahosi5iwutsp4argpcmeqmsza72npyq6d6ghe3a",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreib3mgck6vpb3ccahosi5iwutsp4argpcmeqmsza72npyq6d6ghe3a",
+          "alt": "Councilmember Janeese Lewis George stands with five representatives of DC Flight inside the Wilson Building, holding a black sweatshirt featuring the team’s purple-and-white logo."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidxhj72ru36e2jvarzxgh72vje2bqtjv7fuvuaiwkwxzx3ptvng7a",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidxhj72ru36e2jvarzxgh72vje2bqtjv7fuvuaiwkwxzx3ptvng7a",
+          "alt": "Councilmember Janeese Lewis George smiles beside a DC Flight representative as they pose for a selfie while holding up a black DC Flight sweatshirt."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreichoxoc6bnsagcsfuwrh3qo6rd46ab4i6sxayc4vqpxyxs3vy4y7m",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreichoxoc6bnsagcsfuwrh3qo6rd46ab4i6sxayc4vqpxyxs3vy4y7m",
+          "alt": "Four DC Flight representatives smile together inside the Wilson Building while displaying a T-shirt that reads, “Everyone watches women’s sports.”"
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibqf3u7lpgysje6xk3ve3kpyg7heebrgpqar44ewkv7hce6jrcfom",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibqf3u7lpgysje6xk3ve3kpyg7heebrgpqar44ewkv7hce6jrcfom",
+          "alt": "Councilmember Janeese Lewis George stands with DC Flight representatives and District leaders inside the Wilson Building, holding a purple DC Flight Volleyball sweatshirt."
+        }
+      ],
+      "metrics": {
+        "likes": 11,
+        "reposts": 2,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mvq2foegvf2i",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "CBC Week kicked off in DC with good people, great energy, and of course, go-go! 💜\n\nIt was wonderful to join Council colleagues, staff, neighbors, and leaders from across the country to celebrate Black leadership and recommit ourselves to the work ahead.\n\nRooted, ready, and rising! ✊🏾",
+      "createdAt": "2026-09-17T16:15:23.025Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mvq2foegvf2i",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihnbyjgfezxuxil43nhksrkhh4rfxg7txpl7twgz2sp6xq33vauy4",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihnbyjgfezxuxil43nhksrkhh4rfxg7txpl7twgz2sp6xq33vauy4",
+          "alt": "Councilmember Janeese Lewis George, wearing a salmon-pink suit, smiles beside a reception attendee in a navy plaid blazer."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiaic6r3tf5upi3n6dk6futltulcdki3dpvmaunap7cuieilmduhy4",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiaic6r3tf5upi3n6dk6futltulcdki3dpvmaunap7cuieilmduhy4",
+          "alt": "Councilmember Janeese Lewis George smiles and leans in to greet a woman as guests gather around them at the reception."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreie5ih6jeprxew3hdlioijwbomjwupijrysei65a6px47wt4ey5x3e",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreie5ih6jeprxew3hdlioijwbomjwupijrysei65a6px47wt4ey5x3e",
+          "alt": "Councilmember Janeese Lewis George smiles with two attendees, one wearing a red floral jacket and sunglasses and the other wearing a black blazer."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiamxvthequqr2uydng23xuphiu2nhoakuvfqbc4ra4e6gnzkablmu",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiamxvthequqr2uydng23xuphiu2nhoakuvfqbc4ra4e6gnzkablmu",
+          "alt": "Councilmember Janeese Lewis George smiles beside a veteran wearing a pinstripe suit, military medals, and a Washington Nationals championship cap."
+        }
+      ],
+      "metrics": {
+        "likes": 5,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mvnkr77ztu22",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "We're back! As the Council returns from recess, I'm reflecting on some of my favorite moments from the past few years. Every fight and every victory has been powered by neighbors who believe a better DC is possible. I'm ready to keep working alongside you. Let's get to work, Ward 4! 💜",
+      "createdAt": "2026-09-16T16:30:10.469Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mvnkr77ztu22",
+      "media": [],
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mvkvhus23k2e",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Happy Hispanic Heritage Month, Ward 4! 💜\n\nThis month, we celebrate the histories, cultures, and contributions of Latino communities across Ward 4 and DC, and the generations of neighbors whose leadership, traditions, and contributions continue to shape our city.\n\nFeliz Mes de la Herencia Latina! 🎉",
+      "createdAt": "2026-09-15T15:03:49.466Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mvkvhus23k2e",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibhphxekjlsrgoikkm4zmdymxeam3t6yplmtzgbqu66uuq4bzlbsm",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibhphxekjlsrgoikkm4zmdymxeam3t6yplmtzgbqu66uuq4bzlbsm",
+          "alt": "Graphic celebrating Hispanic Heritage Month on a dark navy background with bright yellow, pink, red, and green floral illustrations in the upper left and lower right corners. Large yellow text reads “Hispanic Heritage Month,” with “September 15 to October 15” in white below. Councilmember Janeese Lewis George’s Ward 4 logo appears in the lower left."
+        }
+      ],
+      "metrics": {
+        "likes": 6,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mvibk2xxkb2k",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Yesterday, Ward 4 showed up at Nats Park! ⚾️💜\n\nThanks to everyone who came out for Ward 4 Day. It was great seeing so many neighbors and families together cheering on the Nats and even better celebrating a win!",
+      "createdAt": "2026-09-14T14:01:48.762Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mvibk2xxkb2k",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreih5mmiu5fcjwx43fiqoi4ittgk7r6jwzljlk6rvweigntu4nj34he",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreih5mmiu5fcjwx43fiqoi4ittgk7r6jwzljlk6rvweigntu4nj34he",
+          "alt": "Councilmember Janeese Lewis George smiles with Ward 4 residents in the stands at Nationals Park during Ward 4 Day."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreie26l5gbuhbc7pinzc2pi35nsn55cddllhfnvkaha2zkmqcjjytw4",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreie26l5gbuhbc7pinzc2pi35nsn55cddllhfnvkaha2zkmqcjjytw4",
+          "alt": "Councilmember Janeese Lewis George smiles with Ward 4 residents in the stands at Nationals Park during Ward 4 Day."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiga3wa7zpm7pgajes6z4ubeitypx6ay3blu6jh5nnuia46bnumkmi",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiga3wa7zpm7pgajes6z4ubeitypx6ay3blu6jh5nnuia46bnumkmi",
+          "alt": "Councilmember Janeese Lewis George smiles with Ward 4 residents in the stands at Nationals Park during Ward 4 Day."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreie4k2jpekfmow7npv3ozccy565fokuvwv74k2xeb4ctlr42f5tpvy",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreie4k2jpekfmow7npv3ozccy565fokuvwv74k2xeb4ctlr42f5tpvy",
+          "alt": "Councilmember Janeese Lewis George smiles with Ward 4 residents in the stands at Nationals Park during Ward 4 Day."
+        }
+      ],
+      "metrics": {
+        "likes": 8,
+        "reposts": 0,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3mvbu3iydcx26",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "As we close out a day of reflection and remembrance, I’m sending warm wishes to our Ethiopian neighbors in Ward 4 and across DC as they welcome a new year. Melkam Addis Amet! 💛 Wishing everyone celebrating peace, joy, good health, and time with loved ones. 🌼",
+      "createdAt": "2026-09-12T00:45:03.056Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mvbu3iydcx26",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifj75cjzxlmgln7xn24osflvtwvxvtn4m2w73okqwg5fjspy3yhpi",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifj75cjzxlmgln7xn24osflvtwvxvtn4m2w73okqwg5fjspy3yhpi",
+          "alt": "Graphic with a soft-focus background of yellow daisies. At the top is the Janeese Lewis George DC Council Ward 4 logo in purple. Centered on a translucent yellow box is purple text reading: “HAPPY ETHIOPIAN NEW YEAR!” followed by Amharic text and “Melkam Addis Amet.”"
+        }
+      ],
+      "metrics": {
+        "likes": 12,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mvbo7txcqk2i",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Shanah Tovah to our Jewish neighbors in Ward 4 and across DC! 🍎🍯\n\nRosh Hashanah, the Jewish New Year, is a time for reflection, renewal, and hope. Wishing everyone celebrating a sweet, healthy, and joyful new year filled with peace and community. 💜",
+      "createdAt": "2026-09-11T23:00:06.293Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mvbo7txcqk2i",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidk5dxws35eccdrsgftqlpjqynmm3sww7polu7lu7ptrok2xyj66a",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidk5dxws35eccdrsgftqlpjqynmm3sww7polu7lu7ptrok2xyj66a",
+          "alt": "cream colored graphic with purple \"Janeese Lewis George\" logo graphic in background. Purple text that says, \"Shanah Tovah, Ward 4! Wishing you a sweet, healthy, and peaceful new year.\" Pomegranate, apple, and honey graphic at the bottom."
+        }
+      ],
+      "metrics": {
+        "likes": 3,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mvaseprcw52z",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Today marks 25 years since September 11. We remember those whose lives were taken, including those killed at the Pentagon, and hold their loved ones in our hearts. We honor all who responded with courage and those who continue to live with the lasting effects.",
+      "createdAt": "2026-09-11T14:41:44.937Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mvaseprcw52z",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidiz52bjxfs3afolnat3voxgngnegzto4vcwuab5piloeloiymeka",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidiz52bjxfs3afolnat3voxgngnegzto4vcwuab5piloeloiymeka",
+          "alt": "Purple-tinted aerial photograph of the Pentagon with the Washington Monument and DC skyline in the background. White text reads, “25 years later, we remember. September 11, 2001. We remember the lives lost and honor all who responded.” The Janeese Lewis George DC Council Ward 4 logo appears in the lower left corner."
+        }
+      ],
+      "metrics": {
+        "likes": 5,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mv4gltg2dv2o",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "All Ward 4 community members are invited to a day out at the ballpark! The @nationals will be playing the Los Angeles Angels on Sun, Sep 13 at 1:35pm Nationals Park. Visit JaneeseWard4.com/Nats to register for your free tickets and for more info. Can't wait to see you there! 💜",
+      "createdAt": "2026-09-09T21:00:19.748Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mv4gltg2dv2o",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreig54jjk52noxoh2zswfkfb7jhqj27dcr3uiwfgm43tnlnsnagaq74",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreig54jjk52noxoh2zswfkfb7jhqj27dcr3uiwfgm43tnlnsnagaq74",
+          "alt": null
+        }
+      ],
+      "metrics": {
+        "likes": 4,
+        "reposts": 1,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3muz6qxgxhs2y",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Tomorrow, Salvadoran families across Ward 4 are facing uncertainty about the future of TPS. For decades, Salvadoran residents have built lives, raised families, and strengthened our communities. They're an essential part of Ward 4 and deserve stability, dignity, and to build their futures here.",
+      "createdAt": "2026-09-08T14:02:02.343Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3muz6qxgxhs2y",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreid6pulclvqqdmm45oyaujg3wkylz4vnp2cazw75w7ptnxfiruhbfa",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreid6pulclvqqdmm45oyaujg3wkylz4vnp2cazw75w7ptnxfiruhbfa",
+          "alt": "Purple graphic with white text titled “Councilmember Lewis George Statement on Temporary Protected Status for Salvadorans.” Text reads: “To our Salvadoran neighbors: You belong here. You have built your lives here. And you are an important part of the District we call home. You are not alone.” Orange brush strokes emphasize key words and phrases. Janeese Lewis George’s Ward 4 logo appears at the bottom."
+        }
+      ],
+      "metrics": {
+        "likes": 6,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3muwkwfm2wr2k",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Happy Labor Day, Ward 4! ☀️💦\n\nToday's the last day for DC’s outdoor pools and splash parks. Check DPR’s website before you go for the latest hours and info.\n\nI’m especially grateful for the workers who keep Ward 4 and our entire city running every day. I hope you find some time to rest and recharge 💜",
+      "createdAt": "2026-09-07T13:01:50.937Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3muwkwfm2wr2k",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreic343qfypnyg7bjmretyv74lbbnkywzmmryoysrvnupgrc72dutkm",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreic343qfypnyg7bjmretyv74lbbnkywzmmryoysrvnupgrc72dutkm",
+          "alt": "Light purple graphic featuring a swimming pool water background with illustrated suns and orange-and-white pool floats across the top. Large white text reads, “Last Splash, Ward 4.” Below it reads, “Pools & Splash Parks Close Today” and “Happy Labor Day!” Janeese Lewis George’s Ward 4 logo appears in purple at the bottom right."
+        }
+      ],
+      "metrics": {
+        "likes": 7,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3murjwlvpfy2t",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "As we head into Labor Day weekend, I’m thinking about the workers who keep Ward 4 and our city moving every day. We honor those who fought for fair wages, safer workplaces, weekends, dignity, and respect on the job. Thank you to every worker who keeps our community going. 💜",
+      "createdAt": "2026-09-05T13:00:45.114Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3murjwlvpfy2t",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreignf2k47bzbmlexeoaicxyzqx24i6au7wduvu6a77gjz5gpbkgqou",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreignf2k47bzbmlexeoaicxyzqx24i6au7wduvu6a77gjz5gpbkgqou",
+          "alt": "Purple Labor Day graphic with white text reading “Ward 4 Works Because You Do. Happy Labor Day.” The graphic thanks the workers who keep the community going and includes Janeese Lewis George’s Ward 4 logo."
+        }
+      ],
+      "metrics": {
+        "likes": 4,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mup25gfgnd2n",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Last night's storm left downed debris and power outages throughout the District. Check out and share this list of storm recovery resources. Be safe out there!",
+      "createdAt": "2026-09-04T13:12:54.880Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mup25gfgnd2n",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidx5jsrwnkzr3ykq6qsilo54dfjfa7diurtkutmz2dou3bk4dlcqa",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidx5jsrwnkzr3ykq6qsilo54dfjfa7diurtkutmz2dou3bk4dlcqa",
+          "alt": "GRAPHIC: Storm Recovery Resources\n\nFor your safety, do not bring power generators inside your home \n\nPower outages: Call 877-737-2662 to report outages or text OUT via text to 48710 \n\nDowned trees: Call 311 or visit 311.dc.gov to report downed trees or debris blocking sidewalks and streets\n\nDowned power lines: Call 911 to report downed power lines, then notify Pepco at 877-737-2662 \n\n[Small version of logo for Ward 4 Councilmember Janeese Lewis George is lower right in light purple on a white background]"
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifeniwx3723wzqlwcnj7hlmx4q22e2yphgel3aeabtrwwzfnb426u",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifeniwx3723wzqlwcnj7hlmx4q22e2yphgel3aeabtrwwzfnb426u",
+          "alt": "GRAPHIC: Storm Recovery Resources\n\nFor your safety, do not bring power generators inside your home \n\nGas Leak:  Call 911, then call Washington Gas at 844-927-4427\n\nVerizon Outage: Call 800-837-4966 to report a residential outage\n\nDC Alerts: Sign up to receive alerts at alert.dc.gov or follow on social media \n\nX:@alertDC\nInstagram: @dchsema\n\n[Small version of logo for Ward 4 Councilmember Janeese Lewis George is lower right in light purple on a white background]"
+        }
+      ],
+      "metrics": {
+        "likes": 11,
+        "reposts": 5,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3mufhj6naou2i",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Did you know ANC 4D (Petworth/Brightwood Park) provides community grants to local nonprofits seeking funding to support impactful projects that benefit ANC 4D residents?\n\nTonight at 6:30pm ANC 4D is hosting a live Grant Application Clinic to make the application process even easier. RSVP below:",
+      "createdAt": "2026-08-31T17:45:29.565Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mufhj6naou2i",
+      "media": [
+        {
+          "type": "link",
+          "url": "https://www.eventbrite.com/e/4d-community-grants-clinic-tickets-1998379154847?listservemail",
+          "title": "4D Community Grants Clinic",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiewxv6ry3myjgevdqgqzkighwvw3ml54ll6ddd7pcdwi3wd452gby"
+        }
+      ],
+      "metrics": {
+        "likes": 3,
+        "reposts": 0,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3mtyziynmkw2h",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Today I joined Barnard Elementary students, staff, and families in celebrating the its beautiful new addition in Ward 4 -- it's a space as vibrant as the bright scholars who fill its halls. Thank you to DCPS and DGS staff and the Barnard community for making this inclusive space a reality! 🐻",
+      "createdAt": "2026-08-26T19:02:55.135Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mtyziynmkw2h",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreif5p52lffromlcbsl7g4w4uos4s23lkxelkldgtwuyibt2mqchyky",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreif5p52lffromlcbsl7g4w4uos4s23lkxelkldgtwuyibt2mqchyky",
+          "alt": "Ribbon cutting at Barnard Elementary School along with students, Interim DCPS Chancellor Dr. Kim Jackson, Ward 4 Councilmember Janeese Lewis George, DGS Director Delano Hunter, Mayor Muriel Bowser, and Barnard Elementary Principal Dr. Grace Reid."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibi4xxmkrp7b6qhum37drxuargex6vltostjzyiqnf37btg4xw4d4",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibi4xxmkrp7b6qhum37drxuargex6vltostjzyiqnf37btg4xw4d4",
+          "alt": "Barnard Elementary Principal Dr. Grace Reid and Ward 4 Councilmember Janeese Lewis George."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiefq3zjm6r77hzngyjni4yuekdxpxp22y2kbcmlm33ev3j3q2bhd4",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiefq3zjm6r77hzngyjni4yuekdxpxp22y2kbcmlm33ev3j3q2bhd4",
+          "alt": "CM Janeese Lewis George poses with DCBOE Ward 4 Representative Dr. T. Michelle Colson (left), two members of Barnard's Student Council (center), and Commissioner Eliza Cava."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiadrxz2zwtcunctkd5u24xhiws2gu7vdyhyhmel2lele2uczz2iym",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiadrxz2zwtcunctkd5u24xhiws2gu7vdyhyhmel2lele2uczz2iym",
+          "alt": "CM Lewis George speaks with Barnard families and community members at the front door of the new addition after the ribbon cutting."
+        }
+      ],
+      "metrics": {
+        "likes": 5,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mtvqlavezb23",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "It takes all of us to make our schools work. \n\nTo our teachers, paraprofessionals, principals, counselors, social workers, librarians, custodians, cafeteria workers, crossing guards, front office staff, nurses, coaches, and everyone who shows up for our kids each day: Thank you 💜",
+      "createdAt": "2026-08-25T11:45:07.985Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mtvqlavezb23",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreih2d3mnplldyuroojkmrc2tgbkxfcpzwtu4gm3h265wfzvujozuaq",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreih2d3mnplldyuroojkmrc2tgbkxfcpzwtu4gm3h265wfzvujozuaq",
+          "alt": "Orange back-to-school graphic with rows of colorful pencils along the top and bottom and the Janeese Lewis George, DC Council Ward 4 logo near the top. Large purple text reads, “It takes all of us.” Below, text reads, “Thank you to everyone who makes our schools work."
+        }
+      ],
+      "metrics": {
+        "likes": 7,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mttwo6psvv2d",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Academic excellence is in Ward 4!✨️ Share a comment below and tell us: how was your first day of school?",
+      "createdAt": "2026-08-24T18:28:49.345Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mttwo6psvv2d",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifjocj3sc74o3rbdbiqrpk5ndxobh6wpa3qxs26y4udcxyznbmfa4",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifjocj3sc74o3rbdbiqrpk5ndxobh6wpa3qxs26y4udcxyznbmfa4",
+          "alt": "Councilmember Janeese Lewis George logo in top right; heading says \"Ward 4 Proud.\" Subhead says \"Welcome Back Students!\"\n\nBeneath photo of CM JLG welcoming back students, image lists W4 schools:\n\nBarnard Elementary School\nBreakthrough Montessori PCS\nBrightwood Elementary School\nCapital City PCS\nCenter City PCS - Brightwood\nCenter City PCS - Petworth\nCoolidge High School\nDistrict of Columbia International School\nDorothy I. Height Elementary School\nE.L. Haynes PCS\nEarly College Academy at Coolidge High School\nFriendship PCS - Ideal\nIda B. Wells Middle School\nJohn Lewis Elementary School\nLafayette Elementary School\nLaSalle-Backus Elementary School\nLatin American Montessori Bilingual PCS\nMacFarland Middle School\nMilitary Road Early Learning Center\nPaul PCS\nPowell Elementary School\nRaymond Elementary School\nRoosevelt High School\nRoots PCS\nSela PCS\nShepherd Elementary School\nTakoma Elementary School\nTruesdell Elementary School\nWashington Latin PCS\nWhittier Elementary School"
+        }
+      ],
+      "metrics": {
+        "likes": 3,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mttlmmn6av2p",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "It's my favorite time of the year! 🏫📚️✏️ Today I had the pleasure of welcoming Ward 4 students as they started their first day of the school year at John Lewis Elementary School and Whittier Elementary School. \n\nHere's to a terrific year for all of DC's students, educators, and support professionals!",
+      "createdAt": "2026-08-24T15:11:05.678Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mttlmmn6av2p",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiaflhwdvdriorklk66sowa3kenzqtfyjnkmv72d7v5edvubzotwcu",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiaflhwdvdriorklk66sowa3kenzqtfyjnkmv72d7v5edvubzotwcu",
+          "alt": "Councilmember Janeese Lewis George speaks with an elementary school student on her first day at Whittier Elementary School."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiduviojnrf7psko3c5wauwcseowikb7scrjgtpebunosc3324gksq",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiduviojnrf7psko3c5wauwcseowikb7scrjgtpebunosc3324gksq",
+          "alt": "Councilmember Janeese Lewis George, wearing a lavender sweater and striped skirt, waves at students as they start their first day of the school year at John Lewis Elementary School."
+        }
+      ],
+      "metrics": {
+        "likes": 13,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mtt7c4f6yz23",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Welcome back, Ward 4! 🎒📚 Wishing all of our students a joyful first day and a school year full of learning and growing.\n\nAnd a huge thank you to the educators, school staff, parents, and caregivers who have worked so hard to get our kids ready for today. We’re grateful for all you do 💜",
+      "createdAt": "2026-08-24T11:30:28.174Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mtt7c4f6yz23",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiehwjwddjtxtjjnrra4udywl4smnljikefoqmgapcxg2bbeyckxum",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiehwjwddjtxtjjnrra4udywl4smnljikefoqmgapcxg2bbeyckxum",
+          "alt": "Purple back-to-school graphic bordered by colorful crayons with the Janeese Lewis George, DC Council Ward 4 logo at the top. Large white text reads, “Welcome Back, Ward 4!” Below, text reads, “Wishing our students & educators a great first day!”"
+        }
+      ],
+      "metrics": {
+        "likes": 3,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mtrqdgilpc2z",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "📚 Welcome back, Petworth Library! I’m especially excited about the new children’s space – a place for our youngest residents to read, explore, play & grow, with new books and sensory toys to welcome children at every stage.",
+      "createdAt": "2026-08-23T21:30:06.478Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mtrqdgilpc2z",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreict35kvvftvbiahbrr5wtnvdyv7ctr6b4sxadfu5icme7ljblogry",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreict35kvvftvbiahbrr5wtnvdyv7ctr6b4sxadfu5icme7ljblogry",
+          "alt": "Five smiling adults stand together inside a library beneath red, blue and white balloons, posing by book displays and a welcome sign during a celebratory community event at a library."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihfwvlrpfrgqnlngqaaps673c4zwojihbfpfj3ffxx6w354mpcss4",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihfwvlrpfrgqnlngqaaps673c4zwojihbfpfj3ffxx6w354mpcss4",
+          "alt": "A storyteller holds up the book Knuffle Bunny while Councilmember Lewis George and her husband and young child sit listening on a bench beneath a pastel mural of rolling hills, a hot-air balloon and a rabbit."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreigyf27kkuwczip2rthu6o47d2ox4erjqyxlb6gsrfvr72uynbd3ce",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreigyf27kkuwczip2rthu6o47d2ox4erjqyxlb6gsrfvr72uynbd3ce",
+          "alt": "Councilmember Lewis George speaking into a microphone, gesturing with one hand while addressing an audience, with a DJ working a laptop and turntables behind her in a bright room framed by tall wooden windows."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidn5kdukn4uglp6sez2j4cyspqfihyealbqdrvgot3b4zzist2bsu",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidn5kdukn4uglp6sez2j4cyspqfihyealbqdrvgot3b4zzist2bsu",
+          "alt": "Councilmember Lewis George and a constituent smiling standing arm-in-arm between library bookshelves, one wearing a purple top and headscarf and the other in a navy-and-white striped shirt, conveying warmth and community in a light-filled reading room."
+        }
+      ],
+      "metrics": {
+        "likes": 18,
+        "reposts": 2,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3mtlulw2hoz2h",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Back to school means back to the bus and Metro for thousands of DC students!\n\nWith Kids Ride Free, eligible DC students ages 5–21 can ride Metrobus and Metrorail for free while traveling in the District.\n\nRemember: No card, no free ride! Learn more at ddot.dc.gov/page/kids-ri....\n\nHappy travels! 💜",
+      "createdAt": "2026-08-21T13:30:27.758Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mtlulw2hoz2h",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiemr6qhbilfnxktnlm7r5umvgp5vaf2coq5p2oeznso2t5osaxqeu",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiemr6qhbilfnxktnlm7r5umvgp5vaf2coq5p2oeznso2t5osaxqeu",
+          "alt": "Poster announcing \"KIDS RIDE FREE\" — students ride free on Metrobus or Metrorail in DC; directs viewers to ddot.dc.gov/kids-ride-free-program, set against a colorful stylized DC Metro map with a purple DC skyline silhouette."
+        }
+      ],
+      "metrics": {
+        "likes": 9,
+        "reposts": 4,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3mtjz4cegwc2c",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Ward 4 has so much school pride! 💜📚\n\nOur DCPS schools are more than buildings. They’re places where generations of Washingtonians have grown and made memories that last a lifetime.\n\nAs we get ready to welcome our students & educators back, we want to know: what's your connection to a Ward 4 school?",
+      "createdAt": "2026-08-20T19:45:53.026Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mtjz4cegwc2c",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidr4dwagtb6yxidwj5ychg7gebzvt4tpylhfuz7li7vmc4b67obdu",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidr4dwagtb6yxidwj5ychg7gebzvt4tpylhfuz7li7vmc4b67obdu",
+          "alt": "Poster promoting Ward 4 school pride showing a map with numbered heart markers for local schools, lists of elementary, middle and high schools, a colorful crayon border, and an office logo for Janeese Lewis George, DC Council Ward 4."
+        }
+      ],
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mtgtnxk6s52k",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Today Lamond Rec Center is hosting a Back-to-School Kickoff! We hope to see you there, Ward 4 💜📚\n\n📅 Wednesday, August 19\n⏰ 4:30–6:30 PM\n📍 Lamond Recreation Center\n20 Tuckerman St NE\n\nStudents & a parent/guardian must be present. Giveaways are 1st-come, 1st-served basis while supplies last.",
+      "createdAt": "2026-08-19T13:30:23.934Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mtgtnxk6s52k",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifplepi5mdx7zu7ukecr3zknvyq5bwpal6fnmq2yquhugx7kysyaq",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifplepi5mdx7zu7ukecr3zknvyq5bwpal6fnmq2yquhugx7kysyaq",
+          "alt": "Green back-to-school graphic bordered by colorful crayons. Large white text reads, “Back to School Kickoff at Lamond.” Kids will have the opportunity to get a bookbag, stock up on supplies, play games and have fun. Text at the bottom reads, “Check out the caption for more info!” with the Janeese Lewis George, DC Council Ward 4 logo."
+        }
+      ],
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mteewah7ln27",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "The first day of school is almost here, Ward 4! 🎒💜 We know getting ready for a new school year means a lot of moving pieces for families. \n\nCheck out our back-to-school checklist and visit BackToSchool.dc.gov for more information. Here’s to a safe, joyful, and successful school year! ✏️📚",
+      "createdAt": "2026-08-18T14:01:16.155Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mteewah7ln27",
+      "media": [],
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mtc7wokqcb27",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "One week until the first day of school! 🎒✏️ DCPS students head back Monday, August 24. For more information on enrollment, health records and immunizations, and getting to and from school, check out BackToSchool.dc.gov for your back-to-school checklist!",
+      "createdAt": "2026-08-17T17:26:42.776Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mtc7wokqcb27",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidalvg5jdl6ydkkpqypxzmbkvw75zzkrusnrruaz6ya4nnv2mb24u",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidalvg5jdl6ydkkpqypxzmbkvw75zzkrusnrruaz6ya4nnv2mb24u",
+          "alt": "Orange back-to-school graphic bordered by colorful crayons with the Janeese Lewis George, DC Council Ward 4 logo at the top. Large white text reads, “One Week to Go. DCPS is back August 24!” At the bottom, text reads “BackToSchool.dc.gov.”"
+        }
+      ],
+      "metrics": {
+        "likes": 5,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mstb6ria2s25",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "One year. More than $1 billion. And for what?\nNot safer communities. \nNot less serious crime. \nNot a stronger DC.",
+      "createdAt": "2026-08-11T18:39:11.944Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mstb6ria2s25",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreigso4e6uznivo55x4uf2r72wynrtobl6l5ww2l5l75sxumjxcdszy",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreigso4e6uznivo55x4uf2r72wynrtobl6l5ww2l5l75sxumjxcdszy",
+          "alt": "Purple graphic with the Janeese Lewis George DC Council Ward 4 logo and a light-purple DC skyline. Text reads: “Today marks one year of National Guard occupation in DC and more than $1 billion in taxpayer money wasted.” “$1 BILLION” is emphasized in large type with an orange brushstroke beneath it."
+        }
+      ],
+      "metrics": {
+        "likes": 4,
+        "reposts": 3,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3ms6yge6rzs2c",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "MPD 4D is currently on the scene after a shooting involving two adult victims in the 7400 block of Georgia Ave NW.\n\nBoth victims are conscious and have been transported by Fire and EMS to receive treatment. This is an active investigation and there will be police presence there for some time.",
+      "createdAt": "2026-08-03T17:09:08.006Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3ms6yge6rzs2c",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreib5syw4kjg4y3ktvi4b6k6jjer5ioii2zry7a4oj6tm2oqyhh5fty",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreib5syw4kjg4y3ktvi4b6k6jjer5ioii2zry7a4oj6tm2oqyhh5fty",
+          "alt": "Police vehicle at 7400 block of Georgia Ave NW — traffic is blocked for investigation"
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidzsxytvewdlk6bk2t4f5wt6cqm5t4viikkf3jtwurtammabhkati",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidzsxytvewdlk6bk2t4f5wt6cqm5t4viikkf3jtwurtammabhkati",
+          "alt": "Police vehicle at 7400 block of Georgia Ave NW — traffic is blocked for investigation, and police tape closes off the area. The McDonald’s is visible on the right."
+        }
+      ],
+      "metrics": {
+        "likes": 2,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mrnmjl3jec2v",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Congrats to @dcfirefighters.bsky.social on their new CBA! This overdue contract will ensure \"DC's Bravest\" receive the critical pay increases they've waited years for, while prices have gone up and affordability has become more urgent. I look forward to voting to approve this contract this fall. #1u",
+      "createdAt": "2026-07-27T19:20:55.451Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mrnmjl3jec2v",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreicqxfpaw54yz2dwzanmnryk55enwdryeiq7qx5m4cacya3tykdzdy",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreicqxfpaw54yz2dwzanmnryk55enwdryeiq7qx5m4cacya3tykdzdy",
+          "alt": "DC Fire Fighters Ratify New Collective\nBargaining Agreement\nWashington, D.C. - July 21, 2026—After nearly two years of negotiations, members of the DC Fire Fighters Association, IAFF Local 36, have voted to ratify a new collective bargaining agreement with the District of Columbia.\nMembers gathered on Monday and Tuesday to consider the tentative agreement, approving the contract by an overwhelming margin.\nThe agreement delivers a much needed wage increase for all members, establishes additional financial incentives for paramedics, and strengthens workplace safety protections. It also provides competitive pay and benefits that help address the rising cost of living while supporting the recruitment and retention of highly qualified firefighters.\n\"Our members have waited a long time for a fair contract,\" said David Hoagland, President of the DC Fire Fighters Association, IAFF Local 36. \"This agreement is a testament to the solidarity of our membership, who remained united throughout a lengthy and challenging bargaining process. \"We are especially grateful to the DC Council for its support, which helped move this agreement across the finish line,\" Hoagland added.\nThroughout negotiations, Local 36 advocated for fair wages, enhanced benefits, and stronger protections for the men and women who serve the District every day. After negotiations reached an impasse, the parties were scheduled to enter arbitration later this summer before the Council voted to place funds into the Workforce Investment Account (the fund from which CBAs are paid). In the interests of DC Taxpayers, Local 36 moved quickly to avoid a costly arbitration process.\nWhile celebrating the successful outcome, Hoagland emphasized the need for a more effective bargaining process in the future.\n\n[Additional text truncated due to character limit; goes on to explain agreement now moved to DC Council for final approval.]"
+        }
+      ],
+      "metrics": {
+        "likes": 8,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mrfyq4e7ec2j",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "It’s Ward 4 Day at the National Building Museum! Today W4 residents can access FREE admission between 2-5pm with their ID showing a W4 address!\n\nCheck out THE PLAYGROUND, featuring 14,000 sq ft of indoor play space. See you soon!",
+      "createdAt": "2026-07-24T18:38:01.886Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mrfyq4e7ec2j",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.bsky.app/watch/did%3Aplc%3A2lwv5jyabj66wqmmhqoar7mg/bafkreifgewp6qhfr2k7aculea6x3gprdx2nudgeufuvaqt5gqk2fr6xgsa/playlist.m3u8",
+          "thumb": "https://video.bsky.app/watch/did%3Aplc%3A2lwv5jyabj66wqmmhqoar7mg/bafkreifgewp6qhfr2k7aculea6x3gprdx2nudgeufuvaqt5gqk2fr6xgsa/thumbnail.jpg",
+          "alt": null
+        }
+      ],
+      "metrics": {
+        "likes": 11,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mr4hxhdiak2e",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Ward 4 Day is coming to the National Building Museum *this Friday* from 2-5pm! Be sure to use your FREE entry to check out The Playground, the museum's 14,000-sq ft architectural playground exhibit featuring 9 activity zones designed for climbing, building, creating, and open-ended play.",
+      "createdAt": "2026-07-20T23:43:56.998Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mr4hxhdiak2e",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihcgnggapqavw4f6c5tb5evsur73zsb4kw476r7frt5qzbgboy66e",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihcgnggapqavw4f6c5tb5evsur73zsb4kw476r7frt5qzbgboy66e",
+          "alt": null
+        }
+      ],
+      "metrics": {
+        "likes": 6,
+        "reposts": 2,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mqkjti33hc2h",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "DC has the world’s fastest growing rat population. I introduced the RAT Act to make rat control more transparent, coordinated, accountable — and ultimately effective. \n\nThank you to @chenderson.bsky.social and @cmnadeauoffice.bsky.social for holding this important hearing on the RAT and REMY bills.",
+      "createdAt": "2026-07-13T20:29:35.766Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mqkjti33hc2h",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.bsky.app/watch/did%3Aplc%3A2lwv5jyabj66wqmmhqoar7mg/bafkreid5fzopgo44b6wmfvrrzmhcoxgy7wugijjw4rdody4h7b6ipqvl2m/playlist.m3u8",
+          "thumb": "https://video.bsky.app/watch/did%3Aplc%3A2lwv5jyabj66wqmmhqoar7mg/bafkreid5fzopgo44b6wmfvrrzmhcoxgy7wugijjw4rdody4h7b6ipqvl2m/thumbnail.jpg",
+          "alt": null
+        }
+      ],
+      "metrics": {
+        "likes": 14,
+        "reposts": 4,
+        "replies": 3
+      }
+    },
+    {
+      "id": "bluesky:3mqkfesbz5k2h",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "July is Disability Pride Month 📆\nDisability rights? 365 days a year 👏",
+      "createdAt": "2026-07-13T19:09:48.198Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mqkfesbz5k2h",
+      "media": [],
+      "metrics": {
+        "likes": 6,
+        "reposts": 1,
+        "replies": 0
+      },
+      "quoted": {
+        "handle": "aclu-dc.bsky.social",
+        "text": "Disability laws are an important tool for building a more just and free D.C. for all. Swipe to learn what you need to know about disability rights in the District.\n\nHave your disability rights been violated? Read more: https://www.acludc.org/news/4-facts-you-need-know-about-disability-rights-dc/",
+        "url": "https://bsky.app/profile/aclu-dc.bsky.social/post/3mqkasod36t2f"
+      }
+    },
+    {
+      "id": "bluesky:3mqjyvxcoyj2c",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Today at 1:30pm the Council is holding a hearing on the RAT Act, my bill to tackle DC's growing rodent population through increased coordination, transparency and enforcement. Listen live at janeeseward4.com/rats!",
+      "createdAt": "2026-07-13T15:26:45.219Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mqjyvxcoyj2c",
+      "media": [
+        {
+          "type": "link",
+          "url": "https://janeeseward4.com/rats",
+          "title": "DC Council Hearings Management System",
+          "thumb": null
+        }
+      ],
+      "metrics": {
+        "likes": 4,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mq5rry7dzc23",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "📆 Save the date! The Petworth Library reopens on Sunday, August 23! 🎉 @dcpubliclibrary.bsky.social",
+      "createdAt": "2026-07-08T18:47:18.907Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mq5rry7dzc23",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibx77vzijff35si3wvmauozln4lw54fmj5tt2h7jxqfmtei3zrnte",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibx77vzijff35si3wvmauozln4lw54fmj5tt2h7jxqfmtei3zrnte",
+          "alt": "[Teal border at top of graphic featuring DC Public Library]\n\nDC Public Library\nPetworth Library Renovation\nMAINTAINING & IMPROVING OUR LIBRARIES\n\nRE-OPENING\nSUNDAY, AUG. 23\n\n[Photos of modernized library] \n\nSoutheast Library\nModernization\nPRESERVATION | RENOVATION | REHABILITATION\n\nRE-OPENING\nTHURSDAY, SEPT. 10\n\n[Photos of modernized library]"
+        }
+      ],
+      "metrics": {
+        "likes": 10,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mq3co7vym526",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "POOL ALERT: The Upshur Pool is currently offline due to a power failure. DPR is working with partners to restore power as soon as possible. The pool will reopen once power is fully restored and the facility is safe for public use. nixle.us/HFBXK",
+      "createdAt": "2026-07-07T19:11:26.735Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mq3co7vym526",
+      "media": [
+        {
+          "type": "link",
+          "url": "https://nixle.us/HFBXK",
+          "title": "Upshur Pool is currently OFFLINE due to a power failure from DC Dept of Parks and Recreation : Nixle",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiguaxws3r6ymyqqhtfv2i2ezhj34k7bvymtqz3vbd3umrdlaf5l6a"
+        }
+      ],
+      "metrics": {
+        "likes": 3,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mq37tnbmgj22",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Today the Council adopted my amendment to the FY27 BSA to ensure that 12 weeks of caregiving leave and medical leave are fully restored in 2030.\n\nPaid leave is a lifeline for families and helps small businesses remain competitive – that’s why I will always be a champion for #paidfamilyleave.",
+      "createdAt": "2026-07-07T18:20:47.714Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mq37tnbmgj22",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.bsky.app/watch/did%3Aplc%3A2lwv5jyabj66wqmmhqoar7mg/bafkreieo3zoahd4f5pqco3avejfby6pkxoyuiuixirkye4jjwsyv46knq4/playlist.m3u8",
+          "thumb": "https://video.bsky.app/watch/did%3Aplc%3A2lwv5jyabj66wqmmhqoar7mg/bafkreieo3zoahd4f5pqco3avejfby6pkxoyuiuixirkye4jjwsyv46knq4/thumbnail.jpg",
+          "alt": null
+        }
+      ],
+      "metrics": {
+        "likes": 14,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mpz5ovjr5p2d",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "ICYMI: On July 1st the D.C. minimum wage increased to $18.40 per hour and the tipped minimum wage increased to $10.30 per hour. \n\nWage theft is a crime. Report wage theft violations to the @dcattorneygeneral.bsky.social by emailing Workers@dc.gov or Trabajadores@dc.gov, or calling 202-724-7730.",
+      "createdAt": "2026-07-06T22:37:01.639Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mpz5ovjr5p2d",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiczexuu2vfitovnsce6734ndooo5e7w4aju45oalfdw52wvqxomiu",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiczexuu2vfitovnsce6734ndooo5e7w4aju45oalfdw52wvqxomiu",
+          "alt": "Effective July 1, 2026 in DC\n\nNew minimum wage: $18.40 per hour\n\nNew Tipped minimum wage: $10.30 per hour. \n\nTo report wage theft violations to OAG, contact workers@dc.gov or 202-724-7730."
+        }
+      ],
+      "metrics": {
+        "likes": 9,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mpyjpqa7e32k",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "July is Disability Pride Month, and @dcpubliclibrary.bsky.social is celebrating disabled joy all month long with an incredible month of programming. Everyone is welcome! Check out the full schedule at dclibrary.org",
+      "createdAt": "2026-07-06T16:39:34.798Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mpyjpqa7e32k",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiefsx5zrhhvnn2jrm4zogylf3qnu4u7vjylvl6xtuk5suo6a4pldy",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiefsx5zrhhvnn2jrm4zogylf3qnu4u7vjylvl6xtuk5suo6a4pldy",
+          "alt": "The image is a flyer for \"Disability Pride Month\" by the DC Public Library. \n\nIt lists events, including \"Story Time for the Spectrum,\" \"Know Your Rights,\" \"Smart Home Tech,\" \"Deaf President Now! Screening & Filmmaker Discussion,\" \"ASL Story Time,\" and \"Down Syndrome and Friends Community Play Group.\" Event dates, times, and library locations are provided. \n\nContact information for accommodations is listed at the bottom:\n\"For reasonable accommodations, email DCPLaccess@dc.gov or call 202-727-2142"
+        }
+      ],
+      "metrics": {
+        "likes": 8,
+        "reposts": 3,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mptefuujn22a",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Wishing everyone a safe and fun-filled July 4th weekend! 🎆 The District remains under an extreme heat emergency, so be sure to take breaks from the heat and hydrate.☀️",
+      "createdAt": "2026-07-04T15:21:16.724Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mptefuujn22a",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreicwpoxnmxw7fommi4544ymiiqejdr5wvvghng2rgocdpp47fdnohm",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreicwpoxnmxw7fommi4544ymiiqejdr5wvvghng2rgocdpp47fdnohm",
+          "alt": "Graphic: image of fireworks in a dark azure sky, with the silhouette of trees and people watching them from the ground. Text: “Happy 4th of July” written in a white handwritten font, and “Wishing you a safe and fun-filled holiday weekend” in a purple sans serif font. Centered at the bottom is the CM Janeese Lewis George logo."
+        }
+      ],
+      "metrics": {
+        "likes": 7,
+        "reposts": 1,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3mpqu5r5kf22i",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Temperatures are dangerously high this weekend! Follow these tips to stay cool and safe:\n\n✅ Find pools, cooling centers, and tips for avoiding heat overexposure at heat.dc.gov\n✅ Young children, seniors, and those on certain medications should take extra precautions to take cool\n✅ Keep pets indoors 🐶",
+      "createdAt": "2026-07-03T15:25:05.050Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mpqu5r5kf22i",
+      "media": [],
+      "metrics": {
+        "likes": 2,
+        "reposts": 3,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3mpodmrrajk2x",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "This week's #Ward4 Dispatch: Have a Safe and Fun Fourth of July! 🎆⬇️\n\njaneeseward4.com/ward-4-dispa...",
+      "createdAt": "2026-07-02T15:23:55.927Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mpodmrrajk2x",
+      "media": [
+        {
+          "type": "link",
+          "url": "https://janeeseward4.com/ward-4-dispatch-have-a-safe-and-fun-fourth-of-july/",
+          "title": "Ward 4 Dispatch: Have a Safe and Fun Fourth of July! - Councilmember Janeese Lewis George",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreigesf5zg3tdmpti7ihmdjnqrbp5reb3ttujwn7ncak7yfrdwzmnai"
+        }
+      ],
+      "metrics": {
+        "likes": 2,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mpluexq4ic2y",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "As we head into Fourth of July weekend, I'm sharing a few important tips and resources for neighbors to celebrate safely.\n \nFor extreme heat resources and to locate your nearest cooling center, visit heat.dc.gov.\n \nWishing you a safe and joyful Fourth of July weekend! 🎆",
+      "createdAt": "2026-07-01T15:45:48.122Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mpluexq4ic2y",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiaobfsz377jvl2z4al2ztdqkas6cqgescpqm72z6quk5jgu45egnu",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiaobfsz377jvl2z4al2ztdqkas6cqgescpqm72z6quk5jgu45egnu",
+          "alt": "A red, white, and blue graphic reading \"Holiday Tips and Reminders: Tips to beat the heat and celebrate Independence Day weekend safely!\""
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifongwmuqneusczjt4nj5vu3y445pz2yczqqgyx6lvz7gzkml6q7q",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifongwmuqneusczjt4nj5vu3y445pz2yczqqgyx6lvz7gzkml6q7q",
+          "alt": "A red, white, and blue graphic reading \"Extreme Heat + Safety Resources: DC is under an Extreme Heat Emergency from now until Sunday morning. For resources and to locate cooling centers near you, visit heat.dc.gov. To report the presence or sale of illegal fireworks, call (202) 673-2776 or submit a 311 request. For fireworks safety reminders, visit fems.dc.gov/fireworks. To report suspicious activity, call (202) 727-9099, text 50411, or visit iWATCHDC.org.\""
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiawsm2cv2qcj4cejz44sqzskp23nofsgsc5ecju2qhamvj237hide",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreiawsm2cv2qcj4cejz44sqzskp23nofsgsc5ecju2qhamvj237hide",
+          "alt": "A red, white, and blue graphic reading \"Transportation Tips: Residents and visitors are strongly encouraged to use Metro to get around the city throughout the weekend. Metrorail, Metrobus, and MetroAccess will be free to ride from 5pm on Saturday, July 4th to 2am on Sunday, July 5th. To get live alerts on traffic, weather, and more, sign up for AlertDC at Alert.DC.gov.\""
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreianscao4y4lcgvampvj6kuuve7xsoyovpnkbuvi2jlzvjt2huqnwe",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreianscao4y4lcgvampvj6kuuve7xsoyovpnkbuvi2jlzvjt2huqnwe",
+          "alt": "A red, white, and blue graphic reading \"Celebrations on the National Mall: Attendees headed to the National Mall should review event details and road closures at 250.dc.gov. Fireworks on the mall are scheduled to begin at 10:30pm and last approximately 40 minutes. NPS will also run a concurrent firework show at Anacostia Park. Extensive street closures and parking restrictions are planned downtown. For timely traffic info, follow @DCPoliceTraffic on social media.\""
+        }
+      ],
+      "metrics": {
+        "likes": 6,
+        "reposts": 5,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mpgngir35222",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "For years, tenants at 1355 Peabody and 6000 13th Street have organized, spoken out, and demanded the safe, dignified housing they deserve. \n\nNo family should have to endure prolonged outages, infestations, unsafe conditions, or retaliation simply for advocating for basic repairs.",
+      "createdAt": "2026-06-29T13:58:04.668Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mpgngir35222",
+      "media": [],
+      "metrics": {
+        "likes": 12,
+        "reposts": 1,
+        "replies": 1
+      },
+      "quoted": {
+        "handle": "dcattorneygeneral.bsky.social",
+        "text": "NEW: We are suing a landlord in Ward 4 for dangerous and illegal housing conditions.\n\nFor years, tenants have been tormented by long winter heating outages, rodents and pests, fire hazards, and widespread disrepair.\n\nThe landlord also unlawfully retaliated against tenants who advocated for repairs.",
+        "url": "https://bsky.app/profile/dcattorneygeneral.bsky.social/post/3mpgjykrdck2j"
+      }
+    },
+    {
+      "id": "bluesky:3mp7r2mzfvc2p",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Read this week's #Ward4 Dispatch: Securing Wins in the DC Budget ⬇️\n\njaneeseward4.com/ward-4-dispa...",
+      "createdAt": "2026-06-26T20:14:23.281Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mp7r2mzfvc2p",
+      "media": [
+        {
+          "type": "link",
+          "url": "https://janeeseward4.com/ward-4-dispatch-securing-wins-in-the-dc-budget/",
+          "title": "Ward 4 Dispatch: Securing Wins in the DC Budget - Councilmember Janeese Lewis George",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibqnxxcgmqoekpovnflodgqpafvqkimu7u3q6keswkvee5byq5j3u"
+        }
+      ],
+      "metrics": {
+        "likes": 4,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3moy33xpndc25",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Ward 4 deserves a budget that reflects our needs and our values.\n \nToday, the Council took our second vote on the Local Budget Act, securing critical investments for residents in Ward 4 and across the District.\n\nHere are some of the wins we secured to make DC stronger and more affordable: ⬇️",
+      "createdAt": "2026-06-23T18:52:47.549Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3moy33xpndc25",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibtydb5pximrlj7kl2r3r22r2evl7uaaodzqtiipshbqpipxpah7u",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibtydb5pximrlj7kl2r3r22r2evl7uaaodzqtiipshbqpipxpah7u",
+          "alt": null
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibczw4cmkurehgbwuxdnodduysd5yz7k7pssdvpoynucgv5s3fwu4",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibczw4cmkurehgbwuxdnodduysd5yz7k7pssdvpoynucgv5s3fwu4",
+          "alt": null
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreianna5vq3sbcygkwkg2tlgj42uavganiyzjuqk77rslcehgugxzze",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreianna5vq3sbcygkwkg2tlgj42uavganiyzjuqk77rslcehgugxzze",
+          "alt": null
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihg4clmc3u2boctunvlg2cgt46b2l5ogt7fxrytbpmq3zltgmpk7m",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihg4clmc3u2boctunvlg2cgt46b2l5ogt7fxrytbpmq3zltgmpk7m",
+          "alt": null
+        }
+      ],
+      "metrics": {
+        "likes": 7,
+        "reposts": 0,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3moo7fl3jqs2t",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Read this week's #Ward4 Dispatch: Utility Transparency, Home Rule Music Festival, and Juneteenth! ⬇️\n\njaneeseward4.com/ward-4-dispa...",
+      "createdAt": "2026-06-19T20:43:07.447Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3moo7fl3jqs2t",
+      "media": [
+        {
+          "type": "link",
+          "url": "https://janeeseward4.com/ward-4-dispatch-utility-transparency-home-rule-music-festival-and-juneteenth/",
+          "title": "Ward 4 Dispatch: Utility Transparency, Home Rule Music Festival, and Juneteenth! - Councilmember Janeese Lewis George",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibtuz3phcayobf4chddxdvas66en2wemwp3bvg526j7tiywc46lsm"
+        }
+      ],
+      "metrics": {
+        "likes": 3,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mong6kknds25",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Happy Juneteenth, DC!\n\nToday is both a celebration and a reminder that freedom, justice, and opportunity have never been guaranteed—they have always been won and sustained through community activism.",
+      "createdAt": "2026-06-19T13:11:48.447Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mong6kknds25",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidmkx2pdywh7nvfe4hcj5twraqw2lzhcprefmdlit2ew55shq5v6a",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidmkx2pdywh7nvfe4hcj5twraqw2lzhcprefmdlit2ew55shq5v6a",
+          "alt": null
+        }
+      ],
+      "metrics": {
+        "likes": 14,
+        "reposts": 4,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3modwx6fyjk2k",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "District residents deserve transparency when utility bills go up.\n \nToday, I'm proud to introduce the Public Trust in Utility Regulation Act.⚡\n \nResidents deserve confidence that rate increases are justified, costs are transparent, and every decision is made in the public interest.",
+      "createdAt": "2026-06-15T18:45:17.049Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3modwx6fyjk2k",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreicp2bpztaozozojc54m25vchrkopjns6ds3t6j7eeyowbd2elj2uu",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreicp2bpztaozozojc54m25vchrkopjns6ds3t6j7eeyowbd2elj2uu",
+          "alt": "A purple graphic with the headline \"Public Trust in Utility Regulation Act of 2026\" and bullets reading \"requires electric and gas companies seeking rate increases to provide detailed information about the purpose, cost, and anticipated benefit to consumers of each proposed expenditure, makes information publicly available to the Council and residents, making utility proposals more transparent, accessible, and understandable for customers, and establishes a regular audit requirement for public utilities on factors affecting rates and customer outcomes, helping inform policymaking to address affordability.\""
+        }
+      ],
+      "metrics": {
+        "likes": 15,
+        "reposts": 4,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mo7d7msvzs2e",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "One of my favorite days of the year is celebrating our Ward 4 graduating classes!\n\nSo incredibly proud of our Coolidge Colts and Roosevelt Rough Riders and all they’ve accomplished as they prepare for their next chapter.\n\nGreat things are ahead for our #Ward4 scholars! 🎓👏🏾🎉",
+      "createdAt": "2026-06-13T22:41:26.812Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mo7d7msvzs2e",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifwnhhptundg6qrwb4uulcjgddcz5qdfdg6vvjwjovn4ytyvdzhsi",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifwnhhptundg6qrwb4uulcjgddcz5qdfdg6vvjwjovn4ytyvdzhsi",
+          "alt": null
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibfglf56stwwneafkdj2lmt46umkjwwtjhzkacevcxcbuvnbfddce",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibfglf56stwwneafkdj2lmt46umkjwwtjhzkacevcxcbuvnbfddce",
+          "alt": null
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihv43rs5hpgmbysnsz46ga23frctdpium3cnm5uvqlvfikm6gbv7u",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihv43rs5hpgmbysnsz46ga23frctdpium3cnm5uvqlvfikm6gbv7u",
+          "alt": null
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidzd23wgfwog4u3mmsrzlba3wvocokcddpdlrxi4zxn2mw33o4zzy",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidzd23wgfwog4u3mmsrzlba3wvocokcddpdlrxi4zxn2mw33o4zzy",
+          "alt": null
+        }
+      ],
+      "metrics": {
+        "likes": 9,
+        "reposts": 1,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3mo4rcd4vfk2m",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Read this week's #Ward4 Dispatch: Budget Wins, Raymond Traffic Safety, and Congratulations Graduates! ⬇️\n\njaneeseward4.com/ward-4-dispa...",
+      "createdAt": "2026-06-12T22:15:30.502Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mo4rcd4vfk2m",
+      "media": [
+        {
+          "type": "link",
+          "url": "https://janeeseward4.com/ward-4-dispatch-budget-wins-raymond-traffic-safety-and-congratulations-graduates/",
+          "title": "Ward 4 Dispatch: Budget Wins, Raymond Traffic Safety, and Congratulations Graduates! - Councilmember Janeese Lewis George",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidt72tfdtejdcnxlrg7dxqyc77j7omrlfcnc5scpj7l6reeymebia"
+        }
+      ],
+      "metrics": {
+        "likes": 4,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mnv6xn5p6k24",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "When the Council received the Mayor's budget, it proposed balancing our fiscal challenges on the backs of working families, educators, youth, and residents struggling to get by.\n \nToday, we approved a budget restoring funding for the Pay Equity Fund, housing vouchers, Access to Justice, and more.",
+      "createdAt": "2026-06-09T21:58:46.355Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mnv6xn5p6k24",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreia6cdev5aoeubnngausmvvcegwhm4zr7cnnb4bfadcyo2oqvdslo4",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreia6cdev5aoeubnngausmvvcegwhm4zr7cnnb4bfadcyo2oqvdslo4",
+          "alt": "The DC Council FY27 budget secures $60M for the Pay Equity Fund, empowering early childhood educators to afford the cost of rent, groceries, and more while continuing to serve the District."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreicavrt3mbvqe3jjj5d5debbva5yzwpe4jewvfdgtgw2osnyc7ycgi",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreicavrt3mbvqe3jjj5d5debbva5yzwpe4jewvfdgtgw2osnyc7ycgi",
+          "alt": "The DC Council FY27 budget funds 442 new housing vouchers in addition to 243 turnover vouchers, keeping District residents housed amid skyrocketing housing costs."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreien5xwgqomfwbgksz5azeefkcbihpcsagzzdhk2pygkhuwdsi5uhy",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreien5xwgqomfwbgksz5azeefkcbihpcsagzzdhk2pygkhuwdsi5uhy",
+          "alt": "The DC Council FY27 budget reverses the freeze on paid family leave benefits, helping workers take the time they need to manage a health crisis or care for a family member in their time of need."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreigwau54q24ayhswmpiap72budwe6gw7umiblaxrhl56ygsn7xctri",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreigwau54q24ayhswmpiap72budwe6gw7umiblaxrhl56ygsn7xctri",
+          "alt": "The DC Council FY27 budget fully funds Access to Justice Grants, supporting residents facing eviction, domestic violence, foreclosure, debt collection, and other life changing legal issues."
+        }
+      ],
+      "metrics": {
+        "likes": 7,
+        "reposts": 3,
+        "replies": 1
+      }
+    },
+    {
+      "id": "bluesky:3mnl6wnmfyk2w",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Read this week's #Ward4 Dispatch: Public Safety Updates, Petworth Library Progress, and Pride ⬇️\n\njaneeseward4.com/ward-4-dispa...",
+      "createdAt": "2026-06-05T22:31:35.939Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mnl6wnmfyk2w",
+      "media": [
+        {
+          "type": "link",
+          "url": "https://janeeseward4.com/ward-4-dispatch-public-safety-updates-petworth-library-progress-and-pride/",
+          "title": "Ward 4 Dispatch: Public Safety Updates, Petworth Library Progress, and Pride - Councilmember Janeese Lewis George",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreic4qeplagivzo4qfhcov63ionzu3ysm4a6pmwqcy3ovbljl5uzuxy"
+        }
+      ],
+      "metrics": {
+        "likes": 3,
+        "reposts": 1,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mnl6gznwt22v",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "This afternoon, I had the opportunity to tour the newly renovated Petworth Library, which is scheduled to reopen at the end of the summer!   The modernized space includes:  🪟 Upgraded windows and flooring 🪑 Brand-new furniture 📚 Teen center on the second floor",
+      "createdAt": "2026-06-05T22:22:51.690Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mnl6gznwt22v",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibnnun5sbt5kjwzttadhiqgkst56pxxh4f3tp6k76wa7hrkuttljq",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibnnun5sbt5kjwzttadhiqgkst56pxxh4f3tp6k76wa7hrkuttljq",
+          "alt": "Councilmember Lewis George touring the newly renovated Petworth Library with DCPL leaders and staff."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibzkcitjj34gxnu6qt4o3bsxeomqlhtt6aahlg3o3ydfwv4lktisi",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibzkcitjj34gxnu6qt4o3bsxeomqlhtt6aahlg3o3ydfwv4lktisi",
+          "alt": null
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifosra2ycdlvc7fzzruiuj55ybzvjjgnv3tgxogsqpnxmjxdy2q3q",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreifosra2ycdlvc7fzzruiuj55ybzvjjgnv3tgxogsqpnxmjxdy2q3q",
+          "alt": null
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreigtfomenc2p3rwv4osg4t76hh6u2cmumr352odl4qweyswerea4v4",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreigtfomenc2p3rwv4osg4t76hh6u2cmumr352odl4qweyswerea4v4",
+          "alt": null
+        }
+      ],
+      "metrics": {
+        "likes": 22,
+        "reposts": 3,
+        "replies": 2
+      }
+    },
+    {
+      "id": "bluesky:3mndrdxkgb22h",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Our youngest learners deserve classrooms centered on human connection, strong instruction, reading, creativity, and engagement with teachers, not excessive screen time.\n \nRead my full statement:",
+      "createdAt": "2026-06-02T23:39:52.002Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mndrdxkgb22h",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreievog2ah65225ha5tyj7ca4n6erv5zxuv2p63gmcqejvsxowwa5uu",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreievog2ah65225ha5tyj7ca4n6erv5zxuv2p63gmcqejvsxowwa5uu",
+          "alt": "I fully support Chairman Mendelson’s resolution, co-introduced by two of my colleagues, to disapprove the renewal of the DC Public Schools i-Ready contract. Our youngest learners deserve classrooms centered on human connection, strong instruction, reading, creativity, and engagement with teachers, not excessive screen time.\n \nMy experience and belief is that to achieve the best student outcomes, our public schools should set strict limits on screen time in early years, end overreliance on Ed-Tech in test preparation, and develop guidance with teachers for appropriate technology by grade, with transparency for parents on tools and their purposes."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreigxymmzk6pccve5mwizv7hkqz2ztdhs6qqgv6fwubwkgixcizi3ka",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreigxymmzk6pccve5mwizv7hkqz2ztdhs6qqgv6fwubwkgixcizi3ka",
+          "alt": "I also believe the i-Ready contract with Curriculum Associates LLC should not be renewed while the platform faces ongoing federal class action litigation related to student data privacy and security concerns. DC families deserve confidence that student information is being protected and handled responsibly.\n \nThe Chairman’s resolution creates an important opportunity for DCPS to reassess whether continued reliance on this platform, or any other, aligns with healthy child development, student well-being, data protection, and the best interests of children and families."
+        }
+      ],
+      "metrics": {
+        "likes": 9,
+        "reposts": 3,
+        "replies": 0
+      }
+    },
+    {
+      "id": "bluesky:3mncs72nmrk2o",
+      "platform": "bluesky",
+      "candidate": "Janeese Lewis George",
+      "account": {
+        "handle": "cmlewisgeorgew4.bsky.social",
+        "displayName": "CM Janeese Lewis George",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihodfwxcsty3hbb45rudokrm54zf5b7lrsyukc4phzkrip3ls2zba",
+        "kind": "official"
+      },
+      "text": "Riggs Park Day was amazing! ☀️\n \nWard 4 showed up to meet neighbors, access DC agency resources, and celebrate community together.\n \nThank you to all the small businesses, agencies, neighborhood leaders, and residents who made it such a success!",
+      "createdAt": "2026-06-02T14:22:21.482Z",
+      "url": "https://bsky.app/profile/cmlewisgeorgew4.bsky.social/post/3mncs72nmrk2o",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihq3akswlrmfjjewt3elb5zzfl2qdrg6wzzt4eecrkkbzuiqyzssi",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreihq3akswlrmfjjewt3elb5zzfl2qdrg6wzzt4eecrkkbzuiqyzssi",
+          "alt": "Councilmember Lewis George standing and smiling with a group of neighbors at Riggs-LaSalle Recreation Center for Riggs Park Day."
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidjllec3lqsukztr5w6mrjc5vlvvepdu4lvnngvp2hkxgxyiwwssu",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidjllec3lqsukztr5w6mrjc5vlvvepdu4lvnngvp2hkxgxyiwwssu",
+          "alt": null
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidxtaxmcfnwobqnhc7ugjgbwzyltqth62saeaqdd32i67jpwjqnte",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreidxtaxmcfnwobqnhc7ugjgbwzyltqth62saeaqdd32i67jpwjqnte",
+          "alt": null
+        },
+        {
+          "type": "image",
+          "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibudxf47p5xxejtnshcws2yccldm5edbvtqre3ovu2u6fgzk3c2vu",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2lwv5jyabj66wqmmhqoar7mg/bafkreibudxf47p5xxejtnshcws2yccldm5edbvtqre3ovu2u6fgzk3c2vu",
+          "alt": null
+        }
+      ],
+      "metrics": {
+        "likes": 7,
+        "reposts": 2,
+        "replies": 0
+      }
+    },
     {
       "id": "bluesky:3m6fjgzpzyk2x",
       "platform": "bluesky",

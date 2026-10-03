@@ -11,10 +11,11 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "facts.json"
 PORTRAITS = ROOT / "data" / "portraits"
 
-# candidate name (as in Ballot.swift) → Wikipedia article title
-PAGES = {
-    "Robert White": "Robert_White_(Washington,_D.C._politician)",
-}
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from candidates import candidates, slug
+
+# every candidate on the ballot with a "wikipedia" field
+PAGES = {c["name"]: c["wikipedia"] for c in candidates() if c.get("wikipedia")}
 
 UA = {"User-Agent": "Rally/0.1 (github.com/anya-decarlo/Rally)"}
 
@@ -69,11 +70,10 @@ def portrait(title, slug):
 def main():
     out = {}
     for cand, title in PAGES.items():
-        slug = re.sub(r"[^a-z0-9]+", "-", cand.lower()).strip("-")
         facts = facts_from(article_text(title))
         url = f"https://en.wikipedia.org/wiki/{title}"
         out[cand] = {"facts": [{"text": f, "source": "Wikipedia", "url": url, "category": "bio"} for f in facts],
-                     "portrait": portrait(title, slug)}
+                     "portrait": portrait(title, slug(cand))}
         print(f"{cand}: {len(facts)} facts, portrait={bool(out[cand]['portrait'])}", file=sys.stderr)
     OUT.write_text(json.dumps({"generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                                "candidates": out}, indent=2, ensure_ascii=False) + "\n")

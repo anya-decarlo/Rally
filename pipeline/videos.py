@@ -9,6 +9,9 @@ import json, subprocess, sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from candidates import candidates
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "videos.json"
 YTDLP = next((p for p in ["/Users/ad/yt-dlp", "yt-dlp"] if Path(p).exists() or p == "yt-dlp"), "yt-dlp")
@@ -37,6 +40,8 @@ def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
     candidate, urls = sys.argv[1], sys.argv[2:]
+    if candidate not in {c["name"] for c in candidates()}:
+        sys.exit(f"{candidate!r} is not on the ballot (data/ballot.json). Names must match the card exactly.")
     data = json.loads(OUT.read_text()) if OUT.exists() else {"videos": {}}
     vids = {v["id"]: v for v in data["videos"].get(candidate, [])}
     for u in urls:

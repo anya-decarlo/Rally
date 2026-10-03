@@ -27,6 +27,8 @@
 		A1000001000000000000013 /* videos.json in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000013 /* videos.json */; };
 		A1000001000000000000014 /* robert-white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000014 /* robert-white.jpg */; };
 		A1000001000000000000015 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000015 /* Backend.swift */; };
+		A1000001000000000000016 /* ballot.json in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000016 /* ballot.json */; };
+		A1000001000000000000017 /* janeese-lewis-george.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000017 /* janeese-lewis-george.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		A1000002000000000000013 /* videos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = videos.json; path = ../data/videos.json; sourceTree = "<group>"; };
 		A1000002000000000000014 /* robert-white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = robert-white.jpg; path = ../data/portraits/robert-white.jpg; sourceTree = "<group>"; };
 		A1000002000000000000015 /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
+		A1000002000000000000016 /* ballot.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ballot.json; path = ../data/ballot.json; sourceTree = "<group>"; };
+		A1000002000000000000017 /* janeese-lewis-george.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = janeese-lewis-george.jpg; path = ../data/portraits/janeese-lewis-george.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 				A1000002000000000000012 /* facts.json */,
 				A1000002000000000000013 /* videos.json */,
 				A1000002000000000000014 /* robert-white.jpg */,
+				A1000002000000000000016 /* ballot.json */,
+				A1000002000000000000017 /* janeese-lewis-george.jpg */,
 				A1000002000000000000003 /* Assets.xcassets */,
 				A1000002000000000000004 /* Rally.entitlements */,
 			);
@@ -172,6 +178,8 @@
 				A1000001000000000000012 /* facts.json in Resources */,
 				A1000001000000000000013 /* videos.json in Resources */,
 				A1000001000000000000014 /* robert-white.jpg in Resources */,
+				A1000001000000000000016 /* ballot.json in Resources */,
+				A1000001000000000000017 /* janeese-lewis-george.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,7 @@
 import Foundation
 
-// Only what we actually know today. Fields get added when the data exists.
+// The ballot is data (data/ballot.json), shared by the app and the pipeline.
+// A candidate's name here is the join key for posts, facts, clips, and portraits.
 
 enum Party: String, Codable {
     case democrat, republican, green, independent, oneHome, nonpartisan
@@ -28,12 +29,32 @@ enum Party: String, Codable {
     }
 }
 
+struct SocialAccount: Codable, Hashable {
+    let platform: String
+    let handle: String
+    let kind: String
+}
+
 struct Candidate: Identifiable, Hashable, Codable {
     var id: String { name }
     let name: String
     let party: Party
     var incumbent = false
     var writeIn = false
+    var wikipedia: String? = nil
+    var accounts: [SocialAccount] = []
+
+    enum CodingKeys: String, CodingKey { case name, party, incumbent, writeIn, wikipedia, accounts }
+
+    init(from d: Decoder) throws {
+        let c = try d.container(keyedBy: CodingKeys.self)
+        name = try c.decode(String.self, forKey: .name)
+        party = try c.decode(Party.self, forKey: .party)
+        incumbent = try c.decodeIfPresent(Bool.self, forKey: .incumbent) ?? false
+        writeIn = try c.decodeIfPresent(Bool.self, forKey: .writeIn) ?? false
+        wikipedia = try c.decodeIfPresent(String.self, forKey: .wikipedia)
+        accounts = try c.decodeIfPresent([SocialAccount].self, forKey: .accounts) ?? []
+    }
 }
 
 enum ContestGroup: String, Codable, CaseIterable {
@@ -51,4 +72,10 @@ struct Contest: Identifiable, Hashable, Codable {
     let office: String
     let candidates: [Candidate]
     var note: String? = nil
+}
+
+struct BallotFile: Codable {
+    let place: String
+    let election: String
+    let contests: [Contest]
 }

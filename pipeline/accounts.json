@@ -1,25 +1,35 @@
 {
+  "_generated": "from data/ballot.json \u2014 do not edit",
   "accounts": [
     {
       "candidate": "Robert White",
       "platform": "bluesky",
       "handle": "robertwhitedc.bsky.social",
-      "kind": "official",
-      "note": "Council office account. Taxpayer-funded government comms, not campaign."
+      "kind": "official"
     },
     {
       "candidate": "Robert White",
       "platform": "x",
       "handle": "RobertWhite_DC",
-      "kind": "personal",
-      "note": "Personal / campaign account."
+      "kind": "personal"
     },
     {
       "candidate": "Robert White",
       "platform": "x",
       "handle": "CMRobertWhiteDC",
-      "kind": "official",
-      "note": "Council office account."
+      "kind": "official"
+    },
+    {
+      "candidate": "Janeese Lewis George",
+      "platform": "bluesky",
+      "handle": "cmlewisgeorgew4.bsky.social",
+      "kind": "official"
+    },
+    {
+      "candidate": "Janeese Lewis George",
+      "platform": "x",
+      "handle": "janeese4dc",
+      "kind": "personal"
     }
   ]
 }

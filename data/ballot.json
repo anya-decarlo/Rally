@@ -1,0 +1,164 @@
+{
+  "place": "DC",
+  "election": "2026-11-03",
+  "contests": [
+    {
+      "group": "Federal",
+      "office": "U.S. House Delegate",
+      "candidates": [
+        {
+          "name": "Robert White",
+          "party": "democrat",
+          "wikipedia": "Robert_White_(Washington,_D.C._politician)",
+          "accounts": [
+            { "platform": "bluesky", "handle": "robertwhitedc.bsky.social", "kind": "official" },
+            { "platform": "x", "handle": "RobertWhite_DC", "kind": "personal" },
+            { "platform": "x", "handle": "CMRobertWhiteDC", "kind": "official" }
+          ]
+        },
+        { "name": "Denise Rosado", "party": "republican" },
+        { "name": "Kymone Freeman", "party": "green" },
+        { "name": "Rebekkah Green", "party": "independent", "writeIn": true },
+        { "name": "David Solana", "party": "independent", "writeIn": true }
+      ]
+    },
+    {
+      "group": "Federal",
+      "office": "U.S. Shadow Senator",
+      "candidates": [
+        { "name": "Paul Strauss", "party": "democrat", "incumbent": true },
+        { "name": "Rob Simmons", "party": "republican" }
+      ]
+    },
+    {
+      "group": "Federal",
+      "office": "U.S. Shadow Representative",
+      "candidates": [
+        { "name": "Franklin Garcia", "party": "democrat" },
+        { "name": "Ciprian Ivanof", "party": "republican" }
+      ]
+    },
+    {
+      "group": "District-wide",
+      "office": "Mayor",
+      "candidates": [
+        {
+          "name": "Janeese Lewis George",
+          "party": "democrat",
+          "wikipedia": "Janeese_Lewis_George",
+          "accounts": [
+            { "platform": "bluesky", "handle": "cmlewisgeorgew4.bsky.social", "kind": "official" },
+            { "platform": "x", "handle": "janeese4dc", "kind": "personal" }
+          ]
+        },
+        { "name": "Robert L. Gross", "party": "green" },
+        { "name": "Rhonda Hamilton", "party": "independent" }
+      ]
+    },
+    {
+      "group": "District-wide",
+      "office": "Attorney General",
+      "candidates": [
+        { "name": "Brian Schwalb", "party": "democrat", "incumbent": true },
+        { "name": "Manuel Rivera", "party": "republican" }
+      ]
+    },
+    {
+      "group": "District-wide",
+      "office": "Council Chairman",
+      "candidates": [
+        { "name": "Phil Mendelson", "party": "democrat", "incumbent": true },
+        { "name": "Abi-Ananiah Prudent", "party": "republican" },
+        { "name": "John C. Cheeks", "party": "independent", "writeIn": true }
+      ]
+    },
+    {
+      "group": "District-wide",
+      "office": "Council At-Large",
+      "candidates": [
+        { "name": "Elissa Silverman", "party": "independent", "incumbent": true },
+        { "name": "Oye Owolewa", "party": "democrat" },
+        { "name": "Darrell Green", "party": "republican" },
+        { "name": "Darryl Moch", "party": "green" },
+        { "name": "Joe Jackson", "party": "independent", "writeIn": true }
+      ]
+    },
+    {
+      "group": "Ward",
+      "office": "Councilmember — Ward 1",
+      "candidates": [
+        { "name": "Aparna Raj", "party": "democrat" },
+        { "name": "Jett Jasper", "party": "republican" },
+        { "name": "Jude Crannitch", "party": "green" },
+        { "name": "Ryan Prince", "party": "independent" }
+      ]
+    },
+    {
+      "group": "Ward",
+      "office": "Councilmember — Ward 3",
+      "candidates": [
+        { "name": "Matthew Frumin", "party": "democrat", "incumbent": true }
+      ]
+    },
+    {
+      "group": "Ward",
+      "office": "Councilmember — Ward 5",
+      "candidates": [
+        { "name": "Zachary Parker", "party": "democrat", "incumbent": true },
+        { "name": "Jeffrey Kihien-Palza", "party": "republican" },
+        { "name": "Joyce Robinson-Paul", "party": "green" }
+      ]
+    },
+    {
+      "group": "Ward",
+      "office": "Councilmember — Ward 6",
+      "candidates": [
+        { "name": "Charles Allen", "party": "democrat", "incumbent": true },
+        { "name": "Jorge Rice", "party": "republican" }
+      ]
+    },
+    {
+      "group": "Education",
+      "office": "State Board of Education — Ward 1",
+      "candidates": [
+        { "name": "Ben Williams", "party": "nonpartisan", "incumbent": true }
+      ]
+    },
+    {
+      "group": "Education",
+      "office": "State Board of Education — Ward 3",
+      "candidates": [
+        { "name": "Eric Goulet", "party": "nonpartisan", "incumbent": true },
+        { "name": "Aaron Wesolowski", "party": "nonpartisan" }
+      ]
+    },
+    {
+      "group": "Education",
+      "office": "State Board of Education — Ward 5",
+      "candidates": [
+        { "name": "Jon Alfuth", "party": "nonpartisan" }
+      ]
+    },
+    {
+      "group": "Education",
+      "office": "State Board of Education — Ward 6",
+      "candidates": [
+        { "name": "Lynn Jennings", "party": "nonpartisan" },
+        { "name": "David Parker", "party": "nonpartisan" },
+        { "name": "Joshua Wiley", "party": "nonpartisan" },
+        { "name": "Amber Williams", "party": "nonpartisan" }
+      ]
+    },
+    {
+      "group": "Neighborhood",
+      "office": "Advisory Neighborhood Commissioner",
+      "note": "Your ANC and single-member district depend on your address.",
+      "candidates": []
+    },
+    {
+      "group": "Ballot Measures",
+      "office": "Initiative 86",
+      "candidates": []
+    }
+  ]
+}
