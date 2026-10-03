@@ -12,11 +12,13 @@ What we've actually hit and confirmed works (updated as we go):
 
 | Source | Endpoint | Status |
 |---|---|---|
-| **DC OCF Contributions** | `https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/34` | ✅ Live ArcGIS REST API, no key. Fields: `COMMITTEENAME, CANDIDATENAME, ELECTIONYEAR, CONTRIBUTORNAME, CONTRIBUTORTYPE, CONTRIBUTIONTYPE, ADDRESS, FULLADDRESS, WARD, EMPLOYER, EMPLOYERADDRESS, AMOUNT, ...` |
-| **DC OCF Expenditures** | `.../MapServer/35` | ✅ Live. Fields: `CANDIDATENAME, PAYEE, FULLADDRESS, ADDRESS, PURPOSE, AMOUNT, TRANSACTIONDATE, WARD, LATITUDE, LONGITUDE, ...` |
+| **DC OCF Contributions** | `https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/34` | ✅ Live ArcGIS REST API, no key, `maxRecordCount=1000`. **308,729 rows** as of 2026-10-03. Fields: `COMMITTEENAME, CANDIDATENAME, ELECTIONYEAR, CONTRIBUTORNAME, CONTRIBUTORTYPE, CONTRIBUTIONTYPE, ADDRESS, FULLADDRESS, WARD, EMPLOYER, EMPLOYERADDRESS, AMOUNT, ...` |
+| **DC OCF Expenditures** | `.../MapServer/35` | ✅ Live. **125,281 rows** as of 2026-10-03. Fields: `CANDIDATENAME, PAYEE, FULLADDRESS, ADDRESS, PURPOSE, AMOUNT, TRANSACTIONDATE, WARD, LATITUDE, LONGITUDE, ...` |
 | **DC OCF bulk CSV** | `https://opendata.dc.gov/api/download/v1/items/5638336c30ea4c69805ebb838f22794a/csv?layers=35` | ✅ Full expenditures since 2003 as one CSV (swap `layers=34` for contributions) |
+| **Fair Elections public API** | `https://fairelections.ocf.dc.gov/app/api` (POST JSON, no auth) | ✅ Live. `/Public/GetStatistics`, `/SearchContributions`, `/SearchExpenditures`, `/SearchRegistrationDisclosure`. 2026: 67 registered / 28 certified / **$11.2M payouts / 46,142 itemized rows**. Mayor: Janeese Lewis George $788K raised + $3.12M public · McDuffie $727K + $2.70M · Goodweather $105K + $525K |
+| **JUFJ Campaign Fund scorecard** | `https://www.dccouncil.org/mems/*` | ✅ Live plain HTML. Per-member Council votes with bill links back to 2016. Advocacy source — always label it. White: 86%, 12/14 |
 
-These two layers are the Mayor race's primary finance source. Every mayoral candidate's donors and payees are in here, geocoded, with employer fields — which is exactly what the Nobody ledger and the donor map need.
+These two layers cover traditional committees. Fair Elections candidates (including the 2026 Mayor frontrunners) file in the Fair Elections portal instead — pull both for the full money story.
 
 ---
 
@@ -24,9 +26,9 @@ These two layers are the Mayor race's primary finance source. Every mayoral cand
 
 | # | Data source | What you pull | API / manual | How it fits the app |
 |---|---|---|---|---|
-| 1 | **FEC.gov / OpenFEC API** | Federal candidates, committees, PACs, receipts, disbursements, donors, filings | API | Core federal campaign-finance engine; test API output against the public FEC website |
+| 1 | **FEC.gov / OpenFEC API** | Federal candidates, committees, PACs, receipts, disbursements, donors, filings | API | Core federal campaign-finance engine; test API output against the public FEC website. Working: `/v1/candidates/`, `/v1/candidate/{id}/totals/`, `/v1/schedules/schedule_a|b|e/` (cursor `last_*` + `sub_id` dedupe — FEC ignores `page` with `sort`; `cycle=` leaks, filter dates in code; drop F24 dupes). Key server-side only; browsers get `fec.gov/data` links. Delegate snapshot: White (H6DC01079) $826,537 raised / $791,773 spent thru Jun 30 |
 | 2 | **FEC Schedule A** | Individual/organization contributions and other receipts | API + bulk | Build donor / company / PAC relationships |
-| 3 | **FEC Schedule B** | Campaign expenditures/disbursements and payees | API + bulk | The "transactions with no recipient" investigation belongs here; flag null/blank/incomplete payee fields rather than assuming they represent an unidentified recipient |
+| 3 | **FEC Schedule B** | Campaign expenditures/disbursements and payees | API + bulk | Itemized spending detail (descriptions, dates, payees) — feed for tactic analysis |
 | 4 | **FEC Independent Expenditures / Schedule E** | Outside spending supporting/opposing federal candidates | API | Separate candidate-controlled money from outside spending |
 | 5 | **FEC committee data** | PAC identity, committee type, sponsor, affiliated committees | API | Build Company → PAC → Candidate relationships |
 | 6 | **D.C. Office of Campaign Finance (OCF)** | D.C. candidate contributions and expenditures | **API (verified — see above)**, plus public database | Primary finance source for the Mayor race; OCF's database contains contribution/expenditure records back to 2003, updated daily. ([OCF](https://ocf.dc.gov/external-link/contributions-and-expenditures-search)) |
@@ -44,6 +46,9 @@ These two layers are the Mayor race's primary finance source. Every mayoral cand
 | 18 | **USAspending.gov** | Federal contracts, awards, recipients | API | Connect companies/organizations to federal spending rather than relying solely on campaign-finance relationships |
 | 19 | **D.C. government open-data / DCAT datasets** | Government entities, expenditures, contracts, administrative datasets | API / download | Expand beyond campaign finance into actual government activity |
 | 20 | **Candidate campaign websites / official statements** | Platforms, issue positions, biographies, endorsements, statements | Manual / web crawl | The Candidate Align layer; keep candidate-authored statements distinct from third-party ratings |
+| 21 | **Fair Elections public API** | Registrations, itemized contributions/expenditures, payouts, per-report summaries | API (verified — see above) | The Mayor race's money engine; traditional ArcGIS layers miss Fair Elections committees |
+| 22 | **JUFJ Campaign Fund scorecard** | Per-member Council votes with bill links | Manual / HTML | Voting-record layer for sitting officials (advocacy source — always label) |
+| 23 | **OCF enforcement orders + audits** | Fines, findings, investigation reports | Manual / PDF | Claim verification, never accusations |
 
 ## Media sources
 
@@ -63,3 +68,22 @@ These two layers are the Mayor race's primary finance source. Every mayoral cand
 5. **DC Council legislative database** (#14) — voting records for candidates who are current councilmembers
 
 Everything federal (#1–5, 8–13, 16, 18) waits for the Delegate race.
+
+---
+
+## New sources queued (from the expansion review)
+
+First three are structured, public, and feed head-to-head directly. Full catalog
+with access/reliability/locality lives in `X_data_sources.md`.
+
+| # | Source | Gives | Why now |
+|---|---|---|---|
+| 1 | **DC Board of Elections results by ward/precinct, with RCV rounds** | Certified lists + 2026's first ranked-choice transfers | Round-by-round visuals are made for this app |
+| 2 | **Candidate questionnaires: Vote411/LWV, WAMU voter guide, WaPo Q&A** | Stated positions, structured + comparable | Cheapest stance-card feed available |
+| 3 | **OCF independent-expenditure filings** | Local outside money = Schedule-E equivalent | The Mayor outside-money story lives here |
+| 4 | **FollowTheMoney.org** | State campaign finance, all 50 states | State equivalent of OpenFEC — one integration per statehouse |
+| 5 | **OpenStates API** | Legislators, bills, votes, all 50 states | LIMS-for-America; same vote cards everywhere |
+| 6 | **Ballotpedia (esp. ballot measures)** | Bios, results, measures DB | Highest-fun national format: yes/no + money for/against |
+| 7 | **Meta Ad Library + Google Transparency** | Digital ad spend by geography | "Who's paying to reach you" |
+| 8 | **ProPublica Congress API + eFD trades** | Votes, missed-vote rates, incumbent stock trades | Completes the federal side |
+| 9 | **Debate fact-checks, endorsements, polls** | Pre-verified claim↔record pairs, who-backs-whom, trends | Stance cards + context, always attributed |

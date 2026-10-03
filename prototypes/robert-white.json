@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "candidate": "Robert Clyde White Jr.",
+    "snapshot_date": "2026-10-03",
+    "note": "Static snapshot. Null means not yet pulled, never invented.",
+    "missing": [
+      "FEC Schedule A itemized rows (API 429 at pull time — retry with FEC_API_KEY off-peak)",
+      "X feed (API/scrape decision open)",
+      "Transcribed clips (YouTube IDs identified, not yet cut)",
+      "LIMS direct API (endpoint TBD; LegiScan mirror fallback)"
+    ]
+  },
+  "identity": {
+    "name": "Robert White",
+    "full_name": "Robert Clyde White Jr.",
+    "party": "Democrat",
+    "office_sought": "U.S. House Delegate",
+    "office_sought_note": "DC's non-voting House seat; would be 3rd delegate ever (Fauntroy → Norton → White)",
+    "current_office": "At-Large Member, Council of the District of Columbia",
+    "council_tenure": "September 2016 – present (third term, through 01/02/2029)",
+    "bio": "Fifth-generation Washingtonian, b. 1982. Legislative Counsel to Delegate Eleanor Holmes Norton 2008–2013. First Director of Community Outreach, DC OAG (2014). Adjunct professor, Georgetown Law. Lives in Ward 4 (Brightwood Park) with wife Christy and daughters Madison and Monroe.",
+    "sources": {
+      "council_bio": "https://dccouncil.gov/council/councilmember-robert-c-white-jr/",
+      "bio_timeline": "https://en.wikipedia.org/wiki/Robert_White_(Washington,_D.C.,_politician)",
+      "campaign_site": "https://www.joinrobertwhite.com/meetrobert"
+    }
+  },
+  "money": {
+    "federal": {
+      "candidate_id": "H6DC01079",
+      "committee": "Congressional Committee to Elect Robert White 2026",
+      "cycle": 2026,
+      "first_filed": "2025-10-01",
+      "coverage": "2025-10-01 to 2026-06-30",
+      "receipts": 826537.33,
+      "contributions": 826537.33,
+      "individual_contributions": 716037.33,
+      "individual_itemized": 601561.5,
+      "individual_unitemized": 114475.83,
+      "other_pac_contributions": 110500.0,
+      "disbursements": 791773.27,
+      "operating_expenditures": 782826.27,
+      "cash_on_hand": 40442.0,
+      "source": "https://www.fec.gov/data/candidate/H6DC01079/?cycle=2026",
+      "api": "/v1/candidate/H6DC01079/totals/?cycle=2026 (server-side, FEC_API_KEY from head2head/.env — never shipped to clients)",
+    },
+    "federal_opponent_snapshot": {
+      "as_of": "2026-03-31",
+      "pinto_raised": 1252427,
+      "pinto_spent": 431768,
+      "pinto_cash": 820659,
+      "white_raised": 414432,
+      "white_spent": 340943,
+      "white_cash": 73488,
+      "source": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_the_District_of_Columbia"
+    },
+    "local_ocf_by_year": [
+      { "year": 2014, "total": 191097.0, "count": 1207 },
+      { "year": 2016, "total": 455773.0, "count": 1779 },
+      { "year": 2020, "total": 419750.0, "count": 1574 }
+    ],
+    "local_ocf_note": "No rows tagged 2022, 2024, or 2026 under CANDIDATENAME='Robert White' in ArcGIS layers 34/35 — mayoral and later filings live under other committee names/years.",
+    "local_2020_max_donors_1000": [
+      { "donor": "The Wilkes Company, LLC", "sector_hint": "real estate" },
+      { "donor": "Jair Lynch (Lynch Development Partners)", "sector_hint": "real estate" },
+      { "donor": "Brookfield Properties Management, LLC", "sector_hint": "real estate" },
+      { "donor": "William Alsup (Hines)", "sector_hint": "real estate" },
+      { "donor": "Steve Boyle (Edens)", "sector_hint": "real estate" },
+      { "donor": "Roger Gendron (Silver Street Development)", "sector_hint": "real estate" },
+      { "donor": "FDS Residential GP LP", "sector_hint": "real estate" },
+      { "donor": "RI Station Member LLC", "sector_hint": "real estate" },
+      { "donor": "International Association of Firefighters COPA Fund Local 36", "sector_hint": "labor" },
+      { "donor": "AFSCME", "sector_hint": "labor" },
+      { "donor": "California Nurses Association PAC", "sector_hint": "labor" },
+      { "donor": "Greater VA Carpenters PEC", "sector_hint": "labor" },
+      { "donor": "American Beverage Association", "sector_hint": "corporate PAC" },
+      { "donor": "District of Columbia Insurance Federation", "sector_hint": "corporate PAC" },
+      { "donor": "Verizon Communications Good Government Club", "sector_hint": "corporate PAC" },
+      { "donor": "Pepsico Inc", "sector_hint": "corporate" },
+      { "donor": "Coca-Cola", "sector_hint": "corporate" },
+      { "donor": "Committee to Expand the Middle Class (Airbnb-backed)", "sector_hint": "corporate committee" }
+    ],
+    "oppo_claim": {
+      "claim": "Pinto campaign 67-page oppo file (April 2026): White accepted real-estate developer donations plus 4 individuals who donated to Trump's past campaigns",
+      "framing": "Present claim next to filing. Never adjudicated here.",
+      "source": "https://nypost.com/2026/06/17/us-news/robert-white-jr-wins-dc-delegate-democratic-primary"
+    }
+  },
+  "primary_2026": {
+    "date": "2026-06-16",
+    "note": "DC's first ranked-choice primary; first new mayor + delegate in a generation on the same ballot",
+    "results": [
+      { "candidate": "Robert White", "votes": 86871, "pct": 63.61 },
+      { "candidate": "Brooke Pinto", "votes": 28550, "pct": 20.9 },
+      { "candidate": "Kinney Zalesne", "votes": 10666, "pct": 7.81 },
+      { "candidate": "Trent Holbrook", "votes": 6100, "pct": 4.47 },
+      { "candidate": "Greg Jaczko", "votes": 3936, "pct": 2.88 }
+    ],
+    "general_opponents": [
+      "Denise Rosado (R)",
+      "Kymone Freeman (Green)",
+      "Rebekkah Green (I, write-in)",
+      "David Solana (I, write-in)"
+    ],
+    "sources": {
+      "results_table": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_the_District_of_Columbia",
+      "nbc4": "https://www.nbcwashington.com/decision-2026/pinto-white-primary-congress/4117978",
+      "fox5": "https://www.fox5dc.com/news/dc-election-results-robert-white-jr-wins-democratic-primary-delegate-congress"
+    }
+  },
+  "record": {
+    "housing_chair_since": 2023,
+    "committees": ["Chair, Committee on Housing", "previously chaired Government Operations and Facilities"],
+    "highlights": [
+      "DCHA Stabilization & Reform (STAR Board), new executive director, 223 more leased units in under a year",
+      "+$24.5M secured for affordable housing (Housing Production Trust Fund + Preservation Fund)",
+      "+$6.7M to Emergency Rental Assistance (ERAP)",
+      "Homelessness added as protected class under DC Human Rights Act",
+      "STRONG Homes tenant-receivership bill (2025, with OAG)",
+      "3 provisions of Whole Government Response to Crime Act folded into Secure DC (gun-tracing reports, Victim Services Coordinator)"
+    ],
+    "record_source": "https://www.robertwhiteatlarge.com/wp-content/uploads/2026/03/Annual-Report-2025.pdf",
+    "scorecard": {
+      "source": "https://www.dccouncil.org/mems/robert-white",
+      "latest": "86% (12/14)",
+      "history": { "2020": "95%", "2018": "93%", "2016": "70%" },
+      "votes": [
+        { "bill": "B24-0185", "title": "Paid Leave Benefit Protection", "date": "2021-05-04", "outcome": "passed", "white": "for", "link": "https://www.dccouncil.org/bills/B24-0185" },
+        { "bill": "B24-0285", "title": "COVID relief + hero pay for essential workers", "date": "2021-07-20", "outcome": "failed", "white": "against", "link": "https://www.dccouncil.org/bills/B24-0285-2" },
+        { "bill": "B24-0716", "title": "Funds for workers excluded from pandemic relief (~15,000 residents)", "date": "2022-05-24", "outcome": "passed", "white": "for", "link": "https://www.dccouncil.org/bills/B24-0716-1" },
+        { "bill": "B24-0716", "title": "Retroactive extended paid family/medical leave", "date": "2022-05-24", "outcome": "failed", "white": "for", "link": "https://www.dccouncil.org/bills/B24-0716-2" },
+        { "bill": "B24-0712", "title": "Domestic Workers Bill of Rights", "date": "2022-12-20", "outcome": "passed", "white": "for", "link": "https://www.dccouncil.org/bills/B24-0712" },
+        { "bill": "B24-0188", "title": "Halt halfway-house eminent-domain takeover", "date": "2021-04-06", "outcome": "failed", "white": "against", "link": "https://www.dccouncil.org/bills/B24-0188" },
+        { "bill": "B24-0714", "title": "Remove police from DC schools", "date": "2022-05-10", "outcome": "passed", "white": "for", "link": "https://www.dccouncil.org/bills/B24-0714" },
+        { "bill": "B24-0237", "title": "Penalize-drivers-for-poverty (Clean Hands water-down)", "date": "2022-07-11", "outcome": "failed", "white": "against", "link": "https://www.dccouncil.org/bills/B24-0237" },
+        { "bill": "B24-0192", "title": "Weaken tenant protections / vacancy rent hikes", "date": "2021-04-06", "outcome": "failed", "white": "against", "link": "https://www.dccouncil.org/bills/B24-0192" },
+        { "bill": "B24-0285", "title": "Tax millionaires for housing + educators + low-income aid", "date": "2021-07-20", "outcome": "passed", "white": "for", "link": "https://www.dccouncil.org/bills/B24-0285-1" },
+        { "bill": "B24-0544", "title": "Encampment-clearing freeze through hypothermia season", "date": "2021-12-21", "outcome": "failed", "white": "for", "link": "https://www.dccouncil.org/bills/B24-0544" },
+        { "bill": "B24-0096", "title": "Seal eviction records", "date": "2022-03-01", "outcome": "passed", "white": "for", "link": "https://www.dccouncil.org/bills/B24-0096" },
+        { "bill": "B24-1144", "title": "DCHA board restructure (more mayoral appointees, residents off board)", "date": "2022-12-20", "outcome": "passed", "white": "for", "link": "https://www.dccouncil.org/bills/B24-1144" },
+        { "bill": "B24-0632", "title": "Grants to early childhood educators", "date": "2022-02-01", "outcome": "passed", "white": "for", "link": "https://www.dccouncil.org/bills/B24-0632" }
+      ]
+    }
+  },
+  "voice": {
+    "victory_quote": "Washington, D.C., thank you. This is our time. We will not yield the promise of America, because that promise belongs to us, too.",
+    "victory_quote_source": "https://www.nbcwashington.com/decision-2026/pinto-white-primary-congress/4117978",
+    "defend_dc": "Recruit, train and transport DC residents to canvass in battleground House districts against anti-Home-Rule members; launch PAC for pro-statehood candidates. Modeled on Fauntroy '72. Discussed with Jeffries and DelBene.",
+    "defend_dc_source": "https://www.pressdemocrat.com/2026/08/25/dc-delegate-politics",
+    "electoral_history": ["2014 At-Large (I): 6%, 22,198 votes — lost", "2016: appointed Sep, won full term", "2020: re-elected", "2022: ran for Mayor, lost Dem primary", "2024: re-elected At-Large", "2026: won Delegate Dem primary 63.6%"]
+  },
+  "endorsements_2026": [
+    "Sen. Elizabeth Warren",
+    "Reps. Greg Casar, Jim Clyburn",
+    "Congressional Black Caucus",
+    "Congressional Progressive Caucus",
+    "AFGE",
+    "Metro Washington AFL-CIO",
+    "ATU Local 689",
+    "Capital Stonewall Democrats",
+    "Free DC",
+    "Janeese Lewis George, Charles Allen"
+  ],
+  "vote_vs_money_pairs": [
+    {
+      "id": "tenant-protections-vs-developers",
+      "vote": "Against weakening tenant protections / vacancy rent hikes (B24-0192, Apr 2021 — failed)",
+      "money": "2020 cycle $1K-max donors include Wilkes Co, Jair Lynch, Brookfield, Hines + Edens execs, Silver Street, FDS Residential, RI Station LLC",
+      "vote_link": "https://www.dccouncil.org/bills/B24-0192"
+    },
+    {
+      "id": "millionaire-tax-vs-corporate-pacs",
+      "vote": "For taxing millionaires to fund housing + educators (B24-0285, Jul 2021 — passed)",
+      "money": "2020 cycle $1K corporate PACs: Verizon, Pepsi, Coca-Cola, Beverage Assoc, Insurance Federation; Airbnb-backed committee $1K",
+      "vote_link": "https://www.dccouncil.org/bills/B24-0285-1"
+    },
+    {
+      "id": "dcha-outlier-vote",
+      "vote": "For DCHA mayoral-takeover board (B24-1144, Dec 2022 — passed; against progressive scorecard position)",
+      "money": "2020 labor base: Firefighters $1K, AFSCME $1K, Nurses PAC $1K, Carpenters $1K — shown as context, no causal claim",
+      "vote_link": "https://www.dccouncil.org/bills/B24-1144"
+    }
+  ]
+}
