@@ -70,11 +70,22 @@ final class ExtrasStore {
         clips = PostStore.loadBundled("videos", as: VideosFile.self)?.videos ?? [:]
     }
 
+    // Bio facts are human-curated in the repo and always win. The backend contributes
+    // money / record / vote facts only — its bio (Wikipedia) facts are never shown.
     @MainActor
     func refresh() async {
         async let f = Backend.fetch(Backend.facts, as: FactsFile.self)
         async let v = Backend.fetch(Backend.videos, as: VideosFile.self)
-        if let f = await f { extras = f.candidates }
+        if let remote = await f {
+            var merged = extras
+            for (name, r) in remote.candidates {
+                let local = extras[name]
+                let bio = local?.facts.filter { ($0.category ?? "bio") == "bio" } ?? []
+                let data = r.facts.filter { $0.category != nil && $0.category != "bio" }
+                merged[name] = CandidateExtras(facts: bio + data, portrait: local?.portrait ?? r.portrait)
+            }
+            extras = merged
+        }
         if let v = await v { clips = v.videos }
     }
 
