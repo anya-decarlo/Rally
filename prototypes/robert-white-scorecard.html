@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rally — Robert White Scorecard</title>
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: #0F0F1E; color: #fff;
+    font-family: ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif;
+    display: flex; justify-content: center; padding: 16px;
+  }
+  a { text-decoration: none; }
+  .page { width: 390px; }
+  .kicker {
+    font-family: ui-monospace, Menlo, monospace; font-size: 11px;
+    font-weight: 700; letter-spacing: 2.5px; color: #7DE3EA; margin-bottom: 8px;
+  }
+  .kicker a { color: #8fd0ff; }
+  .hero {
+    border-radius: 22px; padding: 12px; display: flex; gap: 12px; align-items: center;
+    background:
+      radial-gradient(120% 80% at 100% 0%, rgba(125,227,234,.18), transparent 60%),
+      #1B1B30;
+    border: 1px solid #34344d;
+  }
+  .ring {
+    width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0;
+    background: conic-gradient(#7DE3EA 0 86%, #26263c 86% 100%);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 18px rgba(125,227,234,.4);
+  }
+  .ring div {
+    width: 50px; height: 50px; border-radius: 50%; background: #121222;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; font-weight: 900;
+  }
+  .hero h1 { font-size: 18px; font-weight: 900; text-shadow: 0 2px 0 rgba(125,227,234,.45); }
+  .hero p { font-size: 10.5px; color: #9a9ab0; font-weight: 600; margin-top: 2px; }
+  .hero p b { color: #C8E63E; }
+  .tabs { display: flex; gap: 6px; margin-top: 10px; }
+  .tab {
+    flex: 1; border: 1px solid #34344d; background: #1B1B30; color: #9a9ab0;
+    border-radius: 14px; padding: 8px 2px; font-size: 11px; font-weight: 800;
+    cursor: pointer; font-family: inherit;
+  }
+  .tab b { display: block; font-size: 14px; color: #fff; }
+  .tab.on { background: #7DE3EA; border-color: #7DE3EA; color: #111; }
+  .tab.on b { color: #111; }
+  .rail {
+    display: none; gap: 8px; overflow-x: auto; padding: 10px 0 6px;
+    scroll-snap-type: x mandatory; scrollbar-width: none;
+  }
+  .rail.on { display: flex; }
+  .rail::-webkit-scrollbar { display: none; }
+  .vote {
+    min-width: 230px; max-width: 230px; scroll-snap-align: start;
+    background: #1B1B30; border: 1px solid #2a2a44;
+    border-radius: 18px; padding: 11px 12px; color: #fff;
+    display: flex; flex-direction: column;
+  }
+  .vote .row { display: flex; gap: 8px; align-items: flex-start; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+  .dot.y { background: #5df08f; box-shadow: 0 0 8px rgba(93,240,143,.7); }
+  .dot.n { background: #F5D948; box-shadow: 0 0 8px rgba(245,217,72,.7); }
+  .vote b { font-size: 13px; line-height: 1.35; }
+  .vote small { display: block; font-size: 11px; color: #9a9ab0; font-weight: 600; margin-top: 6px; }
+  .vote .go { margin-top: auto; padding-top: 8px; font-size: 11px; font-weight: 800; color: #8fd0ff; }
+  .foot { text-align: center; margin-top: 6px; font-size: 10px; color: #4a4a63; font-weight: 800; letter-spacing: 1.5px; font-family: ui-monospace, Menlo, monospace; }
+  .foot a { color: #8fd0ff; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="kicker"><a href="robert-white-card-v2.html">← ROBERT WHITE</a> · SCORECARD</div>
+
+  <section class="hero">
+    <div class="ring"><div>86%</div></div>
+    <div>
+      <h1>12 of 14 votes</h1>
+      <p>JUFJ Campaign Fund · trend <b>70 → 93 → 95 → 86</b></p>
+    </div>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab on" data-g="g1"><b>5</b>💼 WORK</button>
+    <button class="tab" data-g="g2"><b>3</b>✊ JUSTICE</button>
+    <button class="tab" data-g="g3"><b>5</b>🏠 HOUSING</button>
+    <button class="tab" data-g="g4"><b>1</b>🧸 U3</button>
+  </nav>
+
+  <div class="rail on" id="g1">
+    <a class="vote" href="https://www.dccouncil.org/bills/B24-0185" target="_blank"><div class="row"><span class="dot y"></span><b>Protected paid-leave benefits for workers with disability plans</b></div><small>Passed May 2021 · White: for</small><span class="go">B24-0185 ↗</span></a>
+    <a class="vote" href="https://www.dccouncil.org/bills/B24-0285-2" target="_blank"><div class="row"><span class="dot n"></span><b>COVID relief + hero pay for essential workers</b></div><small>Failed Jul 2021 · White: against — broke</small><span class="go">B24-0285 ↗</span></a>
+    <a class="vote" href="https://www.dccouncil.org/bills/B24-0716-1" target="_blank"><div class="row"><span class="dot y"></span><b>Funds for 15,000 workers excluded from pandemic relief</b></div><small>Passed May 2022 · White: for</small><span class="go">B24-0716 ↗</span></a>
+    <a class="vote" href="https://www.dccouncil.org/bills/B24-0712" target="_blank"><div class="row"><span class="dot y"></span><b>Domestic Workers Bill of Rights</b></div><small>Passed Dec 2022 · White: for</small><span class="go">B24-0712 ↗</span></a>
+  </div>
+
+  <div class="rail" id="g2">
+    <a class="vote" href="https://www.dccouncil.org/bills/B24-0188" target="_blank"><div class="row"><span class="dot y"></span><b>Blocked halfway-house eminent-domain takeover</b></div><small>Failed Apr 2021 · White: against it</small><span class="go">B24-0188 ↗</span></a>
+    <a class="vote" href="https://www.dccouncil.org/bills/B24-0714" target="_blank"><div class="row"><span class="dot y"></span><b>Remove police from DC schools</b></div><small>Passed May 2022 · White: for</small><span class="go">B24-0714 ↗</span></a>
+    <a class="vote" href="https://www.dccouncil.org/bills/B24-0237" target="_blank"><div class="row"><span class="dot y"></span><b>Blocked fines-and-fees water-down (Clean Hands)</b></div><small>Failed Jul 2022 · White: against it</small><span class="go">B24-0237 ↗</span></a>
+  </div>
+
+  <div class="rail" id="g3">
+    <a class="vote" href="https://www.dccouncil.org/bills/B24-0192" target="_blank"><div class="row"><span class="dot y"></span><b>Blocked weaker tenant protections + vacancy rent hikes</b></div><small>Failed Apr 2021 · White: against it</small><span class="go">B24-0192 ↗</span></a>
+    <a class="vote" href="https://www.dccouncil.org/bills/B24-0285-1" target="_blank"><div class="row"><span class="dot y"></span><b>Taxed millionaires for housing + educators</b></div><small>Passed Jul 2021 · White: for</small><span class="go">B24-0285 ↗</span></a>
+    <a class="vote" href="https://www.dccouncil.org/bills/B24-0544" target="_blank"><div class="row"><span class="dot y"></span><b>Froze encampment clearings thru hypothermia season</b></div><small>Failed Dec 2021 · White: for</small><span class="go">B24-0544 ↗</span></a>
+    <a class="vote" href="https://www.dccouncil.org/bills/B24-0096" target="_blank"><div class="row"><span class="dot y"></span><b>Sealed eviction records</b></div><small>Passed Mar 2022 · White: for</small><span class="go">B24-0096 ↗</span></a>
+    <a class="vote" href="https://www.dccouncil.org/bills/B24-1144" target="_blank"><div class="row"><span class="dot n"></span><b>DCHA board: more mayoral appointees, residents off</b></div><small>Passed Dec 2022 · White: for — broke</small><span class="go">B24-1144 ↗</span></a>
+  </div>
+
+  <div class="rail" id="g4">
+    <a class="vote" href="https://www.dccouncil.org/bills/B24-0632" target="_blank"><div class="row"><span class="dot y"></span><b>Grants to early childhood educators</b></div><small>Passed Feb 2022 · White: for</small><span class="go">B24-0632 ↗</span></a>
+  </div>
+
+  <div class="foot">GREEN = MATCHED · YELLOW = BROKE · <a href="https://www.dccouncil.org/mems/robert-white" target="_blank">↗ FULL SCORECARD</a></div>
+</div>
+<script>
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('on'));
+    document.querySelectorAll('.rail').forEach(x => x.classList.remove('on'));
+    t.classList.add('on');
+    document.getElementById(t.dataset.g).classList.add('on');
+  }));
+</script>
+</body>
+</html>

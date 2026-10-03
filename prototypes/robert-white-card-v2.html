@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rally — Robert White Card v2</title>
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: #0F0F1E; color: #fff;
+    font-family: ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif;
+    display: flex; justify-content: center; padding: 16px;
+  }
+  a { text-decoration: none; }
+  .card {
+    width: 390px; border-radius: 24px; overflow: hidden;
+    background:
+      radial-gradient(120% 50% at 100% 0%, rgba(125,227,234,.16), transparent 60%),
+      radial-gradient(120% 60% at 0% 100%, rgba(232,147,60,.10), transparent 60%),
+      #1B1B30;
+    border: 1px solid #34344d; padding: 12px 12px 10px;
+  }
+  .kicker {
+    font-family: ui-monospace, Menlo, monospace; font-size: 10.5px;
+    font-weight: 700; letter-spacing: 2px; color: #7DE3EA;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .kicker .dots { letter-spacing: 3px; color: #4a4a63; }
+  .kicker .dots b { color: #7DE3EA; }
+  .deck {
+    display: flex; gap: 8px; overflow-x: auto; margin-top: 8px;
+    scroll-snap-type: x mandatory; scrollbar-width: none;
+  }
+  .deck::-webkit-scrollbar { display: none; }
+  .slide {
+    min-width: 100%; scroll-snap-align: center;
+    background: #121222; border: 1px solid #2a2a44; border-radius: 18px;
+    padding: 11px 12px;
+  }
+  .tag {
+    font-family: ui-monospace, Menlo, monospace; font-size: 9.5px;
+    letter-spacing: 1.8px; font-weight: 800; margin-bottom: 4px;
+  }
+  .big { font-size: 42px; font-weight: 900; letter-spacing: -1.5px; line-height: 1; color: #fff; text-shadow: 0 3px 0 rgba(125,227,234,.55); }
+  .cap { font-size: 12.5px; font-weight: 800; margin-top: 3px; line-height: 1.3; }
+  .cap small { color: #9a9ab0; font-weight: 600; font-size: 11px; }
+  .cap small a, .tap { color: #8fd0ff; font-weight: 800; }
+  .bars { margin-top: 7px; }
+  .bar { display: grid; grid-template-columns: 48px 1fr 52px; gap: 7px; align-items: center; font-size: 10.5px; font-weight: 800; margin: 4px 0; }
+  .track { height: 10px; background: #26263c; border-radius: 99px; overflow: hidden; }
+  .fill { display: block; height: 100%; border-radius: 99px; }
+  .nums { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-top: 7px; }
+  .num { background: #1e1e34; border-radius: 12px; padding: 6px 4px; text-align: center; }
+  .num b { display: block; font-size: 14.5px; }
+  .num span { font-size: 8.5px; color: #9a9ab0; font-weight: 700; }
+  .play {
+    display: flex; align-items: center; gap: 8px; margin-top: 8px;
+    background: linear-gradient(145deg, #8ff0f7, #5cc6d6); color: #111;
+    border-radius: 14px; padding: 8px 10px; font-weight: 900; font-size: 12.5px;
+    box-shadow: 0 0 18px rgba(125,227,234,.4);
+  }
+  .play .tri {
+    width: 28px; height: 28px; border-radius: 50%; background: #111; color: #7DE3EA;
+    display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0;
+  }
+  .play small { display: block; font-size: 10px; font-weight: 700; opacity: .7; }
+  .duel { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+  .duel a { border-radius: 14px; padding: 10px 6px; text-align: center; font-weight: 900; font-size: 12.5px; color: #111; }
+  .duel .claim { background: #F5D948; }
+  .duel .filing { background: #5df08f; }
+  .duel small { display: block; font-size: 9.5px; font-weight: 800; margin-top: 2px; opacity: .7; }
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .chip { font-size: 10.5px; font-weight: 700; background: #26263c; border: 1px solid #3a3a58; padding: 4px 8px; border-radius: 99px; }
+  .chip a { color: #C8E63E; }
+  .foot { display: flex; gap: 6px; margin-top: 8px; }
+  .foot a { flex: 1; text-align: center; font-weight: 900; font-size: 12.5px; padding: 10px; border-radius: 14px; }
+  .foot .a { background: #7DE3EA; color: #111; }
+  .foot .b { background: rgba(255,255,255,.08); color: #fff; border: 1px solid #3d3d5c; }
+  .hint { text-align: center; font-size: 9px; color: #4a4a63; font-weight: 800; letter-spacing: 2px; margin-top: 6px; font-family: ui-monospace, Menlo, monospace; }
+</style>
+</head>
+<body>
+<article class="card">
+  <div class="kicker"><span>● ROBERT WHITE · D · DELEGATE</span><span class="dots"><b>●</b>○○○○○</span></div>
+
+  <div class="deck">
+    <!-- 1 · THE NIGHT -->
+    <section class="slide">
+      <div class="tag" style="color:#C8E63E">🎬 THE NIGHT — JUN 16 PRIMARY</div>
+      <div class="big">63.6%</div>
+      <p class="cap">86,871 votes. 3rd delegate ever.<br><small>First ranked-choice DC primary · <a href="https://www.nbcwashington.com/decision-2026/pinto-white-primary-congress/4117978" target="_blank">↗ results</a></small></p>
+      <div class="bars">
+        <div class="bar"><span>White</span><div class="track"><i class="fill" style="width:63.6%;background:#7DE3EA"></i></div><span>63.6</span></div>
+        <div class="bar"><span>Pinto</span><div class="track"><i class="fill" style="width:20.9%;background:#E8933C"></i></div><span>20.9</span></div>
+        <div class="bar"><span>Zalesne</span><div class="track"><i class="fill" style="width:7.8%;background:#8E8EA8"></i></div><span>7.8</span></div>
+      </div>
+      <a class="play" href="https://www.youtube.com/results?search_query=Robert+White+DC+delegate+victory+speech+June+2026" target="_blank">
+        <span class="tri">▶</span>
+        <span>“This promise belongs to us, too.”<small>victory speech · tap to watch ↗</small></span>
+      </a>
+    </section>
+
+    <!-- 2 · THE MONEY -->
+    <section class="slide">
+      <div class="tag" style="color:#7DE3EA">💸 THE MONEY — FEC THRU JUN 30</div>
+      <div class="big">$826K</div>
+      <p class="cap">raised · spent $791K to win it<br><small>Outraised 3-to-1 in March. Won by 42. <a class="tap" href="https://www.fec.gov/data/candidate/H6DC01079/?cycle=2026" target="_blank">↗ filing H6DC01079</a></small></p>
+      <div class="nums">
+        <div class="num"><b>$602K</b><span>itemized donors</span></div>
+        <div class="num"><b>$114K</b><span>small-dollar</span></div>
+        <div class="num"><b>$40K</b><span>cash left</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar"><span>White</span><div class="track"><i class="fill" style="width:66%;background:#7DE3EA"></i></div><span>$826K</span></div>
+        <div class="bar"><span>Pinto</span><div class="track"><i class="fill" style="width:100%;background:#E8933C"></i></div><span>$1.25M</span></div>
+      </div>
+    </section>
+
+    <!-- 3 · THE RECEIPT -->
+    <section class="slide">
+      <div class="tag" style="color:#F5D948">🧾 THE RECEIPT — 67-PAGE OPPO, ONE FILING</div>
+      <div class="big">67pp</div>
+      <p class="cap">Pinto camp: developer $ + Trump donors.<br><small>Filing: $602K itemized, inspectable. You decide.</small></p>
+      <div class="duel">
+        <a class="claim" href="https://nypost.com/2026/06/17/us-news/robert-white-jr-wins-dc-delegate-democratic-primary" target="_blank">THE CLAIM<small>↗ oppo file</small></a>
+        <a class="filing" href="https://www.fec.gov/data/candidate/H6DC01079/?cycle=2026" target="_blank">THE FILING<small>↗ FEC data</small></a>
+      </div>
+      <div class="chips">
+        <span class="chip">🏠 Housing chair since '23</span>
+        <span class="chip">+$24.5M housing</span>
+        <span class="chip">+$6.7M rental aid</span>
+        <span class="chip"><a href="robert-white-scorecard.html">↗ full scorecard: 14 votes</a></span>
+        <span class="chip"><a href="https://dccouncil.gov/council/councilmember-robert-c-white-jr/" target="_blank">↗ record</a></span>
+      </div>
+    </section>
+
+    <!-- 4 · VOTE vs MONEY: tenants -->
+    <section class="slide">
+      <div class="tag" style="color:#5df08f">🏠 VOTE vs MONEY 1/3</div>
+      <div class="big">NO</div>
+      <p class="cap">on weaker tenant protections (Apr 2021)<br><small>Blocked vacancy rent hikes · <a class="tap" href="https://www.dccouncil.org/bills/B24-0192" target="_blank">↗ B24-0192</a></small></p>
+      <div class="nums">
+        <div class="num"><b>$1K×8</b><span>developer max-outs '20</span></div>
+        <div class="num"><b>$420K</b><span>raised 2020</span></div>
+        <div class="num"><b>1,574</b><span>donors</span></div>
+      </div>
+      <p class="cap"><small>Wilkes · Jair Lynch · Brookfield · Hines + Edens execs. <a class="tap" href="https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/34/query?where=CANDIDATENAME%3D%27Robert%20White%27%20AND%20ELECTIONYEAR%3D2020&outFields=CONTRIBUTORNAME%2CAMOUNT%2CEMPLOYER&returnGeometry=false&orderByFields=AMOUNT%20DESC&resultRecordCount=40&f=html" target="_blank">↗ inspect the donors</a></small></p>
+    </section>
+
+    <!-- 5 · VOTE vs MONEY: millionaire tax -->
+    <section class="slide">
+      <div class="tag" style="color:#5df08f">🏠 VOTE vs MONEY 2/3</div>
+      <div class="big">YES</div>
+      <p class="cap">on taxing millionaires for housing (Jul 2021)<br><small>Passed · funded housing + educators · <a class="tap" href="https://www.dccouncil.org/bills/B24-0285-1" target="_blank">↗ B24-0285</a></small></p>
+      <div class="nums">
+        <div class="num"><b>$1K×6</b><span>corporate PAC max-outs</span></div>
+        <div class="num"><b>$1K</b><span>Airbnb-backed cmte</span></div>
+        <div class="num"><b>$1K×3</b><span>soda + telecom</span></div>
+      </div>
+      <p class="cap"><small>Verizon · Pepsi · Coke · Beverage Assoc · Insurance Fed · Airbnb cmte. <a class="tap" href="https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/34/query?where=CANDIDATENAME%3D%27Robert%20White%27%20AND%20ELECTIONYEAR%3D2020&outFields=CONTRIBUTORNAME%2CAMOUNT%2CEMPLOYER&returnGeometry=false&orderByFields=AMOUNT%20DESC&resultRecordCount=40&f=html" target="_blank">↗ inspect the donors</a></small></p>
+    </section>
+
+    <!-- 6 · VOTE vs MONEY: the outlier -->
+    <section class="slide">
+      <div class="tag" style="color:#F5D948">👀 VOTE vs MONEY 3/3 — THE OUTLIER</div>
+      <div class="big">4-1*</div>
+      <p class="cap">Backed the DCHA mayoral takeover (Dec 2022)<br><small>His only housing break with progressives · <a class="tap" href="https://www.dccouncil.org/bills/B24-1144" target="_blank">↗ B24-1144</a></small></p>
+      <div class="nums">
+        <div class="num"><b>$1K×4</b><span>labor max-outs '20</span></div>
+        <div class="num"><b>86%</b><span>scorecard</span></div>
+        <div class="num"><b>12/14</b><span>matched</span></div>
+      </div>
+      <p class="cap"><small>Firefighters · AFSCME · Nurses · Carpenters — context, not cause. <a class="tap" href="robert-white-scorecard.html">↗ full scorecard</a></small></p>
+    </section>
+  </div>
+
+  <div class="foot">
+    <a class="a" href="https://www.youtube.com/results?search_query=Robert+White+Brooke+Pinto+DC+delegate+debate+2026" target="_blank">▶ Shorts</a>
+    <a class="b" href="https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_the_District_of_Columbia" target="_blank">⚔️ Vs Pinto</a>
+  </div>
+  <div class="hint">SWIPE → · NUMBERS ARE TAPPABLE · 6 CARDS</div>
+</article>
+</body>
+</html>

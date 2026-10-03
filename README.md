@@ -1,6 +1,6 @@
 # Rally
 
-**The TikTok for politics. The politicians don't get to post.**
+**The social network for politicians. They don't get to post.**
 
 Every candidate on the ballot gets a profile, a feed, and shorts — but the content is written by their campaign filings, their hearing footage, and their own tweets. Scroll it like TikTok. Trust it like a receipt.
 
@@ -74,7 +74,7 @@ Rally starts at home. One city, one ballot, every contest — small enough to ge
 | **Federal** | U.S. House Delegate | Robert White (D) · Denise Rosado (R) · Kymone Freeman (Green) · Rebekkah Green (I, write-in) · David Solana (I, write-in) |
 | **Federal** | U.S. Shadow Senator | Paul Strauss (D, incumbent) · Rob Simmons (R) |
 | **Federal** | U.S. Shadow Representative | Franklin Garcia (D) · Ciprian Ivanof (R) |
-| **District-wide executive** | Mayor | Janeese Lewis George (D) · Robert L. Gross (DC Statehood Green) · Rhonda Hamilton (I) |
+| **District-wide executive** | Mayor | Janeese Lewis George (D) · Robert Gross (Green) · Rhonda Hamilton (I) · Kathy Henderson (D, write-in) · Michael Arega (One Home, write-in) · Myrtle Alexander, Charles Breedlove, Kenneth Bristow, Anthony Brown, Treasure Chapman, Patrick Christian, George Jackson (I, write-in) |
 | **District-wide executive** | Attorney General | Brian Schwalb (D, incumbent) · Manuel Rivera (R) |
 | **District-wide legislative** | Council Chairman | Phil Mendelson (D, incumbent) · Abi-Ananiah Prudent (R) · John C. Cheeks (I, write-in) |
 | **District-wide legislative** | Council At-Large | Elissa Silverman (I, incumbent) · Oye Owolewa (D) · Darrell Green (R) · Darryl Moch (Green) · Joe Jackson (I, write-in) |
@@ -108,7 +108,7 @@ Leaning **head-to-head** as the default feed, with party and ward as filters.
 
 Open seat, crowded field, and the sharpest money contrast on the ballot — Fair Elections candidates vs. traditional fundraising, side by side. DC Council hearings, mayoral forums, and debates are already on YouTube. It's the most fun contest to scroll, so it's the one we build first.
 
-Candidates: **Janeese Lewis George (D)** · **Robert L. Gross (DC Statehood Green)** · **Rhonda Hamilton (I)**
+Candidates: **Janeese Lewis George (D)** · **Robert Gross (Green)** · **Rhonda Hamilton (I)** · **Kathy Henderson (D, write-in)** · plus the independent write-ins.
 
 ## Roadmap
 
