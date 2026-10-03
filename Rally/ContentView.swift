@@ -4,6 +4,7 @@ struct ContentView: View {
     @AppStorage("place") private var placeID = ""
     @State private var store = PostStore()
     @State private var extras = ExtrasStore()
+    @State private var taste = Taste()
 
     private var place: Place? { Place.find(placeID) }
 
@@ -23,6 +24,7 @@ struct ContentView: View {
         .preferredColorScheme(.dark)
         .environment(store)
         .environment(extras)
+        .environment(taste)
         .task {
             async let p: () = store.refresh()
             async let e: () = extras.refresh()

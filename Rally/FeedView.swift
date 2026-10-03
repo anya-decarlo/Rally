@@ -9,18 +9,22 @@ enum FeedItem: Identifiable {
 
     static let factEvery = 2   // a card after every N posts
 
-    // Every N posts: alternate a fun fact (bio) and a receipt (money / vote / record).
-    static func interleave(posts: [Post], facts: [Fact], every n: Int = factEvery) -> [FeedItem] {
+    var category: String {
+        switch self { case .post: "post"; case .fact(let f): f.category ?? "bio" }
+    }
+
+    // Every N posts, a card. Cards are drawn in taste-weighted random order: categories the
+    // user swiped right on come up more; swiped left, less. Nothing is ever removed.
+    static func interleave(posts: [Post], facts: [Fact], candidate: String, taste: Taste, every n: Int = factEvery) -> [FeedItem] {
         var out: [FeedItem] = []
-        var bio = facts.filter { ($0.category ?? "bio") == "bio" }.shuffled().makeIterator()
-        var receipts = facts.filter { $0.category != nil && $0.category != "bio" }.shuffled().makeIterator()
-        var turn = 0
+        var cards = facts
+            .map { (f: $0, k: Double.random(in: 0...1) * taste.weight(candidate, $0.category ?? "bio")) }
+            .sorted { $0.k > $1.k }
+            .map(\.f)
+            .makeIterator()
         for (i, p) in posts.enumerated() {
             out.append(.post(p))
-            guard (i + 1) % n == 0 else { continue }
-            let pick = turn % 2 == 0 ? (receipts.next() ?? bio.next()) : (bio.next() ?? receipts.next())
-            if let pick { out.append(.fact(pick)) }
-            turn += 1
+            if (i + 1) % n == 0, let c = cards.next() { out.append(.fact(c)) }
         }
         return out
     }
@@ -32,10 +36,18 @@ struct FeedView: View {
     let posts: [Post]
     var facts: [Fact] = []
     @Environment(\.dismiss) private var dismiss
+    @Environment(Taste.self) private var taste
     @State private var current: String?
     @State private var items: [FeedItem] = []
 
     private var index: Int { items.firstIndex { $0.id == current } ?? 0 }
+
+    private func judge(_ item: FeedItem, liked: Bool) {
+        taste.record(candidate.name, item.category, liked: liked)
+        if let i = items.firstIndex(where: { $0.id == item.id }), i + 1 < items.count {
+            withAnimation(.snappy(duration: 0.35)) { current = items[i + 1].id }
+        }
+    }
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -60,6 +72,7 @@ struct FeedView: View {
                                     }
                                 }
                             }
+                            .swipeToJudge { liked in judge(item, liked: liked) }
                             .containerRelativeFrame(.vertical)
                             .id(item.id)
                         }
@@ -102,10 +115,72 @@ struct FeedView: View {
         }
         .background(Theme.bg)
         .onAppear {
-            items = FeedItem.interleave(posts: posts, facts: facts)
+            items = FeedItem.interleave(posts: posts, facts: facts, candidate: candidate.name, taste: taste)
             current = items.first?.id
         }
     }
+}
+
+// MARK: - 👈 nah  ·  more 👉
+
+struct SwipeToJudge: ViewModifier {
+    let onJudge: (Bool) -> Void
+    @State private var drag: CGFloat = 0
+    @State private var gone = false
+
+    func body(content: Content) -> some View {
+        let p = max(-1, min(1, drag / 140))
+        content
+            .offset(x: gone ? (p > 0 ? 600 : -600) : drag)
+            .rotationEffect(.degrees(Double(p) * 8), anchor: .bottom)
+            .opacity(gone ? 0 : 1)
+            .overlay(alignment: .top) {
+                HStack {
+                    Stamp("NAH 👈", color: Theme.pink).opacity(Double(max(0, -p))).rotationEffect(.degrees(-12))
+                    Spacer()
+                    Stamp("MORE 👉", color: Theme.lime).opacity(Double(max(0, p))).rotationEffect(.degrees(12))
+                }
+                .padding(.horizontal, 24)
+                .padding(.top, 70)
+            }
+            .simultaneousGesture(
+                DragGesture(minimumDistance: 24, coordinateSpace: .local)
+                    .onChanged { v in
+                        // only claim clearly-horizontal drags; vertical stays with the pager
+                        guard abs(v.translation.width) > abs(v.translation.height) * 1.4 else { return }
+                        drag = v.translation.width
+                    }
+                    .onEnded { v in
+                        guard abs(drag) > 100 || abs(v.predictedEndTranslation.width) > 260 else {
+                            withAnimation(.bouncy) { drag = 0 }; return
+                        }
+                        let liked = drag > 0
+                        Haptic.tap()
+                        withAnimation(.easeIn(duration: 0.22)) { gone = true }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.22) {
+                            onJudge(liked)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { drag = 0; gone = false }
+                        }
+                    }
+            )
+    }
+}
+
+struct Stamp: View {
+    let text: String, color: Color
+    init(_ text: String, color: Color) { self.text = text; self.color = color }
+    var body: some View {
+        Text(text)
+            .font(.system(size: 28, weight: .black, design: .rounded))
+            .foregroundStyle(color)
+            .padding(.horizontal, 14).padding(.vertical, 8)
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(color, lineWidth: 4))
+            .shadow(color: color, radius: 12)
+    }
+}
+
+extension View {
+    func swipeToJudge(_ onJudge: @escaping (Bool) -> Void) -> some View { modifier(SwipeToJudge(onJudge: onJudge)) }
 }
 
 // MARK: - ✨ Fun fact
@@ -237,6 +312,16 @@ struct ReceiptPage: View {
                             .rotationEffect(.degrees(slam ? -3 : 25))
                             .scaleEffect(slam ? 1 : 2.2)
                     }
+                    if let t = fact.title {
+                        Text(t)
+                            .font(.system(size: 34, weight: .black, design: .rounded))
+                            .foregroundStyle(
+                                LinearGradient(colors: [.white, .white, kind.color], startPoint: .topLeading, endPoint: .bottomTrailing)
+                            )
+                            .shadow(color: kind.color.opacity(0.7), radius: 24)
+                            .minimumScaleFactor(0.6)
+                            .lineLimit(2)
+                    }
 
                     // the receipt itself: paper, ink — the serious thing inside the party
                     VStack(alignment: .leading, spacing: 10) {
@@ -250,6 +335,7 @@ struct ReceiptPage: View {
                             Text(lines[0])
                                 .font(.system(size: 15, weight: .black, design: .rounded))
                                 .foregroundStyle(Theme.ink.opacity(0.6))
+                                .fixedSize(horizontal: false, vertical: true)
                             ForEach(Array(lines.dropFirst().enumerated()), id: \.offset) { i, row in
                                 HStack(alignment: .firstTextBaseline, spacing: 8) {
                                     Text(i == 0 ? "▶" : "·")

@@ -30,8 +30,9 @@ def usd(n):
     return f"${n:,.2f}" if n != int(n) else f"${int(n):,}"
 
 
-def card(category, text, source, url):
-    return {"text": text, "source": source, "url": url, "category": category}
+def card(category, title, text, source, url):
+    """title = plain-English headline so the card makes sense cold; text = the datum, verbatim."""
+    return {"title": title, "text": text, "source": source, "url": url, "category": category}
 
 
 def cards(d):
@@ -41,11 +42,11 @@ def cards(d):
     idn = d.get("identity") or {}
     src = idn.get("sources", {})
     if idn.get("office_sought_note"):
-        out.append(card("identity", idn["office_sought_note"], "DC Council", src.get("council_bio")))
+        out.append(card("identity", "The seat he's running for", idn["office_sought_note"], "DC Council", src.get("council_bio")))
     if idn.get("council_tenure"):
-        out.append(card("identity", f"Council tenure: {idn['council_tenure']}", "DC Council", src.get("council_bio")))
+        out.append(card("identity", "Time on the Council", idn["council_tenure"], "DC Council", src.get("council_bio")))
     if idn.get("current_office"):
-        out.append(card("identity", idn["current_office"], "DC Council", src.get("council_bio")))
+        out.append(card("identity", "His current job", idn["current_office"], "DC Council", src.get("council_bio")))
 
     # money — every federal number is its own card
     m = d.get("money") or {}
@@ -56,64 +57,64 @@ def cards(d):
               ("cash_on_hand", "Cash on hand")]
     for key, label in labels:
         if fed.get(key) is not None:
-            out.append(card("money", f"{label}: {usd(fed[key])} — {fed['committee']}, {fed['coverage']}", "FEC", fed["source"]))
+            out.append(card("money", f"{label} — Delegate campaign", f"{usd(fed[key])}\n{fed['committee']}\n{fed['coverage']}", "FEC", fed["source"]))
 
     snap = m.get("federal_opponent_snapshot") or {}
     for key, label in [("pinto_raised", "Brooke Pinto raised"), ("pinto_spent", "Brooke Pinto spent"), ("pinto_cash", "Brooke Pinto cash on hand"),
                        ("white_raised", "Robert White raised"), ("white_spent", "Robert White spent"), ("white_cash", "Robert White cash on hand")]:
         if snap.get(key) is not None:
-            out.append(card("money", f"{label}: {usd(snap[key])} as of {snap['as_of']}", "FEC via Wikipedia", snap["source"]))
+            out.append(card("money", "The money race vs. Brooke Pinto", f"{label}: {usd(snap[key])}\nas of {snap['as_of']}", "FEC via Wikipedia", snap["source"]))
 
     for y in m.get("local_ocf_by_year") or []:
-        out.append(card("money", f"{y['year']} Council campaign: {usd(y['total'])} across {y['count']:,} contributions", "DC OCF", OCF_URL))
+        out.append(card("money", f"His {y['year']} Council campaign", f"{usd(y['total'])} raised\n{y['count']:,} contributions", "DC OCF", OCF_URL))
     if m.get("local_ocf_note"):
-        out.append(card("money", m["local_ocf_note"], "DC OCF", OCF_URL))
+        out.append(card("money", "A gap in the local filings", m["local_ocf_note"], "DC OCF", OCF_URL))
 
     for x in m.get("local_2020_max_donors_1000") or []:
-        out.append(card("money", f"$1,000-max donor, 2020 Council run: {x['donor']} ({x['sector_hint']})", "DC OCF", OCF_URL))
+        out.append(card("money", f"Gave the $1,000 max in 2020 · {x['sector_hint']}", x["donor"], "DC OCF", OCF_URL))
 
     oc = m.get("oppo_claim")
     if oc:
-        out.append(card("money", f"Claim: {oc['claim']} — {oc['framing']}", "NY Post", oc["source"]))
+        out.append(card("money", "What his opponent's oppo file claimed", f"{oc['claim']}\n{oc['framing']}", "NY Post", oc["source"]))
 
     # primary — a results table is one fact; every row kept, verbatim, together
     p = d.get("primary_2026") or {}
     if p.get("results"):
         rows = "\n".join(f"{r['candidate']} — {r['pct']}% ({r['votes']:,} votes)" for r in p["results"])
-        out.append(card("vote", f"Democratic primary for Delegate, {p['date']}\n{rows}", "AP via Wikipedia", p["sources"]["results_table"]))
+        out.append(card("vote", "He won the primary", f"Democratic primary for Delegate, {p['date']}\n{rows}", "AP via Wikipedia", p["sources"]["results_table"]))
     if p.get("note"):
-        out.append(card("vote", f"{p['date']}: {p['note']}", "AP via Wikipedia", p["sources"]["results_table"]))
+        out.append(card("vote", "Why this primary was different", f"{p['date']}: {p['note']}", "AP via Wikipedia", p["sources"]["results_table"]))
 
     # record — every highlight, every vote, scorecard latest + each history year
     rec = d.get("record") or {}
     for c in rec.get("committees") or []:
-        out.append(card("record", c, "2025 Annual Report", rec.get("record_source")))
+        out.append(card("record", "Committees", c, "2025 Annual Report", rec.get("record_source")))
     for h in rec.get("highlights") or []:
-        out.append(card("record", h, "2025 Annual Report", rec.get("record_source")))
+        out.append(card("record", "What he did as Housing chair", h, "2025 Annual Report", rec.get("record_source")))
     sc = rec.get("scorecard") or {}
     for v in sc.get("votes") or []:
         side = "FOR" if v["white"] == "for" else "AGAINST"
-        out.append(card("vote", f"Voted {side}: {v['title']} ({v['bill']}, {v['date']}) — {v['outcome']}", f"DC Council · JUFJ scorecard", v["link"]))
+        out.append(card("vote", f"Voted {side}", f"{v['title']}\n{v['bill']} · {v['date']} · {v['outcome']}", "DC Council · JUFJ scorecard", v["link"]))
     if sc.get("latest"):
         hist = "\n".join(f"{yr}: {pct}" for yr, pct in sorted((sc.get("history") or {}).items()))
-        out.append(card("vote", f"JUFJ Campaign Fund scorecard\nCurrent term: {sc['latest']}\n{hist}", "JUFJ Campaign Fund (advocacy)", sc["source"]))
+        out.append(card("vote", "How a progressive group grades him", f"JUFJ Campaign Fund scorecard\nCurrent term: {sc['latest']}\n{hist}", "JUFJ Campaign Fund (advocacy)", sc["source"]))
 
     # voice — verbatim
     v = d.get("voice") or {}
     if v.get("victory_quote"):
-        out.append(card("record", f"“{v['victory_quote']}”", "NBC4", v["victory_quote_source"]))
+        out.append(card("record", "What he said on election night", f"“{v['victory_quote']}”", "NBC4", v["victory_quote_source"]))
     if v.get("defend_dc"):
-        out.append(card("record", f"“Defend DC” plan: {v['defend_dc']}", "AP", v["defend_dc_source"]))
+        out.append(card("record", "His plan: “Defend DC”", v["defend_dc"], "AP", v["defend_dc_source"]))
     for e in v.get("electoral_history") or []:
-        out.append(card("record", e, "Wikipedia", src.get("bio_timeline")))
+        out.append(card("record", "Every race he's run", e, "Wikipedia", src.get("bio_timeline")))
 
     # endorsements — one each
     for e in d.get("endorsements_2026") or []:
-        out.append(card("endorsement", f"Endorsed by {e}", "Campaign", src.get("campaign_site")))
+        out.append(card("endorsement", "Endorsed by", e, "Campaign", src.get("campaign_site")))
 
     # pairs — vote ⟷ money, verbatim both sides
     for pr in d.get("vote_vs_money_pairs") or []:
-        out.append(card("pair", f"{pr['vote']}{SEP}{pr['money']}", "DC Council + DC OCF", pr["vote_link"]))
+        out.append(card("pair", "A vote, and the money", f"{pr['vote']}{SEP}{pr['money']}", "DC Council + DC OCF", pr["vote_link"]))
 
     return [c for c in out if c["text"] and c["url"]]
 

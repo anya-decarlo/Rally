@@ -17,7 +17,37 @@ struct Fact: Codable, Hashable, Identifiable {
     let text: String
     let source: String
     let url: URL
-    var category: String? = nil     // "bio" | "money" | "record" | "vote" — optional, missing is fine
+    var category: String? = nil     // "bio" | "money" | "record" | "vote" | "pair" | "endorsement" | "identity"
+    var title: String? = nil        // plain-English headline so the card makes sense cold
+}
+
+// What this user swipes right on. Per candidate, per category. Lives on device.
+@Observable
+final class Taste {
+    private(set) var scores: [String: Int] = [:]
+    private let key = "rally.taste"
+
+    init() {
+        if let d = UserDefaults.standard.data(forKey: key),
+           let s = try? JSONDecoder().decode([String: Int].self, from: d) { scores = s }
+    }
+
+    func score(_ candidate: String, _ category: String) -> Int {
+        (scores["\(candidate)|\(category)"] ?? 0) + (scores["*|\(category)"] ?? 0)
+    }
+
+    func record(_ candidate: String, _ category: String, liked: Bool) {
+        let d = liked ? 1 : -1
+        scores["\(candidate)|\(category)", default: 0] += d
+        scores["*|\(category)", default: 0] += d
+        if let data = try? JSONEncoder().encode(scores) { UserDefaults.standard.set(data, forKey: key) }
+    }
+
+    // 1.0 = neutral; swipe-right categories float up, swipe-left ones sink.
+    func weight(_ candidate: String, _ category: String) -> Double {
+        let s = Double(max(-6, min(6, score(candidate, category))))
+        return pow(1.5, s)
+    }
 }
 
 struct Portrait: Codable, Hashable {
