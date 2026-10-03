@@ -7,7 +7,9 @@ enum FeedItem: Identifiable {
         switch self { case .post(let p): p.id; case .fact(let f): "fact:" + f.id }
     }
 
-    static func interleave(posts: [Post], facts: [Fact], every n: Int = 4) -> [FeedItem] {
+    static let factEvery = 3   // a fun fact after every N posts
+
+    static func interleave(posts: [Post], facts: [Fact], every n: Int = factEvery) -> [FeedItem] {
         var out: [FeedItem] = [], f = facts.shuffled().makeIterator()
         for (i, p) in posts.enumerated() {
             out.append(.post(p))
@@ -116,7 +118,7 @@ struct FactPage: View {
 
                 VStack(alignment: .leading, spacing: 20) {
                     Spacer()
-                    Sticker("✨ Fun fact", color: Theme.yellow)
+                    Sticker("wait, seriously?", color: Theme.yellow)
                         .rotationEffect(.degrees(-4))
                         .scaleEffect(pop ? 1 : 0.6)
                     Text(fact.text)

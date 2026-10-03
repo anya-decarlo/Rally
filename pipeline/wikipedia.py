@@ -67,14 +67,26 @@ def portrait(title, slug):
             "credit": clean("Artist") or clean("Credit"), "page": f"https://commons.wikimedia.org/wiki/File:{fname}"}
 
 
+CURATED = ROOT / "pipeline" / "curated_facts.json"
+
+
+def curated_facts(cand):
+    """Hand-written facts win over Wikipedia for a candidate, when present."""
+    data = json.loads(CURATED.read_text()) if CURATED.exists() else {}
+    c = data.get(cand)
+    if not c:
+        return None
+    return [{"text": t, "source": c["source"], "url": c["url"], "category": "bio"} for t in c["facts"]]
+
+
 def main():
     out = {}
     for cand, title in PAGES.items():
-        facts = facts_from(article_text(title))
         url = f"https://en.wikipedia.org/wiki/{title}"
-        out[cand] = {"facts": [{"text": f, "source": "Wikipedia", "url": url, "category": "bio"} for f in facts],
-                     "portrait": portrait(title, slug(cand))}
-        print(f"{cand}: {len(facts)} facts, portrait={bool(out[cand]['portrait'])}", file=sys.stderr)
+        facts = curated_facts(cand) or \
+            [{"text": f, "source": "Wikipedia", "url": url, "category": "bio"} for f in facts_from(article_text(title))]
+        out[cand] = {"facts": facts, "portrait": portrait(title, slug(cand))}
+        print(f"{cand}: {len(facts)} facts ({'curated' if curated_facts(cand) else 'wikipedia'}), portrait={bool(out[cand]['portrait'])}", file=sys.stderr)
     OUT.write_text(json.dumps({"generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                                "candidates": out}, indent=2, ensure_ascii=False) + "\n")
     print(f"wrote → {OUT.relative_to(ROOT)}", file=sys.stderr)
