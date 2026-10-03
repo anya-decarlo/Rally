@@ -2,6 +2,8 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("place") private var placeID = ""
+    @State private var store = PostStore()
+    @State private var extras = ExtrasStore()
 
     private var place: Place? { Place.find(placeID) }
 
@@ -19,6 +21,8 @@ struct ContentView: View {
         }
         .animation(.snappy(duration: 0.45), value: placeID)
         .preferredColorScheme(.dark)
+        .environment(store)
+        .environment(extras)
     }
 }
 

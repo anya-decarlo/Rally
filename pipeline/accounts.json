@@ -1,0 +1,25 @@
+{
+  "accounts": [
+    {
+      "candidate": "Robert White",
+      "platform": "bluesky",
+      "handle": "robertwhitedc.bsky.social",
+      "kind": "official",
+      "note": "Council office account. Taxpayer-funded government comms, not campaign."
+    },
+    {
+      "candidate": "Robert White",
+      "platform": "x",
+      "handle": "RobertWhite_DC",
+      "kind": "personal",
+      "note": "Personal / campaign account."
+    },
+    {
+      "candidate": "Robert White",
+      "platform": "x",
+      "handle": "CMRobertWhiteDC",
+      "kind": "official",
+      "note": "Council office account."
+    }
+  ]
+}

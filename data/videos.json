@@ -1,0 +1,33 @@
+{
+  "videos": {
+    "Robert White": [
+      {
+        "id": "youtube:DPLYY53XbuE",
+        "platform": "youtube",
+        "title": "DC Delegate Candidate Robert White on The DC Beat",
+        "channel": "WUSA9",
+        "channelUrl": "https://www.youtube.com/channel/UCcT6w3xUyVshyR2_2vrMp1w",
+        "publishedAt": "2026-02-12",
+        "duration": 42,
+        "thumb": "https://i.ytimg.com/vi/DPLYY53XbuE/hq720_2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYWSBNKGUwDw==&rs=AOn4CLCpA_4TmWBBhMgrlo80tMbLF5yvxQ",
+        "url": "https://www.youtube.com/watch?v=DPLYY53XbuE",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/DPLYY53XbuE?playsinline=1&rel=0",
+        "verifiedBy": "human"
+      },
+      {
+        "id": "youtube:8JVFI_RgLLk",
+        "platform": "youtube",
+        "title": "Councilmember Robert White criticizes DC mayor's response to federal surge",
+        "channel": "WUSA9",
+        "channelUrl": "https://www.youtube.com/channel/UCcT6w3xUyVshyR2_2vrMp1w",
+        "publishedAt": "2025-08-28",
+        "duration": 135,
+        "thumb": "https://i.ytimg.com/vi/8JVFI_RgLLk/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=8JVFI_RgLLk",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/8JVFI_RgLLk?playsinline=1&rel=0",
+        "verifiedBy": "human"
+      }
+    ]
+  },
+  "generatedAt": "2026-10-03T18:15:20Z"
+}

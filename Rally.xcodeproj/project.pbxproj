@@ -16,7 +16,16 @@
 		A1000001000000000000009 /* CandidateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000009 /* CandidateView.swift */; };
 		A100000100000000000000A /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000200000000000000A /* Places.swift */; };
 		A100000100000000000000B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000200000000000000B /* HomeView.swift */; };
+		A100000100000000000000C /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000200000000000000C /* Posts.swift */; };
+		A100000100000000000000D /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000200000000000000D /* FeedView.swift */; };
+		A100000100000000000000E /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = A100000200000000000000E /* posts.json */; };
 		A1000001000000000000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000003 /* Assets.xcassets */; };
+		A10000010000000000000F /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000020000000000000F /* Extras.swift */; };
+		A1000001000000000000010 /* ChaosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000010 /* ChaosView.swift */; };
+		A1000001000000000000011 /* BoothView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000011 /* BoothView.swift */; };
+		A1000001000000000000012 /* facts.json in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000012 /* facts.json */; };
+		A1000001000000000000013 /* videos.json in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000013 /* videos.json */; };
+		A1000001000000000000014 /* robert-white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000014 /* robert-white.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +41,15 @@
 		A1000002000000000000009 /* CandidateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateView.swift; sourceTree = "<group>"; };
 		A100000200000000000000A /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		A100000200000000000000B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A100000200000000000000C /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		A100000200000000000000D /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		A100000200000000000000E /* posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = posts.json; path = ../data/posts.json; sourceTree = "<group>"; };
+		A10000020000000000000F /* Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
+		A1000002000000000000010 /* ChaosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaosView.swift; sourceTree = "<group>"; };
+		A1000002000000000000011 /* BoothView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoothView.swift; sourceTree = "<group>"; };
+		A1000002000000000000012 /* facts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = facts.json; path = ../data/facts.json; sourceTree = "<group>"; };
+		A1000002000000000000013 /* videos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = videos.json; path = ../data/videos.json; sourceTree = "<group>"; };
+		A1000002000000000000014 /* robert-white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = robert-white.jpg; path = ../data/portraits/robert-white.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +83,15 @@
 				A1000002000000000000009 /* CandidateView.swift */,
 				A100000200000000000000A /* Places.swift */,
 				A100000200000000000000B /* HomeView.swift */,
+				A100000200000000000000C /* Posts.swift */,
+				A100000200000000000000D /* FeedView.swift */,
+				A100000200000000000000E /* posts.json */,
+				A10000020000000000000F /* Extras.swift */,
+				A1000002000000000000010 /* ChaosView.swift */,
+				A1000002000000000000011 /* BoothView.swift */,
+				A1000002000000000000012 /* facts.json */,
+				A1000002000000000000013 /* videos.json */,
+				A1000002000000000000014 /* robert-white.jpg */,
 				A1000002000000000000003 /* Assets.xcassets */,
 				A1000002000000000000004 /* Rally.entitlements */,
 			);
@@ -138,6 +165,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1000001000000000000003 /* Assets.xcassets in Resources */,
+				A100000100000000000000E /* posts.json in Resources */,
+				A1000001000000000000012 /* facts.json in Resources */,
+				A1000001000000000000013 /* videos.json in Resources */,
+				A1000001000000000000014 /* robert-white.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +188,11 @@
 				A1000001000000000000009 /* CandidateView.swift in Sources */,
 				A100000100000000000000A /* Places.swift in Sources */,
 				A100000100000000000000B /* HomeView.swift in Sources */,
+				A100000100000000000000C /* Posts.swift in Sources */,
+				A100000100000000000000D /* FeedView.swift in Sources */,
+				A10000010000000000000F /* Extras.swift in Sources */,
+				A1000001000000000000010 /* ChaosView.swift in Sources */,
+				A1000001000000000000011 /* BoothView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
