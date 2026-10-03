@@ -1,0 +1,14 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+# macOS
+.DS_Store
+
+# Scratch files from data pulls (keep the CSVs, drop the session junk)
+data/**/jar
+data/**/*.html
