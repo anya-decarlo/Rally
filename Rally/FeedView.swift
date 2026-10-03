@@ -121,16 +121,28 @@ struct FactPage: View {
                     Sticker("wait, seriously?", color: Theme.yellow)
                         .rotationEffect(.degrees(-4))
                         .scaleEffect(pop ? 1 : 0.6)
-                    Text(fact.text)
-                        .font(.system(size: fact.text.count < 110 ? 34 : 27, weight: .black, design: .rounded))
-                        .foregroundStyle(
-                            LinearGradient(colors: [.white, .white, Theme.yellow], startPoint: .topLeading, endPoint: .bottomTrailing)
-                        )
-                        .shadow(color: Theme.yellow.opacity(0.6), radius: 24)
-                        .minimumScaleFactor(0.6)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .offset(y: pop ? 0 : 30)
-                        .opacity(pop ? 1 : 0)
+                    // "wait, seriously?" facts have a punchline first sentence, then the story.
+                    let (headline, story) = split(fact.text)
+                    VStack(alignment: .leading, spacing: 14) {
+                        Text(headline)
+                            .font(.system(size: headline.count < 60 ? 34 : 28, weight: .black, design: .rounded))
+                            .foregroundStyle(
+                                LinearGradient(colors: [.white, .white, Theme.yellow], startPoint: .topLeading, endPoint: .bottomTrailing)
+                            )
+                            .shadow(color: Theme.yellow.opacity(0.6), radius: 24)
+                            .minimumScaleFactor(0.7)
+                            .fixedSize(horizontal: false, vertical: true)
+                        if !story.isEmpty {
+                            Text(story)
+                                .font(.system(size: 17, weight: .semibold, design: .rounded))
+                                .foregroundStyle(.white.opacity(0.9))
+                                .lineSpacing(3)
+                                .minimumScaleFactor(0.8)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                    }
+                    .offset(y: pop ? 0 : 30)
+                    .opacity(pop ? 1 : 0)
                     Button {
                         Haptic.tap()
                         openURL(fact.url)
@@ -153,6 +165,11 @@ struct FactPage: View {
         }
         .onAppear { withAnimation(.bouncy(duration: 0.7)) { pop = true } }
         .onDisappear { pop = false }
+    }
+
+    private func split(_ text: String) -> (String, String) {
+        guard let r = text.range(of: #"(?<=[.!?])\s+"#, options: .regularExpression) else { return (text, "") }
+        return (String(text[..<r.lowerBound]), String(text[r.upperBound...]))
     }
 }
 
