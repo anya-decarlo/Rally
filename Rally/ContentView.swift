@@ -23,6 +23,11 @@ struct ContentView: View {
         .preferredColorScheme(.dark)
         .environment(store)
         .environment(extras)
+        .task {
+            async let p: () = store.refresh()
+            async let e: () = extras.refresh()
+            _ = await (p, e)
+        }
     }
 }
 

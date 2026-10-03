@@ -62,29 +62,29 @@ extension ISO8601DateFormatter {
     static func parse(_ s: String) -> Date? { withMillis.date(from: s) ?? plain.date(from: s) }
 }
 
-// Loads posts.json. Today: the bundled copy. Tomorrow: the backend URL, same shape.
+// posts.json: bundled copy on launch, replaced wholesale by the backend when it answers.
 @Observable
 final class PostStore {
     private(set) var posts: [Post] = []
     private(set) var generatedAt: String = ""
+    private(set) var isLive = false
 
-    init() { loadBundled() }
+    init() {
+        if let file = PostStore.loadBundled("posts", as: PostsFile.self) { apply(file) }
+    }
 
     func posts(for candidate: Candidate) -> [Post] {
         posts.filter { $0.candidate == candidate.name }
     }
 
-    private func loadBundled() {
-        guard let url = Bundle.main.url(forResource: "posts", withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let file = try? JSONDecoder().decode(PostsFile.self, from: data) else { return }
-        posts = file.posts
-        generatedAt = file.generatedAt
+    @MainActor
+    func refresh() async {
+        guard let file = await Backend.fetch(Backend.posts, as: PostsFile.self) else { return }
+        apply(file)
+        isLive = true
     }
 
-    func load(from remote: URL) async {
-        guard let (data, _) = try? await URLSession.shared.data(from: remote),
-              let file = try? JSONDecoder().decode(PostsFile.self, from: data) else { return }
+    private func apply(_ file: PostsFile) {
         posts = file.posts
         generatedAt = file.generatedAt
     }

@@ -70,6 +70,14 @@ final class ExtrasStore {
         clips = PostStore.loadBundled("videos", as: VideosFile.self)?.videos ?? [:]
     }
 
+    @MainActor
+    func refresh() async {
+        async let f = Backend.fetch(Backend.facts, as: FactsFile.self)
+        async let v = Backend.fetch(Backend.videos, as: VideosFile.self)
+        if let f = await f { extras = f.candidates }
+        if let v = await v { clips = v.videos }
+    }
+
     func facts(for c: Candidate) -> [Fact] { extras[c.name]?.facts ?? [] }
     func portrait(for c: Candidate) -> Portrait? { extras[c.name]?.portrait }
     func clips(for c: Candidate) -> [Clip] { clips[c.name] ?? [] }
