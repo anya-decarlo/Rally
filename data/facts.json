@@ -128,602 +128,688 @@
           "text": "DC's non-voting House seat; would be 3rd delegate ever (Fauntroy → Norton → White)",
           "source": "DC Council",
           "url": "https://dccouncil.gov/council/councilmember-robert-c-white-jr/",
-          "category": "identity"
+          "category": "identity",
+          "explain": "Basic facts about the office, from the DC Council's official site."
         },
         {
           "title": "Time on the Council",
           "text": "September 2016 – present (third term, through 01/02/2029)",
           "source": "DC Council",
           "url": "https://dccouncil.gov/council/councilmember-robert-c-white-jr/",
-          "category": "identity"
+          "category": "identity",
+          "explain": "Basic facts about the office, from the DC Council's official site."
         },
         {
           "title": "His current job",
           "text": "At-Large Member, Council of the District of Columbia",
           "source": "DC Council",
           "url": "https://dccouncil.gov/council/councilmember-robert-c-white-jr/",
-          "category": "identity"
+          "category": "identity",
+          "explain": "Basic facts about the office, from the DC Council's official site."
         },
         {
           "title": "Raised — Delegate campaign",
           "text": "$826,537.33\nCongressional Committee to Elect Robert White 2026\n2025-10-01 to 2026-06-30",
           "source": "FEC",
           "url": "https://www.fec.gov/data/candidate/H6DC01079/?cycle=2026",
-          "category": "money"
+          "category": "money",
+          "explain": "Receipts = every dollar that came into the campaign committee in the period: individual donations, PAC money, transfers. This is the top-line 'raised' number the FEC reports."
         },
         {
           "title": "Spent — Delegate campaign",
           "text": "$791,773.27\nCongressional Committee to Elect Robert White 2026\n2025-10-01 to 2026-06-30",
           "source": "FEC",
           "url": "https://www.fec.gov/data/candidate/H6DC01079/?cycle=2026",
-          "category": "money"
+          "category": "money",
+          "explain": "Disbursements = every dollar the committee paid out: ads, staff, consultants, rent, fees. The top-line 'spent' number."
         },
         {
           "title": "From individuals — Delegate campaign",
           "text": "$716,037.33\nCongressional Committee to Elect Robert White 2026\n2025-10-01 to 2026-06-30",
           "source": "FEC",
           "url": "https://www.fec.gov/data/candidate/H6DC01079/?cycle=2026",
-          "category": "money"
+          "category": "money",
+          "explain": "Money from people (not PACs, parties, or committees). Federal law caps an individual at $3,500 per election for the 2026 cycle."
         },
         {
           "title": "Itemized (over $200) — Delegate campaign",
           "text": "$601,561.50\nCongressional Committee to Elect Robert White 2026\n2025-10-01 to 2026-06-30",
           "source": "FEC",
           "url": "https://www.fec.gov/data/candidate/H6DC01079/?cycle=2026",
-          "category": "money"
+          "category": "money",
+          "explain": "'Itemized' = donations from anyone who gave more than $200 total. The FEC requires the donor's name, address, employer and occupation on these — this is the part of the money you can actually see."
         },
         {
           "title": "Small-dollar (under $200) — Delegate campaign",
           "text": "$114,475.83\nCongressional Committee to Elect Robert White 2026\n2025-10-01 to 2026-06-30",
           "source": "FEC",
           "url": "https://www.fec.gov/data/candidate/H6DC01079/?cycle=2026",
-          "category": "money"
+          "category": "money",
+          "explain": "'Unitemized' = donations of $200 or less. Reported only as a lump sum — no names. A high share here usually means a small-donor base."
         },
         {
           "title": "From PACs — Delegate campaign",
           "text": "$110,500\nCongressional Committee to Elect Robert White 2026\n2025-10-01 to 2026-06-30",
           "source": "FEC",
           "url": "https://www.fec.gov/data/candidate/H6DC01079/?cycle=2026",
-          "category": "money"
+          "category": "money",
+          "explain": "Money from political action committees — unions, trade groups, corporate PACs, leadership PACs. Capped at $5,000 per election per PAC."
         },
         {
           "title": "Operating expenditures — Delegate campaign",
           "text": "$782,826.27\nCongressional Committee to Elect Robert White 2026\n2025-10-01 to 2026-06-30",
           "source": "FEC",
           "url": "https://www.fec.gov/data/candidate/H6DC01079/?cycle=2026",
-          "category": "money"
+          "category": "money",
+          "explain": "The everyday cost of running the campaign: payroll, rent, ads, travel, consultants. Most of 'spent' is this."
         },
         {
           "title": "Cash on hand — Delegate campaign",
           "text": "$40,442\nCongressional Committee to Elect Robert White 2026\n2025-10-01 to 2026-06-30",
           "source": "FEC",
           "url": "https://www.fec.gov/data/candidate/H6DC01079/?cycle=2026",
-          "category": "money"
+          "category": "money",
+          "explain": "What was left in the account on the last day of the reporting period. Low cash late in a race means the money is being spent, not hoarded."
         },
         {
           "title": "The money race vs. Brooke Pinto",
           "text": "Brooke Pinto raised: $1,252,427\nas of 2026-03-31",
           "source": "FEC via Wikipedia",
           "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_the_District_of_Columbia",
-          "category": "money"
+          "category": "money",
+          "explain": "A snapshot of both campaigns' FEC totals on the same date, so the numbers are comparable. Brooke Pinto was his main primary opponent. Pinto raised about 3x more and still lost the primary 63.6% to 20.9%."
         },
         {
           "title": "The money race vs. Brooke Pinto",
           "text": "Brooke Pinto spent: $431,768\nas of 2026-03-31",
           "source": "FEC via Wikipedia",
           "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_the_District_of_Columbia",
-          "category": "money"
+          "category": "money",
+          "explain": "A snapshot of both campaigns' FEC totals on the same date, so the numbers are comparable. Brooke Pinto was his main primary opponent. Pinto raised about 3x more and still lost the primary 63.6% to 20.9%."
         },
         {
           "title": "The money race vs. Brooke Pinto",
           "text": "Brooke Pinto cash on hand: $820,659\nas of 2026-03-31",
           "source": "FEC via Wikipedia",
           "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_the_District_of_Columbia",
-          "category": "money"
+          "category": "money",
+          "explain": "A snapshot of both campaigns' FEC totals on the same date, so the numbers are comparable. Brooke Pinto was his main primary opponent. Pinto raised about 3x more and still lost the primary 63.6% to 20.9%."
         },
         {
           "title": "The money race vs. Brooke Pinto",
           "text": "Robert White raised: $414,432\nas of 2026-03-31",
           "source": "FEC via Wikipedia",
           "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_the_District_of_Columbia",
-          "category": "money"
+          "category": "money",
+          "explain": "A snapshot of both campaigns' FEC totals on the same date, so the numbers are comparable. Brooke Pinto was his main primary opponent. Pinto raised about 3x more and still lost the primary 63.6% to 20.9%."
         },
         {
           "title": "The money race vs. Brooke Pinto",
           "text": "Robert White spent: $340,943\nas of 2026-03-31",
           "source": "FEC via Wikipedia",
           "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_the_District_of_Columbia",
-          "category": "money"
+          "category": "money",
+          "explain": "A snapshot of both campaigns' FEC totals on the same date, so the numbers are comparable. Brooke Pinto was his main primary opponent. Pinto raised about 3x more and still lost the primary 63.6% to 20.9%."
         },
         {
           "title": "The money race vs. Brooke Pinto",
           "text": "Robert White cash on hand: $73,488\nas of 2026-03-31",
           "source": "FEC via Wikipedia",
           "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_the_District_of_Columbia",
-          "category": "money"
+          "category": "money",
+          "explain": "A snapshot of both campaigns' FEC totals on the same date, so the numbers are comparable. Brooke Pinto was his main primary opponent. Pinto raised about 3x more and still lost the primary 63.6% to 20.9%."
         },
         {
           "title": "His 2014 Council campaign",
           "text": "$191,097 raised\n1,207 contributions",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "His earlier Council campaigns filed with DC's Office of Campaign Finance (OCF), not the FEC — local races, local regulator. 'Contributions' here = number of individual donation rows in the filing."
         },
         {
           "title": "His 2016 Council campaign",
           "text": "$455,773 raised\n1,779 contributions",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "His earlier Council campaigns filed with DC's Office of Campaign Finance (OCF), not the FEC — local races, local regulator. 'Contributions' here = number of individual donation rows in the filing."
         },
         {
           "title": "His 2020 Council campaign",
           "text": "$419,750 raised\n1,574 contributions",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "His earlier Council campaigns filed with DC's Office of Campaign Finance (OCF), not the FEC — local races, local regulator. 'Contributions' here = number of individual donation rows in the filing."
         },
         {
           "title": "A gap in the local filings",
           "text": "No rows tagged 2022, 2024, or 2026 under CANDIDATENAME='Robert White' in ArcGIS layers 34/35 — mayoral and later filings live under other committee names/years.",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "The DC OCF open-data layer tags rows by candidate name. His 2022 mayoral run and later filings appear under different committee names or years, so they don't show up under 'Robert White' — a data quirk, not missing money."
         },
         {
           "title": "Gave the $1,000 max in 2020 · real estate",
           "text": "The Wilkes Company, LLC",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · real estate",
           "text": "Jair Lynch (Lynch Development Partners)",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · real estate",
           "text": "Brookfield Properties Management, LLC",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · real estate",
           "text": "William Alsup (Hines)",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · real estate",
           "text": "Steve Boyle (Edens)",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · real estate",
           "text": "Roger Gendron (Silver Street Development)",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · real estate",
           "text": "FDS Residential GP LP",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · real estate",
           "text": "RI Station Member LLC",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · labor",
           "text": "International Association of Firefighters COPA Fund Local 36",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · labor",
           "text": "AFSCME",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · labor",
           "text": "California Nurses Association PAC",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · labor",
           "text": "Greater VA Carpenters PEC",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · corporate PAC",
           "text": "American Beverage Association",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · corporate PAC",
           "text": "District of Columbia Insurance Federation",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · corporate PAC",
           "text": "Verizon Communications Good Government Club",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · corporate",
           "text": "Pepsico Inc",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · corporate",
           "text": "Coca-Cola",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "Gave the $1,000 max in 2020 · corporate committee",
           "text": "Committee to Expand the Middle Class (Airbnb-backed)",
           "source": "DC OCF",
           "url": "https://efiling.ocf.dc.gov/ContributionExpenditure",
-          "category": "money"
+          "category": "money",
+          "explain": "In 2020, $1,000 was the legal maximum one person or company could give to an At-Large Council candidate in DC. This donor gave the cap. The sector tag is a hint derived from the filing's employer/occupation field. Real-estate developers are a frequent topic in DC politics because the Council votes on zoning, housing and land deals."
         },
         {
           "title": "What his opponent's oppo file claimed",
           "text": "Pinto campaign 67-page oppo file (April 2026): White accepted real-estate developer donations plus 4 individuals who donated to Trump's past campaigns\nPresent claim next to filing. Never adjudicated here.",
           "source": "NY Post",
           "url": "https://nypost.com/2026/06/17/us-news/robert-white-jr-wins-dc-delegate-democratic-primary",
-          "category": "money"
+          "category": "money",
+          "explain": "An 'oppo file' is opposition research a rival campaign assembles about a candidate. This is their claim, reported by a newspaper. Rally shows it next to the filings so you can check it yourself — it is not a finding."
         },
         {
           "title": "He won the primary",
           "text": "Democratic primary for Delegate, 2026-06-16\nRobert White — 63.61% (86,871 votes)\nBrooke Pinto — 20.9% (28,550 votes)\nKinney Zalesne — 7.81% (10,666 votes)\nTrent Holbrook — 4.47% (6,100 votes)\nGreg Jaczko — 2.88% (3,936 votes)",
           "source": "AP via Wikipedia",
           "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_the_District_of_Columbia",
-          "category": "vote"
+          "category": "vote",
+          "explain": "DC is overwhelmingly Democratic, so the Democratic primary effectively decides the Delegate seat. 2026 was DC's first ranked-choice primary: voters ranked candidates, and if nobody cleared 50% the last-place candidate's votes were redistributed. He cleared 50% outright."
         },
         {
           "title": "Why this primary was different",
           "text": "2026-06-16: DC's first ranked-choice primary; first new mayor + delegate in a generation on the same ballot",
           "source": "AP via Wikipedia",
           "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_the_District_of_Columbia",
-          "category": "vote"
+          "category": "vote",
+          "explain": "Eleanor Holmes Norton held the Delegate seat from 1991 to 2026. The Mayor's office was also open in 2026, so DC chose a new mayor and a new delegate on the same ballot."
         },
         {
           "title": "Committees",
           "text": "Chair, Committee on Housing",
           "source": "2025 Annual Report",
           "url": "https://www.robertwhiteatlarge.com/wp-content/uploads/2026/03/Annual-Report-2025.pdf",
-          "category": "record"
+          "category": "record",
+          "explain": "DC Councilmembers chair committees that write and gatekeep legislation in one policy area. The Housing chair controls the housing budget and oversight of the DC Housing Authority (DCHA)."
         },
         {
           "title": "Committees",
           "text": "previously chaired Government Operations and Facilities",
           "source": "2025 Annual Report",
           "url": "https://www.robertwhiteatlarge.com/wp-content/uploads/2026/03/Annual-Report-2025.pdf",
-          "category": "record"
+          "category": "record",
+          "explain": "DC Councilmembers chair committees that write and gatekeep legislation in one policy area. The Housing chair controls the housing budget and oversight of the DC Housing Authority (DCHA)."
         },
         {
           "title": "What he did as Housing chair",
           "text": "DCHA Stabilization & Reform (STAR Board), new executive director, 223 more leased units in under a year",
           "source": "2025 Annual Report",
           "url": "https://www.robertwhiteatlarge.com/wp-content/uploads/2026/03/Annual-Report-2025.pdf",
-          "category": "record"
+          "category": "record",
+          "explain": "From his office's own 2025 annual report — his account of what he did. Treat it as the candidate speaking, not a neutral audit."
         },
         {
           "title": "What he did as Housing chair",
           "text": "+$24.5M secured for affordable housing (Housing Production Trust Fund + Preservation Fund)",
           "source": "2025 Annual Report",
           "url": "https://www.robertwhiteatlarge.com/wp-content/uploads/2026/03/Annual-Report-2025.pdf",
-          "category": "record"
+          "category": "record",
+          "explain": "From his office's own 2025 annual report — his account of what he did. Treat it as the candidate speaking, not a neutral audit."
         },
         {
           "title": "What he did as Housing chair",
           "text": "+$6.7M to Emergency Rental Assistance (ERAP)",
           "source": "2025 Annual Report",
           "url": "https://www.robertwhiteatlarge.com/wp-content/uploads/2026/03/Annual-Report-2025.pdf",
-          "category": "record"
+          "category": "record",
+          "explain": "From his office's own 2025 annual report — his account of what he did. Treat it as the candidate speaking, not a neutral audit."
         },
         {
           "title": "What he did as Housing chair",
           "text": "Homelessness added as protected class under DC Human Rights Act",
           "source": "2025 Annual Report",
           "url": "https://www.robertwhiteatlarge.com/wp-content/uploads/2026/03/Annual-Report-2025.pdf",
-          "category": "record"
+          "category": "record",
+          "explain": "From his office's own 2025 annual report — his account of what he did. Treat it as the candidate speaking, not a neutral audit."
         },
         {
           "title": "What he did as Housing chair",
           "text": "STRONG Homes tenant-receivership bill (2025, with OAG)",
           "source": "2025 Annual Report",
           "url": "https://www.robertwhiteatlarge.com/wp-content/uploads/2026/03/Annual-Report-2025.pdf",
-          "category": "record"
+          "category": "record",
+          "explain": "From his office's own 2025 annual report — his account of what he did. Treat it as the candidate speaking, not a neutral audit."
         },
         {
           "title": "What he did as Housing chair",
           "text": "3 provisions of Whole Government Response to Crime Act folded into Secure DC (gun-tracing reports, Victim Services Coordinator)",
           "source": "2025 Annual Report",
           "url": "https://www.robertwhiteatlarge.com/wp-content/uploads/2026/03/Annual-Report-2025.pdf",
-          "category": "record"
+          "category": "record",
+          "explain": "From his office's own 2025 annual report — his account of what he did. Treat it as the candidate speaking, not a neutral audit."
         },
         {
           "title": "Voted FOR",
           "text": "Paid Leave Benefit Protection\nB24-0185 · 2021-05-04 · passed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-0185",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "Voted AGAINST",
           "text": "COVID relief + hero pay for essential workers\nB24-0285 · 2021-07-20 · failed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-0285-2",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "Voted FOR",
           "text": "Funds for workers excluded from pandemic relief (~15,000 residents)\nB24-0716 · 2022-05-24 · passed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-0716-1",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "Voted FOR",
           "text": "Retroactive extended paid family/medical leave\nB24-0716 · 2022-05-24 · failed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-0716-2",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "Voted FOR",
           "text": "Domestic Workers Bill of Rights\nB24-0712 · 2022-12-20 · passed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-0712",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "Voted AGAINST",
           "text": "Halt halfway-house eminent-domain takeover\nB24-0188 · 2021-04-06 · failed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-0188",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "Voted FOR",
           "text": "Remove police from DC schools\nB24-0714 · 2022-05-10 · passed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-0714",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "Voted AGAINST",
           "text": "Penalize-drivers-for-poverty (Clean Hands water-down)\nB24-0237 · 2022-07-11 · failed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-0237",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "Voted AGAINST",
           "text": "Weaken tenant protections / vacancy rent hikes\nB24-0192 · 2021-04-06 · failed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-0192",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "Voted FOR",
           "text": "Tax millionaires for housing + educators + low-income aid\nB24-0285 · 2021-07-20 · passed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-0285-1",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "Voted FOR",
           "text": "Encampment-clearing freeze through hypothermia season\nB24-0544 · 2021-12-21 · failed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-0544",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "Voted FOR",
           "text": "Seal eviction records\nB24-0096 · 2022-03-01 · passed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-0096",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "Voted FOR",
           "text": "DCHA board restructure (more mayoral appointees, residents off board)\nB24-1144 · 2022-12-20 · passed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-1144",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "Voted FOR",
           "text": "Grants to early childhood educators\nB24-0632 · 2022-02-01 · passed",
           "source": "DC Council · JUFJ scorecard",
           "url": "https://www.dccouncil.org/bills/B24-0632",
-          "category": "vote"
+          "category": "vote",
+          "explain": "A recorded vote on a DC Council bill. Bill numbers like B24-0192 mean Council Period 24 (2021-22), bill 192. 'Passed' or 'failed' is the outcome of the vote itself. These votes were selected by the JUFJ Campaign Fund, an advocacy group — the list reflects what they cared about."
         },
         {
           "title": "How a progressive group grades him",
           "text": "JUFJ Campaign Fund scorecard\nCurrent term: 86% (12/14)\n2016: 70%\n2018: 93%\n2020: 95%",
           "source": "JUFJ Campaign Fund (advocacy)",
           "url": "https://www.dccouncil.org/mems/robert-white",
-          "category": "vote"
+          "category": "vote",
+          "explain": "The JUFJ Campaign Fund is a progressive advocacy group (Jews United for Justice). Their scorecard grades councilmembers on how often they voted the group's way on bills the group picked. It's a legitimate record of votes, scored from one point of view — always labeled advocacy in Rally."
         },
         {
           "title": "What he said on election night",
           "text": "“Washington, D.C., thank you. This is our time. We will not yield the promise of America, because that promise belongs to us, too.”",
           "source": "NBC4",
           "url": "https://www.nbcwashington.com/decision-2026/pinto-white-primary-congress/4117978",
-          "category": "record"
+          "category": "record",
+          "explain": "His election-night speech after winning the 2026 Democratic primary for Delegate, as reported by NBC4."
         },
         {
           "title": "His plan: “Defend DC”",
           "text": "Recruit, train and transport DC residents to canvass in battleground House districts against anti-Home-Rule members; launch PAC for pro-statehood candidates. Modeled on Fauntroy '72. Discussed with Jeffries and DelBene.",
           "source": "AP",
           "url": "https://www.pressdemocrat.com/2026/08/25/dc-delegate-politics",
-          "category": "record"
+          "category": "record",
+          "explain": "His stated plan for the Delegate seat, as reported by AP. The Delegate can't vote on the House floor, so this is a strategy for influence without a vote. Walter Fauntroy was DC's first delegate (1971-91)."
         },
         {
           "title": "Every race he's run",
           "text": "2014 At-Large (I): 6%, 22,198 votes — lost",
           "source": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Robert_White_(Washington,_D.C.,_politician)",
-          "category": "record"
+          "category": "record",
+          "explain": "Every election he has appeared in. 'At-Large' = a Council seat elected by the whole city, not one ward. '(I)' = he ran as an independent that year."
         },
         {
           "title": "Every race he's run",
           "text": "2016: appointed Sep, won full term",
           "source": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Robert_White_(Washington,_D.C.,_politician)",
-          "category": "record"
+          "category": "record",
+          "explain": "Every election he has appeared in. 'At-Large' = a Council seat elected by the whole city, not one ward. '(I)' = he ran as an independent that year."
         },
         {
           "title": "Every race he's run",
           "text": "2020: re-elected",
           "source": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Robert_White_(Washington,_D.C.,_politician)",
-          "category": "record"
+          "category": "record",
+          "explain": "Every election he has appeared in. 'At-Large' = a Council seat elected by the whole city, not one ward. '(I)' = he ran as an independent that year."
         },
         {
           "title": "Every race he's run",
           "text": "2022: ran for Mayor, lost Dem primary",
           "source": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Robert_White_(Washington,_D.C.,_politician)",
-          "category": "record"
+          "category": "record",
+          "explain": "Every election he has appeared in. 'At-Large' = a Council seat elected by the whole city, not one ward. '(I)' = he ran as an independent that year."
         },
         {
           "title": "Every race he's run",
           "text": "2024: re-elected At-Large",
           "source": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Robert_White_(Washington,_D.C.,_politician)",
-          "category": "record"
+          "category": "record",
+          "explain": "Every election he has appeared in. 'At-Large' = a Council seat elected by the whole city, not one ward. '(I)' = he ran as an independent that year."
         },
         {
           "title": "Every race he's run",
           "text": "2026: won Delegate Dem primary 63.6%",
           "source": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Robert_White_(Washington,_D.C.,_politician)",
-          "category": "record"
+          "category": "record",
+          "explain": "Every election he has appeared in. 'At-Large' = a Council seat elected by the whole city, not one ward. '(I)' = he ran as an independent that year."
         },
         {
           "title": "Endorsed by",
           "text": "Sen. Elizabeth Warren",
           "source": "Campaign",
           "url": "https://www.joinrobertwhite.com/meetrobert",
-          "category": "endorsement"
+          "category": "endorsement",
+          "explain": "Endorsements the campaign lists on its own site. An endorsement is a public statement of support — it is not money. Some endorsers (unions, PACs) may separately spend money; that shows up in filings, not here."
         },
         {
           "title": "Endorsed by",
           "text": "Reps. Greg Casar, Jim Clyburn",
           "source": "Campaign",
           "url": "https://www.joinrobertwhite.com/meetrobert",
-          "category": "endorsement"
+          "category": "endorsement",
+          "explain": "Endorsements the campaign lists on its own site. An endorsement is a public statement of support — it is not money. Some endorsers (unions, PACs) may separately spend money; that shows up in filings, not here."
         },
         {
           "title": "Endorsed by",
           "text": "Congressional Black Caucus",
           "source": "Campaign",
           "url": "https://www.joinrobertwhite.com/meetrobert",
-          "category": "endorsement"
+          "category": "endorsement",
+          "explain": "Endorsements the campaign lists on its own site. An endorsement is a public statement of support — it is not money. Some endorsers (unions, PACs) may separately spend money; that shows up in filings, not here."
         },
         {
           "title": "Endorsed by",
           "text": "Congressional Progressive Caucus",
           "source": "Campaign",
           "url": "https://www.joinrobertwhite.com/meetrobert",
-          "category": "endorsement"
+          "category": "endorsement",
+          "explain": "Endorsements the campaign lists on its own site. An endorsement is a public statement of support — it is not money. Some endorsers (unions, PACs) may separately spend money; that shows up in filings, not here."
         },
         {
           "title": "Endorsed by",
           "text": "AFGE",
           "source": "Campaign",
           "url": "https://www.joinrobertwhite.com/meetrobert",
-          "category": "endorsement"
+          "category": "endorsement",
+          "explain": "Endorsements the campaign lists on its own site. An endorsement is a public statement of support — it is not money. Some endorsers (unions, PACs) may separately spend money; that shows up in filings, not here."
         },
         {
           "title": "Endorsed by",
           "text": "Metro Washington AFL-CIO",
           "source": "Campaign",
           "url": "https://www.joinrobertwhite.com/meetrobert",
-          "category": "endorsement"
+          "category": "endorsement",
+          "explain": "Endorsements the campaign lists on its own site. An endorsement is a public statement of support — it is not money. Some endorsers (unions, PACs) may separately spend money; that shows up in filings, not here."
         },
         {
           "title": "Endorsed by",
           "text": "ATU Local 689",
           "source": "Campaign",
           "url": "https://www.joinrobertwhite.com/meetrobert",
-          "category": "endorsement"
+          "category": "endorsement",
+          "explain": "Endorsements the campaign lists on its own site. An endorsement is a public statement of support — it is not money. Some endorsers (unions, PACs) may separately spend money; that shows up in filings, not here."
         },
         {
           "title": "Endorsed by",
           "text": "Capital Stonewall Democrats",
           "source": "Campaign",
           "url": "https://www.joinrobertwhite.com/meetrobert",
-          "category": "endorsement"
+          "category": "endorsement",
+          "explain": "Endorsements the campaign lists on its own site. An endorsement is a public statement of support — it is not money. Some endorsers (unions, PACs) may separately spend money; that shows up in filings, not here."
         },
         {
           "title": "Endorsed by",
           "text": "Free DC",
           "source": "Campaign",
           "url": "https://www.joinrobertwhite.com/meetrobert",
-          "category": "endorsement"
+          "category": "endorsement",
+          "explain": "Endorsements the campaign lists on its own site. An endorsement is a public statement of support — it is not money. Some endorsers (unions, PACs) may separately spend money; that shows up in filings, not here."
         },
         {
           "title": "Endorsed by",
           "text": "Janeese Lewis George, Charles Allen",
           "source": "Campaign",
           "url": "https://www.joinrobertwhite.com/meetrobert",
-          "category": "endorsement"
+          "category": "endorsement",
+          "explain": "Endorsements the campaign lists on its own site. An endorsement is a public statement of support — it is not money. Some endorsers (unions, PACs) may separately spend money; that shows up in filings, not here."
         },
         {
           "title": "A vote, and the money",
           "text": "Against weakening tenant protections / vacancy rent hikes (B24-0192, Apr 2021 — failed) ⟷ 2020 cycle $1K-max donors include Wilkes Co, Jair Lynch, Brookfield, Hines + Edens execs, Silver Street, FDS Residential, RI Station LLC",
           "source": "DC Council + DC OCF",
           "url": "https://www.dccouncil.org/bills/B24-0192",
-          "category": "pair"
+          "category": "pair",
+          "explain": "Two separate facts placed side by side: how he voted on a bill, and who gave to his campaign in an earlier cycle. Rally does not claim one caused the other. The point is that you can see both at once."
         },
         {
           "title": "A vote, and the money",
           "text": "For taxing millionaires to fund housing + educators (B24-0285, Jul 2021 — passed) ⟷ 2020 cycle $1K corporate PACs: Verizon, Pepsi, Coca-Cola, Beverage Assoc, Insurance Federation; Airbnb-backed committee $1K",
           "source": "DC Council + DC OCF",
           "url": "https://www.dccouncil.org/bills/B24-0285-1",
-          "category": "pair"
+          "category": "pair",
+          "explain": "Two separate facts placed side by side: how he voted on a bill, and who gave to his campaign in an earlier cycle. Rally does not claim one caused the other. The point is that you can see both at once."
         },
         {
           "title": "A vote, and the money",
           "text": "For DCHA mayoral-takeover board (B24-1144, Dec 2022 — passed; against progressive scorecard position) ⟷ 2020 labor base: Firefighters $1K, AFSCME $1K, Nurses PAC $1K, Carpenters $1K — shown as context, no causal claim",
           "source": "DC Council + DC OCF",
           "url": "https://www.dccouncil.org/bills/B24-1144",
-          "category": "pair"
+          "category": "pair",
+          "explain": "Two separate facts placed side by side: how he voted on a bill, and who gave to his campaign in an earlier cycle. Rally does not claim one caused the other. The point is that you can see both at once."
         }
       ],
       "portrait": {

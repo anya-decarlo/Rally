@@ -54,6 +54,8 @@ struct StoriesView: View {
                             current = contests.first { $0.group == group }?.id
                         }
                     }
+                    WalletButton()
+                        .padding(.trailing, 16)
                 }
                 .padding(.top, 10)
 
@@ -123,7 +125,7 @@ struct ChapterBar: View {
                     .buttonStyle(.plain)
                 }
             }
-            .padding(.trailing, 16)
+            .padding(.trailing, 8)
         }
         .animation(.bouncy, value: selected)
     }
@@ -206,13 +208,19 @@ struct CandidateStickers: View {
     let candidates: [Candidate]
     let shown: Bool
     let onPick: (Candidate) -> Void
+    @Environment(Wallet.self) private var wallet
 
     private let cols = [GridItem(.adaptive(minimum: 150), spacing: 10)]
+
+    // ❤️ followed candidates float to the top of their contest
+    private var ordered: [Candidate] {
+        candidates.sorted { wallet.isFollowing($0.name) && !wallet.isFollowing($1.name) }
+    }
 
     var body: some View {
         ScrollView(showsIndicators: false) {
             LazyVGrid(columns: cols, spacing: 12) {
-                ForEach(Array(candidates.enumerated()), id: \.element.id) { i, c in
+                ForEach(Array(ordered.enumerated()), id: \.element.id) { i, c in
                     Button {
                         Haptic.tap()
                         onPick(c)
@@ -233,6 +241,7 @@ struct CandidateStickers: View {
 
 struct CandidateChip: View {
     let candidate: Candidate
+    @Environment(Wallet.self) private var wallet
     private var color: Color { Theme.party(candidate.party) }
 
     var body: some View {
@@ -249,6 +258,7 @@ struct CandidateChip: View {
                         .foregroundStyle(Theme.bg)
                         .shadow(color: color.opacity(0.8), radius: 8)
                     Spacer()
+                    if wallet.isFollowing(candidate.name) { Text("❤️").font(.system(size: 15)) }
                     if candidate.incumbent { Text("👑").font(.system(size: 15)) }
                     if candidate.writeIn { Text("✍️").font(.system(size: 15)) }
                 }

@@ -5,6 +5,7 @@ struct CandidateView: View {
     let candidate: Candidate
     @Environment(PostStore.self) private var store
     @Environment(ExtrasStore.self) private var extras
+    @Environment(Wallet.self) private var wallet
     @State private var showFeed = false
     @State private var showChaos = false
     @State private var showBooth = false
@@ -35,6 +36,22 @@ struct CandidateView: View {
                         if candidate.writeIn { Sticker("Write-in ✍️", color: Theme.dim) }
                     }
                 }
+                Spacer(minLength: 0)
+                let following = wallet.isFollowing(candidate.name)
+                Button {
+                    Haptic.tap()
+                    withAnimation(.bouncy(duration: 0.4, extraBounce: 0.3)) { wallet.toggleFollow(candidate.name) }
+                } label: {
+                    Image(systemName: following ? "heart.fill" : "heart")
+                        .font(.system(size: 20, weight: .black))
+                        .foregroundStyle(following ? Theme.pink : .white)
+                        .frame(width: 44, height: 44)
+                        .background(.ultraThinMaterial, in: Circle())
+                        .overlay(Circle().stroke(following ? Theme.pink : .white.opacity(0.25), lineWidth: 1.5))
+                        .shadow(color: Theme.pink.opacity(following ? 0.8 : 0), radius: 14)
+                        .scaleEffect(following ? 1.1 : 1)
+                }
+                .buttonStyle(SquishButton())
             }
 
             if !posts.isEmpty {

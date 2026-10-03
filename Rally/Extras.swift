@@ -19,6 +19,7 @@ struct Fact: Codable, Hashable, Identifiable {
     let url: URL
     var category: String? = nil     // "bio" | "money" | "record" | "vote" | "pair" | "endorsement" | "identity"
     var title: String? = nil        // plain-English headline so the card makes sense cold
+    var explain: String? = nil      // "what am I looking at?" — definitions + context for THIS datum, never new claims
 }
 
 // What this user swipes right on. Per candidate, per category. Lives on device.

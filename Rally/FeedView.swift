@@ -37,6 +37,7 @@ struct FeedView: View {
     var facts: [Fact] = []
     @Environment(\.dismiss) private var dismiss
     @Environment(Taste.self) private var taste
+    @Environment(Wallet.self) private var wallet
     @State private var current: String?
     @State private var items: [FeedItem] = []
 
@@ -44,6 +45,8 @@ struct FeedView: View {
 
     private func judge(_ item: FeedItem, liked: Bool) {
         taste.record(candidate.name, item.category, liked: liked)
+        if liked { wallet.pocket(item, candidate: candidate.name) }
+        Backend.signal(cardID: item.id, candidate: candidate.name, category: item.category, liked: liked)
         if let i = items.firstIndex(where: { $0.id == item.id }), i + 1 < items.count {
             withAnimation(.snappy(duration: 0.35)) { current = items[i + 1].id }
         }
@@ -109,6 +112,7 @@ struct FeedView: View {
                         .padding(.horizontal, 12).padding(.vertical, 9)
                         .background(.ultraThinMaterial, in: Capsule())
                 }
+                WalletButton()
             }
             .padding(.horizontal, 16)
             .padding(.top, 8)
@@ -138,7 +142,7 @@ struct SwipeToJudge: ViewModifier {
                 HStack {
                     Stamp("NAH 👈", color: Theme.pink).opacity(Double(max(0, -p))).rotationEffect(.degrees(-12))
                     Spacer()
-                    Stamp("MORE 👉", color: Theme.lime).opacity(Double(max(0, p))).rotationEffect(.degrees(12))
+                    Stamp("POCKET �", color: Theme.lime).opacity(Double(max(0, p))).rotationEffect(.degrees(12))
                 }
                 .padding(.horizontal, 24)
                 .padding(.top, 70)
@@ -267,6 +271,7 @@ struct ReceiptPage: View {
     let candidate: Candidate
     @Environment(\.openURL) private var openURL
     @State private var slam = false
+    @State private var open = false
 
     private var kind: (label: String, emoji: String, color: Color) {
         switch fact.category {
@@ -353,6 +358,41 @@ struct ReceiptPage: View {
                                 .foregroundStyle(Theme.ink)
                                 .lineSpacing(3)
                                 .fixedSize(horizontal: false, vertical: true)
+                        }
+                        if let why = fact.explain {
+                            Button {
+                                Haptic.tick()
+                                withAnimation(.bouncy(duration: 0.45)) { open.toggle() }
+                            } label: {
+                                HStack(spacing: 8) {
+                                    Text("?")
+                                        .font(.system(size: 13, weight: .black, design: .rounded))
+                                        .foregroundStyle(Theme.paper)
+                                        .frame(width: 24, height: 24)
+                                        .background(kind.color.opacity(0.9), in: Circle())
+                                    Text(open ? "got it" : "what am I looking at?")
+                                        .font(.system(size: 13, weight: .black, design: .rounded))
+                                        .foregroundStyle(Theme.ink)
+                                    Spacer()
+                                    Image(systemName: "chevron.down")
+                                        .font(.system(size: 11, weight: .black))
+                                        .foregroundStyle(Theme.ink.opacity(0.5))
+                                        .rotationEffect(.degrees(open ? 180 : 0))
+                                }
+                                .padding(.vertical, 6)
+                            }
+                            .buttonStyle(.plain)
+                            if open {
+                                Text(why)
+                                    .font(.system(size: 14, weight: .medium, design: .rounded))
+                                    .foregroundStyle(Theme.ink.opacity(0.85))
+                                    .lineSpacing(3)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                    .padding(12)
+                                    .background(kind.color.opacity(0.18), in: RoundedRectangle(cornerRadius: 10))
+                                    .transition(.asymmetric(insertion: .scale(scale: 0.95, anchor: .top).combined(with: .opacity),
+                                                            removal: .opacity))
+                            }
                         }
                         Rectangle().fill(Theme.ink.opacity(0.15)).frame(height: 1).padding(.vertical, 4)
                         Button {

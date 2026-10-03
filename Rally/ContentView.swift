@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var store = PostStore()
     @State private var extras = ExtrasStore()
     @State private var taste = Taste()
+    @State private var wallet = Wallet()
 
     private var place: Place? { Place.find(placeID) }
 
@@ -25,6 +26,7 @@ struct ContentView: View {
         .environment(store)
         .environment(extras)
         .environment(taste)
+        .environment(wallet)
         .task {
             async let p: () = store.refresh()
             async let e: () = extras.refresh()
