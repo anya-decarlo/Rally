@@ -7,7 +7,7 @@ enum FeedItem: Identifiable {
         switch self { case .post(let p): p.id; case .fact(let f): "fact:" + f.id }
     }
 
-    static let factEvery = 3   // a fun fact after every N posts
+    static let factEvery = 2   // a card after every N posts
 
     // Every N posts: alternate a fun fact (bio) and a receipt (money / vote / record).
     static func interleave(posts: [Post], facts: [Fact], every n: Int = factEvery) -> [FeedItem] {
@@ -53,8 +53,11 @@ struct FeedView: View {
                                 switch item {
                                 case .post(let post): PostPage(post: post, color: Theme.party(candidate.party))
                                 case .fact(let fact):
-                                    if (fact.category ?? "bio") == "bio" { FactPage(fact: fact, candidate: candidate) }
-                                    else { ReceiptPage(fact: fact, candidate: candidate) }
+                                    switch fact.category ?? "bio" {
+                                    case "bio": FactPage(fact: fact, candidate: candidate)
+                                    case "pair": PairPage(fact: fact, candidate: candidate)
+                                    default: ReceiptPage(fact: fact, candidate: candidate)
+                                    }
                                 }
                             }
                             .containerRelativeFrame(.vertical)
@@ -194,6 +197,8 @@ struct ReceiptPage: View {
         switch fact.category {
         case "money": ("Follow the money", "💸", Theme.lime)
         case "vote": ("On the record", "🗳️", Theme.pink)
+        case "endorsement": ("Backed by", "🤝", Theme.orange)
+        case "identity": ("Who", "🪪", Theme.violet)
         default: ("Receipts", "🧾", Theme.cyan)
         }
     }
@@ -282,6 +287,94 @@ struct ReceiptPage: View {
     }
 }
 
+// MARK: - ⚔️ Pair — a vote and the money, side by side. The user draws the line.
+
+struct PairPage: View {
+    let fact: Fact
+    let candidate: Candidate
+    @Environment(\.openURL) private var openURL
+    @State private var split = false
+
+    private var halves: (vote: String, money: String) {
+        let parts = fact.text.components(separatedBy: " ⟷ ")
+        return (parts.first ?? fact.text, parts.count > 1 ? parts[1] : "")
+    }
+
+    var body: some View {
+        GeometryReader { geo in
+            VStack(spacing: 0) {
+                // top: the vote
+                VStack(alignment: .leading, spacing: 10) {
+                    Sticker("🗳️ The vote", color: Theme.pink).rotationEffect(.degrees(-3))
+                    Spacer(minLength: 0)
+                    Text(halves.vote)
+                        .font(.system(size: 24, weight: .black, design: .rounded))
+                        .foregroundStyle(.white)
+                        .shadow(color: Theme.pink.opacity(0.6), radius: 20)
+                        .minimumScaleFactor(0.6)
+                    Spacer(minLength: 0)
+                }
+                .padding(22)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(height: geo.size.height * 0.46)
+                .background(Theme.pink.opacity(0.18))
+                .offset(x: split ? 0 : -geo.size.width)
+
+                // the seam
+                HStack {
+                    Rectangle().fill(.white.opacity(0.35)).frame(height: 2)
+                    Text("⟷")
+                        .font(.system(size: 28, weight: .black))
+                        .foregroundStyle(.white)
+                        .rotationEffect(.degrees(split ? 0 : 540))
+                    Rectangle().fill(.white.opacity(0.35)).frame(height: 2)
+                }
+                .padding(.horizontal, 22)
+                .frame(height: geo.size.height * 0.08)
+
+                // bottom: the money, on paper
+                VStack(alignment: .leading, spacing: 10) {
+                    Sticker("💸 The money", color: Theme.lime).rotationEffect(.degrees(2))
+                    Spacer(minLength: 0)
+                    Text(halves.money)
+                        .font(.system(size: 19, weight: .bold, design: .rounded))
+                        .foregroundStyle(Theme.ink)
+                        .minimumScaleFactor(0.6)
+                    Spacer(minLength: 0)
+                    Button {
+                        Haptic.tap()
+                        openURL(fact.url)
+                    } label: {
+                        HStack(spacing: 6) {
+                            Image(systemName: "doc.text.magnifyingglass")
+                            Text("SOURCE: \(fact.source.uppercased())")
+                            Spacer()
+                            Image(systemName: "arrow.up.right")
+                        }
+                        .font(.system(size: 11, weight: .black, design: .monospaced))
+                        .foregroundStyle(Theme.ink)
+                    }
+                    .buttonStyle(SquishButton())
+                    Text("Two facts, side by side. No causal claim — you draw the line.")
+                        .font(.system(size: 10, weight: .heavy, design: .monospaced))
+                        .foregroundStyle(Theme.ink.opacity(0.5))
+                }
+                .padding(22)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(height: geo.size.height * 0.46)
+                .background(Theme.paper)
+                .offset(x: split ? 0 : geo.size.width)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 28))
+            .padding(.horizontal, 14)
+            .padding(.vertical, 60)
+            .shadow(color: .black.opacity(0.4), radius: 30, y: 12)
+        }
+        .onAppear { withAnimation(.bouncy(duration: 0.7)) { split = true } }
+        .onDisappear { split = false }
+    }
+}
+
 struct Triangle: Shape {
     func path(in r: CGRect) -> Path {
         var p = Path()
@@ -320,11 +413,11 @@ struct PostPage: View {
                         }
                     }
 
-                    Text(post.text)
+                    Text(displayText)
                         .font(.system(size: bigSize, weight: .black, design: .rounded))
                         .foregroundStyle(.white)
                         .shadow(color: .black.opacity(0.6), radius: 4, y: 2)
-                        .lineLimit(12)
+                        .lineLimit(10)
                         .minimumScaleFactor(0.5)
                         .multilineTextAlignment(.leading)
                         .fixedSize(horizontal: false, vertical: true)
@@ -408,8 +501,17 @@ struct PostPage: View {
         }
     }
 
+    // Display only — the stored text is verbatim. When the post has a link card, the bare
+    // URL in the body is redundant noise, so it's hidden on screen.
+    private var displayText: String {
+        guard post.link != nil else { return post.text }
+        let stripped = post.text.replacingOccurrences(
+            of: #"\s*(?:https?://|www\.)\S+(?:\.\.\.|…)?\s*$"#, with: "", options: .regularExpression)
+        return stripped.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
     private var bigSize: CGFloat {
-        switch post.text.count {
+        switch displayText.count {
         case ..<60: 44
         case ..<140: 34
         case ..<220: 28

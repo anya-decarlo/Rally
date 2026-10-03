@@ -79,10 +79,12 @@ final class ExtrasStore {
         if let remote = await f {
             var merged = extras
             for (name, r) in remote.candidates {
-                let local = extras[name]
-                let bio = local?.facts.filter { ($0.category ?? "bio") == "bio" } ?? []
-                let data = r.facts.filter { $0.category != nil && $0.category != "bio" }
-                merged[name] = CandidateExtras(facts: bio + data, portrait: local?.portrait ?? r.portrait)
+                let local = extras[name]?.facts ?? []
+                let bio = local.filter { ($0.category ?? "bio") == "bio" }
+                let localData = local.filter { $0.category != nil && $0.category != "bio" }
+                let seen = Set(localData.map(\.text))
+                let remoteData = r.facts.filter { $0.category != nil && $0.category != "bio" && !seen.contains($0.text) }
+                merged[name] = CandidateExtras(facts: bio + localData + remoteData, portrait: extras[name]?.portrait ?? r.portrait)
             }
             extras = merged
         }
