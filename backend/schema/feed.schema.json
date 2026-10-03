@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rally/feed.schema.json",
+  "title": "Rally news feed — iPhone contract",
+  "description": "Every social item from every source, one shape. Null means not provided by that source — never invented.",
+  "definitions": {
+    "source": {
+      "type": "string",
+      "enum": ["bluesky", "youtube", "x"]
+    },
+    "feed_item": {
+      "type": "object",
+      "required": ["id", "candidate_id", "source", "source_id", "url", "author_handle", "text", "created_at", "fetched_at"],
+      "properties": {
+        "id": { "type": "string", "description": "Global id: '<source>:<source_id>', e.g. 'youtube:-oMESUHRrDg'" },
+        "candidate_id": { "type": "integer", "description": "Candidate the item counts toward (committees attach to their linked candidate)" },
+        "committee_id": { "type": ["integer", "null"], "description": "Set when the item came from a PAC/super PAC/IEC channel" },
+        "channel_key": { "type": ["string", "null"], "description": "'<platform>:<platform_id>', e.g. 'youtube:UCPJZbHhKFbnyGeQclJxQk0g'" },
+        "source": { "$ref": "#/definitions/source" },
+        "source_id": { "type": "string", "description": "Native id: at-uri (bluesky), videoId (youtube), tweet id (x)" },
+        "url": { "type": "string", "description": "Canonical link: bsky.app, youtube watch, x.com" },
+        "author_handle": { "type": "string" },
+        "title": { "type": ["string", "null"], "description": "Video title (youtube only)" },
+        "text": { "type": "string", "description": "Post text, or video title+description (youtube)" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "like_count": { "type": "integer", "default": 0 },
+        "repost_count": { "type": "integer", "default": 0 },
+        "reply_count": { "type": "integer", "default": 0 },
+        "view_count": { "type": ["integer", "null"], "description": "Only where the source gives it" },
+        "thumb_url": { "type": ["string", "null"], "description": "Video thumbnail (youtube only)" },
+        "fetched_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "integer" },
+        "name": { "type": "string" },
+        "party": { "type": ["string", "null"] },
+        "office": { "type": ["string", "null"] },
+        "bsky_handle": { "type": ["string", "null"] },
+        "bsky_did": { "type": ["string", "null"] },
+        "youtube_channel_id": { "type": ["string", "null"] },
+        "youtube_label": { "type": ["string", "null"], "description": "@handle or name as given at request time" },
+        "x_handle": { "type": ["string", "null"], "description": "Stored for later — crawl pending until X access is decided" },
+        "post_count": { "type": "integer" },
+        "latest_item": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "committee": {
+      "type": "object",
+      "required": ["id", "name", "kind"],
+      "properties": {
+        "id": { "type": "integer" },
+        "name": { "type": "string" },
+        "kind": { "type": "string", "enum": ["candidate_committee", "pac", "super_pac", "iec", "party", "other"] },
+        "candidate_id": { "type": ["integer", "null"], "description": "Candidate supported or opposed" },
+        "stance": { "type": ["string", "null"], "enum": ["support", "oppose", null] },
+        "fec_id": { "type": ["string", "null"] },
+        "ocf_name": { "type": ["string", "null"] }
+      }
+    },
+    "channel": {
+      "type": "object",
+      "required": ["id", "channel_key", "platform", "platform_id", "role"],
+      "properties": {
+        "id": { "type": "integer" },
+        "channel_key": { "type": "string" },
+        "platform": { "type": "string", "enum": ["youtube"] },
+        "platform_id": { "type": "string" },
+        "label": { "type": ["string", "null"] },
+        "role": { "type": "string", "enum": ["official", "campaign", "committee", "personal", "pac", "iec", "other"] },
+        "candidate_id": { "type": ["integer", "null"] },
+        "committee_id": { "type": ["integer", "null"], "description": "Exactly one of candidate_id / committee_id is set" }
+      }
+    },
+    "source_status": {
+      "type": "object",
+      "required": ["source", "status", "fetched", "stored"],
+      "properties": {
+        "source": { "$ref": "#/definitions/source" },
+        "status": { "type": "string", "enum": ["ok", "skipped", "pending", "error"] },
+        "fetched": { "type": "integer" },
+        "stored": { "type": "integer" },
+        "note": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "feed_response": {
+      "type": "object",
+      "required": ["items"],
+      "properties": {
+        "items": { "type": "array", "items": { "$ref": "#/definitions/feed_item" } }
+      }
+    },
+    "crawl_response": {
+      "type": "object",
+      "required": ["crawled"],
+      "properties": {
+        "crawled": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["candidate_id", "sources"],
+            "properties": {
+              "candidate_id": { "type": "integer" },
+              "sources": { "type": "array", "items": { "$ref": "#/definitions/source_status" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}
