@@ -116,6 +116,38 @@ extension Post {
         tryNext(0)
     }
 }
+#elseif canImport(AppKit)
+import AppKit
+
+private let linkLog = Logger(subsystem: "com.anyadecarlo.Rally", category: "links")
+
+// macOS build: macappstore:// opens the real App Store app on the Mac.
+func openAppStore() {
+    let itms = URL(string: "macappstore://apps.apple.com/app/id333903271")!
+    linkLog.info("[rally:link] 🍎 open \(itms.absoluteString)")
+    if !NSWorkspace.shared.open(itms) {
+        linkLog.error("[rally:link] macappstore failed")
+    }
+}
+
+extension Post {
+    func openLink() {
+        guard platform == "x" else {
+            linkLog.info("[rally:link] \(self.platform) \(self.id) open \(self.url.absoluteString)")
+            NSWorkspace.shared.open(url)
+            return
+        }
+        let id = url.lastPathComponent
+        for s in ["x://status?id=\(id)", "twitter://status?id=\(id)"] {
+            if let u = URL(string: s), NSWorkspace.shared.open(u) {
+                linkLog.info("[rally:link] open \(u.absoluteString) → true")
+                return
+            }
+        }
+        linkLog.info("[rally:link] no X app — opening App Store")
+        openAppStore()
+    }
+}
 #endif
 
 // Timestamps arrive verbatim from each platform — with or without fractional seconds. Accept both.

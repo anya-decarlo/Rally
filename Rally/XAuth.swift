@@ -222,9 +222,17 @@ final class XAccount {
 final class AnchorProvider: NSObject, ASWebAuthenticationPresentationContextProviding {
     static let shared = AnchorProvider()
     func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
-        UIApplication.shared.connectedScenes
+        #if canImport(UIKit)
+        return UIApplication.shared.connectedScenes
             .compactMap { $0 as? UIWindowScene }
             .flatMap(\.windows).first { $0.isKeyWindow } ?? ASPresentationAnchor()
+        #elseif canImport(AppKit)
+        return NSApplication.shared.keyWindow
+            ?? NSApplication.shared.windows.first
+            ?? ASPresentationAnchor()
+        #else
+        return ASPresentationAnchor()
+        #endif
     }
 }
 
