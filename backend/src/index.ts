@@ -1,11 +1,12 @@
 // Rally backend — routes for the iPhone app + crawl triggers.
-// Sources: Bluesky (live), YouTube (live), X (stored, crawl pending).
+// Sources: Bluesky (live), YouTube (live), X (live — profile page + syndication).
 // Ownership: a channel belongs to exactly one candidate or committee, so
 // PAC / super PAC / IEC voice stays correlated with the money.
 // Contract: schema/feed.schema.json.
 
 import {
   fetchBluesky,
+  fetchXTimeline,
   fetchYoutube,
   resolveBlueskyProfile,
   resolveYoutubeChannel,
@@ -191,13 +192,42 @@ async function crawlCandidate(
   }
 
   if (want("x")) {
-    sources.push({
-      source: "x",
-      status: c.x_handle ? "pending" : "skipped",
-      fetched: 0,
-      stored: 0,
-      note: c.x_handle ? "handle stored — crawl pending X access decision" : "no handle",
-    });
+    // allowed_accounts is the authority — a candidate may have more X handles
+    // than the single candidates.x_handle column holds.
+    const { results: xRows } = await env.DB.prepare(
+      "SELECT handle, kind FROM allowed_accounts WHERE platform = 'x' AND candidate = ?",
+    )
+      .bind(c.name)
+      .all<{ handle: string; kind: string }>();
+    if (xRows.length === 0) {
+      sources.push({ source: "x", status: "skipped", fetched: 0, stored: 0, note: "no handle" });
+    } else {
+      let fetched = 0;
+      let stored = 0;
+      let errors = 0;
+      for (const row of xRows) {
+        try {
+          const { items, profile } = await fetchXTimeline(row.handle);
+          fetched += items.length;
+          stored += await storeItems(
+            env,
+            { candidate_id: c.id, committee_id: null },
+            null,
+            "x",
+            items,
+            { displayName: profile.name, avatar: profile.avatar, kind: row.kind },
+          );
+        } catch {
+          errors++;
+        }
+      }
+      sources.push({
+        source: "x",
+        status: errors === xRows.length ? "error" : "ok",
+        fetched,
+        stored,
+      });
+    }
   }
 
   return { candidate_id: c.id, sources };
@@ -532,13 +562,13 @@ async function handleFetch(request: Request, env: Env): Promise<Response> {
     const { results } = await env.DB.prepare(
       `SELECT f.*, c.name AS candidate_name
        FROM feed_items f JOIN candidates c ON c.id = f.candidate_id
-       WHERE f.source = 'bluesky'
+       WHERE f.source IN ('bluesky', 'x')
        ORDER BY f.created_at DESC`,
     ).all();
     const posts = results.map((r: Record<string, unknown>) => {
       const post: Record<string, unknown> = {
         id: r["id"],
-        platform: "bluesky",
+        platform: r["source"],
         candidate: r["candidate_name"],
         account: {
           handle: r["author_handle"],
@@ -614,6 +644,38 @@ async function handleFetch(request: Request, env: Env): Promise<Response> {
       (videos[c["candidate"] as string] ??= []).push(clip);
     }
     return json({ generatedAt: new Date().toISOString(), videos });
+  }
+
+  // Anonymous game votes. One row per vote — no identity stored.
+  if (request.method === "POST" && pathname === "/api/faceoffs/vote") {
+    let body: { faceoffId?: string; lookId?: string };
+    try {
+      body = (await request.json()) as typeof body;
+    } catch {
+      return err("invalid JSON body", 400);
+    }
+    if (!body.faceoffId || !body.lookId) return err("faceoffId and lookId are required", 400);
+    await env.DB.prepare("INSERT INTO faceoff_votes (faceoff_id, look_id) VALUES (?, ?)")
+      .bind(body.faceoffId, body.lookId)
+      .run();
+    return json({ ok: true }, 201);
+  }
+
+  if (request.method === "GET" && pathname === "/api/faceoffs/results") {
+    const id = url.searchParams.get("id");
+    if (!id) return err("id is required", 400);
+    const { results } = await env.DB.prepare(
+      "SELECT look_id, COUNT(*) AS n FROM faceoff_votes WHERE faceoff_id = ? GROUP BY look_id",
+    )
+      .bind(id)
+      .all<{ look_id: string; n: number }>();
+    const votes: Record<string, number> = {};
+    let total = 0;
+    for (const r of results) {
+      votes[r.look_id] = r.n;
+      total += r.n;
+    }
+    return json({ faceoffId: id, total, votes });
   }
 
   return err("not found", 404);

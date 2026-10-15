@@ -1,5 +1,5 @@
 // Source fetchers: Bluesky (public AppView, keyless) + YouTube (channel RSS,
-// keyless). X has no keyless path — handled as pending until access is decided.
+// keyless) + X (logged-out profile page → syndication embed, keyless).
 // Each fetcher returns normalized items matching schema/feed.schema.json.
 
 export type Source = "bluesky" | "youtube" | "x";
@@ -198,6 +198,108 @@ function unescapeXml(s: string): string {
 function pick(block: string, re: RegExp): string | null {
   const m = block.match(re);
   return m?.[1] ? unescapeXml(m[1]) : null;
+}
+
+// --- X -------------------------------------------------------------
+
+const SYND = "https://cdn.syndication.twimg.com/tweet-result";
+
+function syndicationToken(tweetId: string): string {
+  // The embed widget's anti-abuse token: (id / 1e15 * π) rendered in base 36,
+  // zeros stripped. Same math as pipeline/x.py.
+  const n = (Number(tweetId) / 1e15) * Math.PI;
+  const digits = "0123456789abcdefghijklmnopqrstuvwxyz";
+  let i = Math.floor(n);
+  let frac = n - i;
+  let s = "";
+  while (i) {
+    s = digits[i % 36] + s;
+    i = Math.floor(i / 36);
+  }
+  for (let k = 0; k < 10; k++) {
+    frac *= 36;
+    const d = Math.floor(frac);
+    frac -= d;
+    s += digits[d];
+  }
+  return s.replace(/0/g, "");
+}
+
+function xMedia(t: any): BskyMedia[] {
+  const media: BskyMedia[] = [];
+  for (const m of t.mediaDetails ?? []) {
+    if (m.type === "photo") {
+      media.push({ type: "image", url: m.media_url_https ?? null, thumb: m.media_url_https ?? null, alt: m.ext_alt_text || null });
+    } else if (m.type === "video" || m.type === "animated_gif") {
+      const vs = ((m.video_info?.variants ?? []) as any[])
+        .filter((v) => v.content_type === "video/mp4")
+        .sort((a, b) => (b.bitrate ?? 0) - (a.bitrate ?? 0));
+      media.push({ type: "video", url: vs[0]?.url ?? null, thumb: m.media_url_https ?? null, alt: m.ext_alt_text || null });
+    }
+  }
+  for (const u of t.entities?.urls ?? []) {
+    media.push({ type: "link", url: u.expanded_url ?? null, title: null });
+  }
+  return media;
+}
+
+export interface XResult {
+  items: NormalizedItem[];
+  profile: { name?: string; avatar?: string };
+}
+
+export async function fetchXTimeline(handle: string): Promise<XResult> {
+  // The logged-out profile page is server-rendered with the ~5 newest tweets
+  // embedded. No auth. Bulk history is not available — run on the hourly cron
+  // and feed_items' INSERT OR IGNORE accumulates over time.
+  const res = await fetch(`https://x.com/${encodeURIComponent(handle)}`, {
+    headers: { "user-agent": UA, accept: "text/html" },
+  });
+  if (!res.ok) throw new Error(`x profile -> ${res.status}`);
+  const html = await res.text();
+  const ids = [
+    ...new Set(
+      [...html.matchAll(new RegExp(`/${handle}/status/(\\d{10,})`, "gi"))]
+        .map((m) => m[1])
+        .filter((x): x is string => typeof x === "string"),
+    ),
+  ];
+  const out: NormalizedItem[] = [];
+  let profile: XResult["profile"] = {};
+  for (const id of ids) {
+    const q = new URLSearchParams({ id, token: syndicationToken(id), lang: "en" });
+    const t = await getJson<any>(`${SYND}?${q}`, { "user-agent": UA });
+    const user = t.user ?? {};
+    if ((user.screen_name ?? "").toLowerCase() !== handle.toLowerCase()) continue;
+    profile = { name: user.name, avatar: user.profile_image_url_https };
+    let created = t.created_at ?? "";
+    try {
+      created = new Date(created).toISOString();
+    } catch { /* keep raw */ }
+    const quoted = t.quoted_tweet
+      ? {
+          handle: t.quoted_tweet.user?.screen_name ?? "",
+          text: t.quoted_tweet.text ?? "",
+          url: `https://x.com/${t.quoted_tweet.user?.screen_name}/status/${t.quoted_tweet.id_str}`,
+        }
+      : null;
+    out.push({
+      source: "x",
+      source_id: t.id_str,
+      url: `https://x.com/${user.screen_name}/status/${t.id_str}`,
+      author_handle: user.screen_name,
+      title: null,
+      text: t.text ?? "",
+      created_at: created,
+      like_count: t.favorite_count ?? 0,
+      repost_count: t.retweet_count ?? 0,
+      reply_count: t.reply_count ?? t.conversation_count ?? 0,
+      view_count: null,
+      thumb_url: null,
+      extra: { media: xMedia(t), quoted },
+    });
+  }
+  return { items: out, profile };
 }
 
 export async function resolveYoutubeChannel(input: string): Promise<string> {
