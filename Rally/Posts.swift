@@ -84,8 +84,12 @@ final class PostStore {
         isLive = true
     }
 
+    // Merge by id — bundled posts for candidates the backend hasn't crawled yet
+    // stay in the feed; remote wins on any post it knows about.
     private func apply(_ file: PostsFile) {
-        posts = file.posts
+        var merged = Dictionary(posts.map { ($0.id, $0) }, uniquingKeysWith: { _, new in new })
+        for p in file.posts { merged[p.id] = p }
+        posts = merged.values.sorted { ($0.date ?? .distantPast) > ($1.date ?? .distantPast) }
         generatedAt = file.generatedAt
     }
 }

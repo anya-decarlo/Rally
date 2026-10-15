@@ -4,12 +4,14 @@ import SwiftUI
 struct StoriesView: View {
     let place: Place
     let onChangePlace: () -> Void
+    var onClose: (() -> Void)? = nil
     private let contests: [Contest]
     @State private var current: String?
     @State private var selected: Candidate?
 
-    init(place: Place, onChangePlace: @escaping () -> Void) {
+    init(place: Place, onClose: (() -> Void)? = nil, onChangePlace: @escaping () -> Void) {
         self.place = place
+        self.onClose = onClose
         self.onChangePlace = onChangePlace
         contests = Ballot.contests(for: place)
         _current = State(initialValue: contests.first?.id)
@@ -31,6 +33,20 @@ struct StoriesView: View {
                     .padding(.top, 8)
 
                 HStack(spacing: 8) {
+                    if let onClose {
+                        Button {
+                            Haptic.tick()
+                            onClose()
+                        } label: {
+                            Image(systemName: "chevron.down")
+                                .font(.system(size: 14, weight: .black))
+                                .frame(width: 36, height: 36)
+                                .background(.ultraThinMaterial, in: Circle())
+                                .foregroundStyle(.white)
+                        }
+                        .buttonStyle(.plain)
+                        .padding(.leading, 16)
+                    }
                     Button {
                         Haptic.tick()
                         onChangePlace()
@@ -46,7 +62,7 @@ struct StoriesView: View {
                         .foregroundStyle(.white)
                     }
                     .buttonStyle(.plain)
-                    .padding(.leading, 16)
+                    .padding(.leading, onClose == nil ? 16 : 0)
 
                     ChapterBar(selected: currentGroup) { group in
                         Haptic.tick()

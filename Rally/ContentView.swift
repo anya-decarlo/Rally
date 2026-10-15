@@ -4,6 +4,7 @@ struct ContentView: View {
     @AppStorage("place") private var placeID = ""
     @State private var store = PostStore()
     @State private var extras = ExtrasStore()
+    @State private var fashion = FashionStore()
     @State private var taste = Taste()
     @State private var wallet = Wallet()
 
@@ -12,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if let place {
-                StoriesView(place: place) { placeID = "" }
+                ForYouView(place: place) { placeID = "" }
                     .transition(.asymmetric(insertion: .move(edge: .trailing).combined(with: .opacity),
                                             removal: .move(edge: .trailing).combined(with: .opacity)))
             } else {
@@ -25,6 +26,7 @@ struct ContentView: View {
         .preferredColorScheme(.dark)
         .environment(store)
         .environment(extras)
+        .environment(fashion)
         .environment(taste)
         .environment(wallet)
         .task {

@@ -136,7 +136,9 @@ struct CandidateView: View {
             ChaosView(candidate: candidate, clips: extras.clips(for: candidate))
         }
         .fullScreenCoverCompat(isPresented: $showBooth) {
-            if let p = extras.portrait(for: candidate) { BoothView(candidate: candidate, portrait: p) }
+            if let p = extras.portrait(for: candidate) {
+                BoothView(candidate: candidate, portrait: p) { showBooth = false }
+            }
         }
     }
 
@@ -190,6 +192,15 @@ extension View {
         fullScreenCover(isPresented: isPresented, content: content)
         #else
         sheet(isPresented: isPresented) { content().frame(minWidth: 480, minHeight: 820) }
+        #endif
+    }
+
+    @ViewBuilder
+    func fullScreenCoverCompat<I: Identifiable, C: View>(item: Binding<I?>, @ViewBuilder content: @escaping (I) -> C) -> some View {
+        #if os(iOS)
+        fullScreenCover(item: item, content: content)
+        #else
+        sheet(item: item) { i in content(i).frame(minWidth: 480, minHeight: 820) }
         #endif
     }
 }

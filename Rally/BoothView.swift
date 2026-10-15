@@ -4,6 +4,7 @@ import SwiftUI
 struct BoothView: View {
     let candidate: Candidate
     let portrait: Portrait
+    var onClose: (() -> Void)? = nil
     @Environment(\.dismiss) private var dismiss
     @State private var stickers: [PlacedSticker] = []
     @State private var exported: Image?
@@ -19,12 +20,14 @@ struct BoothView: View {
 
             VStack(spacing: 14) {
                 HStack {
-                    Button { dismiss() } label: {
-                        Image(systemName: "chevron.down")
-                            .font(.system(size: 14, weight: .black))
-                            .frame(width: 36, height: 36)
+                    Button { if let onClose { onClose() } else { dismiss() } } label: {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 15, weight: .black))
+                            .frame(width: 44, height: 44)
                             .background(.ultraThinMaterial, in: Circle())
+                            .overlay(Circle().stroke(.white.opacity(0.35), lineWidth: 1))
                             .foregroundStyle(.white)
+                            .contentShape(Circle())
                     }
                     .buttonStyle(.plain)
                     Spacer()

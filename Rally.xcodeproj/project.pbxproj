@@ -31,6 +31,11 @@
 		A1000001000000000000017 /* janeese-lewis-george.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000017 /* janeese-lewis-george.jpg */; };
 		A1000001000000000000018 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000018 /* Wallet.swift */; };
 		A1000001000000000000019 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000019 /* WalletView.swift */; };
+		A100000100000000000001A /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000200000000000001A /* ForYouView.swift */; };
+		A100000100000000000001B /* fashion in Resources */ = {isa = PBXBuildFile; fileRef = A100000200000000000001B /* fashion */; };
+		A100000100000000000001C /* Fashion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000200000000000001C /* Fashion.swift */; };
+		A100000100000000000001D /* FaceoffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000200000000000001D /* FaceoffView.swift */; };
+		A100000100000000000001E /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000200000000000001E /* PlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +65,11 @@
 		A1000002000000000000017 /* janeese-lewis-george.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = janeese-lewis-george.jpg; path = ../data/portraits/janeese-lewis-george.jpg; sourceTree = "<group>"; };
 		A1000002000000000000018 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		A1000002000000000000019 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		A100000200000000000001A /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
+		A100000200000000000001B /* fashion */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fashion; path = ../data/fashion; sourceTree = "<group>"; };
+		A100000200000000000001C /* Fashion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fashion.swift; sourceTree = "<group>"; };
+		A100000200000000000001D /* FaceoffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceoffView.swift; sourceTree = "<group>"; };
+		A100000200000000000001E /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +105,10 @@
 				A100000200000000000000B /* HomeView.swift */,
 				A100000200000000000000C /* Posts.swift */,
 				A100000200000000000000D /* FeedView.swift */,
+				A100000200000000000001A /* ForYouView.swift */,
+				A100000200000000000001C /* Fashion.swift */,
+				A100000200000000000001D /* FaceoffView.swift */,
+				A100000200000000000001E /* PlayView.swift */,
 				A100000200000000000000E /* posts.json */,
 				A10000020000000000000F /* Extras.swift */,
 				A1000002000000000000015 /* Backend.swift */,
@@ -107,6 +121,7 @@
 				A1000002000000000000014 /* robert-white.jpg */,
 				A1000002000000000000016 /* ballot.json */,
 				A1000002000000000000017 /* janeese-lewis-george.jpg */,
+				A100000200000000000001B /* fashion */,
 				A1000002000000000000003 /* Assets.xcassets */,
 				A1000002000000000000004 /* Rally.entitlements */,
 			);
@@ -186,6 +201,7 @@
 				A1000001000000000000014 /* robert-white.jpg in Resources */,
 				A1000001000000000000016 /* ballot.json in Resources */,
 				A1000001000000000000017 /* janeese-lewis-george.jpg in Resources */,
+				A100000100000000000001B /* fashion in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +223,10 @@
 				A100000100000000000000B /* HomeView.swift in Sources */,
 				A100000100000000000000C /* Posts.swift in Sources */,
 				A100000100000000000000D /* FeedView.swift in Sources */,
+				A100000100000000000001A /* ForYouView.swift in Sources */,
+				A100000100000000000001C /* Fashion.swift in Sources */,
+				A100000100000000000001D /* FaceoffView.swift in Sources */,
+				A100000100000000000001E /* PlayView.swift in Sources */,
 				A10000010000000000000F /* Extras.swift in Sources */,
 				A1000001000000000000015 /* Backend.swift in Sources */,
 				A1000001000000000000019 /* WalletView.swift in Sources */,

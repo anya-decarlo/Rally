@@ -1,0 +1,28 @@
+{
+  "looks": [
+    {
+      "id": "rama-duwaji-the-cut",
+      "person": "Rama Duwaji",
+      "file": "rama-duwaji-the-cut.jpg",
+      "event": "The Cut cover",
+      "date": "2026-10",
+      "source": "The Cut / New York Magazine",
+      "url": "https://www.thecut.com/"
+    },
+    {
+      "id": "sculptural-floor-lamp",
+      "person": "This Lamp",
+      "file": "sculptural-floor-lamp.jpg",
+      "event": "Someone's living room",
+      "source": "Product listing"
+    }
+  ],
+  "faceoffs": [
+    {
+      "id": "wwib-001",
+      "title": "Who wore it best?",
+      "lookIds": ["rama-duwaji-the-cut", "sculptural-floor-lamp"],
+      "closesAt": "2026-10-12T04:00:00Z"
+    }
+  ]
+}

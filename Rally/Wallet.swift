@@ -32,11 +32,27 @@ final class Wallet {
     func has(_ id: String) -> Bool { items.contains { $0.id == id } }
 
     func pocket(_ item: FeedItem, candidate: String) {
-        guard !has(item.id) else { return }
-        var s = SavedItem(id: item.id, candidate: candidate, savedAt: .now)
-        switch item { case .post(let p): s.post = p; case .fact(let f): s.fact = f }
+        switch item {
+        case .post(let p): save(id: item.id, candidate: candidate, post: p, fact: nil)
+        case .fact(let f): save(id: item.id, candidate: candidate, post: nil, fact: f)
+        }
+    }
+
+    func pocket(_ item: FYPItem) {
+        switch item {
+        case .post(let p, let c): save(id: item.id, candidate: c.name, post: p, fact: nil)
+        case .fact(let f, let c): save(id: item.id, candidate: c.name, post: nil, fact: f)
+        case .faceoff: break    // games aren't pocketable
+        }
+    }
+
+    private func save(id: String, candidate: String, post: Post?, fact: Fact?) {
+        guard !has(id) else { return }
+        var s = SavedItem(id: id, candidate: candidate, savedAt: .now)
+        s.post = post
+        s.fact = fact
         items.insert(s, at: 0)
-        lastSavedID = item.id
+        lastSavedID = id
         persist()
     }
 
