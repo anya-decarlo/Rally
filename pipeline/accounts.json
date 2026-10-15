@@ -20,6 +20,36 @@
       "kind": "official"
     },
     {
+      "candidate": "Denise Rosado",
+      "platform": "x",
+      "handle": "Rosado4Congress",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Kymone Freeman",
+      "platform": "x",
+      "handle": "guerillartist",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Paul Strauss",
+      "platform": "bluesky",
+      "handle": "paulstrauss.bsky.social",
+      "kind": "official"
+    },
+    {
+      "candidate": "Paul Strauss",
+      "platform": "x",
+      "handle": "SenPaulStrauss",
+      "kind": "official"
+    },
+    {
+      "candidate": "Franklin Garcia",
+      "platform": "x",
+      "handle": "FGarciaDC",
+      "kind": "personal"
+    },
+    {
       "candidate": "Janeese Lewis George",
       "platform": "bluesky",
       "handle": "cmlewisgeorgew4.bsky.social",
@@ -29,6 +59,192 @@
       "candidate": "Janeese Lewis George",
       "platform": "x",
       "handle": "janeese4dc",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Janeese Lewis George",
+      "platform": "x",
+      "handle": "CMLewisGeorgeW4",
+      "kind": "official"
+    },
+    {
+      "candidate": "Robert L. Gross",
+      "platform": "bluesky",
+      "handle": "grossformayor.bsky.social",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Robert L. Gross",
+      "platform": "x",
+      "handle": "RLGforMayor",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Rhonda Hamilton",
+      "platform": "bluesky",
+      "handle": "rhondahamilton4dc.bsky.social",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Rhonda Hamilton",
+      "platform": "x",
+      "handle": "Rhonda4DC",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Brian Schwalb",
+      "platform": "bluesky",
+      "handle": "dcattorneygeneral.bsky.social",
+      "kind": "official"
+    },
+    {
+      "candidate": "Brian Schwalb",
+      "platform": "x",
+      "handle": "DCAttorneyGen",
+      "kind": "official"
+    },
+    {
+      "candidate": "Brian Schwalb",
+      "platform": "x",
+      "handle": "BrianforDC",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Phil Mendelson",
+      "platform": "bluesky",
+      "handle": "chairmanmendelson.com",
+      "kind": "official"
+    },
+    {
+      "candidate": "Phil Mendelson",
+      "platform": "x",
+      "handle": "ChmnMendelson",
+      "kind": "official"
+    },
+    {
+      "candidate": "Elissa Silverman",
+      "platform": "bluesky",
+      "handle": "elissasilverman.bsky.social",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Elissa Silverman",
+      "platform": "x",
+      "handle": "tweetelissa",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Elissa Silverman",
+      "platform": "x",
+      "handle": "CM_Silverman",
+      "kind": "official"
+    },
+    {
+      "candidate": "Oye Owolewa",
+      "platform": "bluesky",
+      "handle": "repoyedc.bsky.social",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Oye Owolewa",
+      "platform": "x",
+      "handle": "repoyedc",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Aparna Raj",
+      "platform": "bluesky",
+      "handle": "aparnafordc.bsky.social",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Aparna Raj",
+      "platform": "x",
+      "handle": "AparnaForDC",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Ryan Prince",
+      "platform": "x",
+      "handle": "Prince4Ward1",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Matthew Frumin",
+      "platform": "bluesky",
+      "handle": "mattfrumin.bsky.social",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Matthew Frumin",
+      "platform": "x",
+      "handle": "CMFrumin",
+      "kind": "official"
+    },
+    {
+      "candidate": "Zachary Parker",
+      "platform": "bluesky",
+      "handle": "cmzparker5.bsky.social",
+      "kind": "official"
+    },
+    {
+      "candidate": "Zachary Parker",
+      "platform": "x",
+      "handle": "cmzparker5",
+      "kind": "official"
+    },
+    {
+      "candidate": "Zachary Parker",
+      "platform": "x",
+      "handle": "ZacharyforWard5",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Charles Allen",
+      "platform": "bluesky",
+      "handle": "cmcharlesallen.bsky.social",
+      "kind": "official"
+    },
+    {
+      "candidate": "Charles Allen",
+      "platform": "x",
+      "handle": "cmcharlesallen",
+      "kind": "official"
+    },
+    {
+      "candidate": "Charles Allen",
+      "platform": "x",
+      "handle": "charlesallen",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Ben Williams",
+      "platform": "x",
+      "handle": "BenWilliamsDC",
+      "kind": "official"
+    },
+    {
+      "candidate": "Eric Goulet",
+      "platform": "bluesky",
+      "handle": "ejgoulet.bsky.social",
+      "kind": "official"
+    },
+    {
+      "candidate": "Aaron Wesolowski",
+      "platform": "bluesky",
+      "handle": "aaron4ward3sboe.bsky.social",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Aaron Wesolowski",
+      "platform": "x",
+      "handle": "Aaron4Ward3SBOE",
+      "kind": "personal"
+    },
+    {
+      "candidate": "Joshua Wiley",
+      "platform": "x",
+      "handle": "whywiley",
       "kind": "personal"
     }
   ]

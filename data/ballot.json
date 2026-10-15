@@ -16,8 +16,20 @@
             { "platform": "x", "handle": "CMRobertWhiteDC", "kind": "official" }
           ]
         },
-        { "name": "Denise Rosado", "party": "republican" },
-        { "name": "Kymone Freeman", "party": "green" },
+        {
+          "name": "Denise Rosado",
+          "party": "republican",
+          "accounts": [
+            { "platform": "x", "handle": "Rosado4Congress", "kind": "personal" }
+          ]
+        },
+        {
+          "name": "Kymone Freeman",
+          "party": "green",
+          "accounts": [
+            { "platform": "x", "handle": "guerillartist", "kind": "personal" }
+          ]
+        },
         { "name": "Rebekkah Green", "party": "independent", "writeIn": true },
         { "name": "David Solana", "party": "independent", "writeIn": true }
       ]
@@ -26,7 +38,15 @@
       "group": "Federal",
       "office": "U.S. Shadow Senator",
       "candidates": [
-        { "name": "Paul Strauss", "party": "democrat", "incumbent": true },
+        {
+          "name": "Paul Strauss",
+          "party": "democrat",
+          "incumbent": true,
+          "accounts": [
+            { "platform": "bluesky", "handle": "paulstrauss.bsky.social", "kind": "official" },
+            { "platform": "x", "handle": "SenPaulStrauss", "kind": "official" }
+          ]
+        },
         { "name": "Rob Simmons", "party": "republican" }
       ]
     },
@@ -34,7 +54,13 @@
       "group": "Federal",
       "office": "U.S. Shadow Representative",
       "candidates": [
-        { "name": "Franklin Garcia", "party": "democrat" },
+        {
+          "name": "Franklin Garcia",
+          "party": "democrat",
+          "accounts": [
+            { "platform": "x", "handle": "FGarciaDC", "kind": "personal" }
+          ]
+        },
         { "name": "Ciprian Ivanof", "party": "republican" }
       ]
     },
@@ -48,18 +74,42 @@
           "wikipedia": "Janeese_Lewis_George",
           "accounts": [
             { "platform": "bluesky", "handle": "cmlewisgeorgew4.bsky.social", "kind": "official" },
-            { "platform": "x", "handle": "janeese4dc", "kind": "personal" }
+            { "platform": "x", "handle": "janeese4dc", "kind": "personal" },
+            { "platform": "x", "handle": "CMLewisGeorgeW4", "kind": "official" }
           ]
         },
-        { "name": "Robert L. Gross", "party": "green" },
-        { "name": "Rhonda Hamilton", "party": "independent" }
+        {
+          "name": "Robert L. Gross",
+          "party": "green",
+          "accounts": [
+            { "platform": "bluesky", "handle": "grossformayor.bsky.social", "kind": "personal" },
+            { "platform": "x", "handle": "RLGforMayor", "kind": "personal" }
+          ]
+        },
+        {
+          "name": "Rhonda Hamilton",
+          "party": "independent",
+          "accounts": [
+            { "platform": "bluesky", "handle": "rhondahamilton4dc.bsky.social", "kind": "personal" },
+            { "platform": "x", "handle": "Rhonda4DC", "kind": "personal" }
+          ]
+        }
       ]
     },
     {
       "group": "District-wide",
       "office": "Attorney General",
       "candidates": [
-        { "name": "Brian Schwalb", "party": "democrat", "incumbent": true },
+        {
+          "name": "Brian Schwalb",
+          "party": "democrat",
+          "incumbent": true,
+          "accounts": [
+            { "platform": "bluesky", "handle": "dcattorneygeneral.bsky.social", "kind": "official" },
+            { "platform": "x", "handle": "DCAttorneyGen", "kind": "official" },
+            { "platform": "x", "handle": "BrianforDC", "kind": "personal" }
+          ]
+        },
         { "name": "Manuel Rivera", "party": "republican" }
       ]
     },
@@ -67,7 +117,15 @@
       "group": "District-wide",
       "office": "Council Chairman",
       "candidates": [
-        { "name": "Phil Mendelson", "party": "democrat", "incumbent": true },
+        {
+          "name": "Phil Mendelson",
+          "party": "democrat",
+          "incumbent": true,
+          "accounts": [
+            { "platform": "bluesky", "handle": "chairmanmendelson.com", "kind": "official" },
+            { "platform": "x", "handle": "ChmnMendelson", "kind": "official" }
+          ]
+        },
         { "name": "Abi-Ananiah Prudent", "party": "republican" },
         { "name": "John C. Cheeks", "party": "independent", "writeIn": true }
       ]
@@ -76,8 +134,24 @@
       "group": "District-wide",
       "office": "Council At-Large",
       "candidates": [
-        { "name": "Elissa Silverman", "party": "independent", "incumbent": true },
-        { "name": "Oye Owolewa", "party": "democrat" },
+        {
+          "name": "Elissa Silverman",
+          "party": "independent",
+          "incumbent": true,
+          "accounts": [
+            { "platform": "bluesky", "handle": "elissasilverman.bsky.social", "kind": "personal" },
+            { "platform": "x", "handle": "tweetelissa", "kind": "personal" },
+            { "platform": "x", "handle": "CM_Silverman", "kind": "official" }
+          ]
+        },
+        {
+          "name": "Oye Owolewa",
+          "party": "democrat",
+          "accounts": [
+            { "platform": "bluesky", "handle": "repoyedc.bsky.social", "kind": "personal" },
+            { "platform": "x", "handle": "repoyedc", "kind": "personal" }
+          ]
+        },
         { "name": "Darrell Green", "party": "republican" },
         { "name": "Darryl Moch", "party": "green" },
         { "name": "Joe Jackson", "party": "independent", "writeIn": true }
@@ -87,24 +161,54 @@
       "group": "Ward",
       "office": "Councilmember — Ward 1",
       "candidates": [
-        { "name": "Aparna Raj", "party": "democrat" },
+        {
+          "name": "Aparna Raj",
+          "party": "democrat",
+          "accounts": [
+            { "platform": "bluesky", "handle": "aparnafordc.bsky.social", "kind": "personal" },
+            { "platform": "x", "handle": "AparnaForDC", "kind": "personal" }
+          ]
+        },
         { "name": "Jett Jasper", "party": "republican" },
         { "name": "Jude Crannitch", "party": "green" },
-        { "name": "Ryan Prince", "party": "independent" }
+        {
+          "name": "Ryan Prince",
+          "party": "independent",
+          "accounts": [
+            { "platform": "x", "handle": "Prince4Ward1", "kind": "personal" }
+          ]
+        }
       ]
     },
     {
       "group": "Ward",
       "office": "Councilmember — Ward 3",
       "candidates": [
-        { "name": "Matthew Frumin", "party": "democrat", "incumbent": true }
+        {
+          "name": "Matthew Frumin",
+          "party": "democrat",
+          "incumbent": true,
+          "accounts": [
+            { "platform": "bluesky", "handle": "mattfrumin.bsky.social", "kind": "personal" },
+            { "platform": "x", "handle": "CMFrumin", "kind": "official" }
+          ]
+        }
       ]
     },
     {
       "group": "Ward",
       "office": "Councilmember — Ward 5",
       "candidates": [
-        { "name": "Zachary Parker", "party": "democrat", "incumbent": true },
+        {
+          "name": "Zachary Parker",
+          "party": "democrat",
+          "incumbent": true,
+          "accounts": [
+            { "platform": "bluesky", "handle": "cmzparker5.bsky.social", "kind": "official" },
+            { "platform": "x", "handle": "cmzparker5", "kind": "official" },
+            { "platform": "x", "handle": "ZacharyforWard5", "kind": "personal" }
+          ]
+        },
         { "name": "Jeffrey Kihien-Palza", "party": "republican" },
         { "name": "Joyce Robinson-Paul", "party": "green" }
       ]
@@ -113,7 +217,16 @@
       "group": "Ward",
       "office": "Councilmember — Ward 6",
       "candidates": [
-        { "name": "Charles Allen", "party": "democrat", "incumbent": true },
+        {
+          "name": "Charles Allen",
+          "party": "democrat",
+          "incumbent": true,
+          "accounts": [
+            { "platform": "bluesky", "handle": "cmcharlesallen.bsky.social", "kind": "official" },
+            { "platform": "x", "handle": "cmcharlesallen", "kind": "official" },
+            { "platform": "x", "handle": "charlesallen", "kind": "personal" }
+          ]
+        },
         { "name": "Jorge Rice", "party": "republican" }
       ]
     },
@@ -121,31 +234,58 @@
       "group": "Education",
       "office": "State Board of Education — Ward 1",
       "candidates": [
-        { "name": "Ben Williams", "party": "nonpartisan", "incumbent": true }
+        {
+          "name": "Ben Williams",
+          "party": "nonpartisan",
+          "incumbent": true,
+          "accounts": [
+            { "platform": "x", "handle": "BenWilliamsDC", "kind": "official" }
+          ]
+        }
       ]
     },
     {
       "group": "Education",
       "office": "State Board of Education — Ward 3",
       "candidates": [
-        { "name": "Eric Goulet", "party": "nonpartisan", "incumbent": true },
-        { "name": "Aaron Wesolowski", "party": "nonpartisan" }
+        {
+          "name": "Eric Goulet",
+          "party": "nonpartisan",
+          "incumbent": true,
+          "accounts": [
+            { "platform": "bluesky", "handle": "ejgoulet.bsky.social", "kind": "official" }
+          ]
+        },
+        {
+          "name": "Aaron Wesolowski",
+          "party": "nonpartisan",
+          "accounts": [
+            { "platform": "bluesky", "handle": "aaron4ward3sboe.bsky.social", "kind": "personal" },
+            { "platform": "x", "handle": "Aaron4Ward3SBOE", "kind": "personal" }
+          ]
+        }
       ]
     },
     {
       "group": "Education",
       "office": "State Board of Education — Ward 5",
       "candidates": [
-        { "name": "Jon Alfuth", "party": "nonpartisan" }
+        { "name": "Jon Alfuth", "party": "nonpartisan" },
+        { "name": "Lynn Jennings", "party": "nonpartisan" }
       ]
     },
     {
       "group": "Education",
       "office": "State Board of Education — Ward 6",
       "candidates": [
-        { "name": "Lynn Jennings", "party": "nonpartisan" },
         { "name": "David Parker", "party": "nonpartisan" },
-        { "name": "Joshua Wiley", "party": "nonpartisan" },
+        {
+          "name": "Joshua Wiley",
+          "party": "nonpartisan",
+          "accounts": [
+            { "platform": "x", "handle": "whywiley", "kind": "personal" }
+          ]
+        },
         { "name": "Amber Williams", "party": "nonpartisan" }
       ]
     },
