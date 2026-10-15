@@ -7,6 +7,7 @@ struct ContentView: View {
     @State private var fashion = FashionStore()
     @State private var taste = Taste()
     @State private var wallet = Wallet()
+    @State private var x = XAccount()
 
     private var place: Place? { Place.find(placeID) }
 
@@ -29,6 +30,7 @@ struct ContentView: View {
         .environment(fashion)
         .environment(taste)
         .environment(wallet)
+        .environment(x)
         .task {
             async let p: () = store.refresh()
             async let e: () = extras.refresh()

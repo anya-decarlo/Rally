@@ -1,6 +1,6 @@
 import SwiftUI
 
-// 👛 Everything you pocketed. Sources intact. Share one or share the lot.
+// ✉️ Everything you pocketed. Sources intact. Share one or share the lot.
 struct WalletView: View {
     @Environment(Wallet.self) private var wallet
     @Environment(\.dismiss) private var dismiss
@@ -26,7 +26,7 @@ struct WalletView: View {
                     }
                     .buttonStyle(.plain)
                     Spacer()
-                    Sticker("👛 Your receipts", color: Theme.yellow).rotationEffect(.degrees(-2))
+                    Sticker("✉️ Your receipts", color: Theme.yellow).rotationEffect(.degrees(-2))
                     Spacer()
                     if !wallet.items.isEmpty {
                         ShareLink(item: shareAll) {
@@ -42,6 +42,10 @@ struct WalletView: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
+
+                XConnectRow()
+                    .padding(.horizontal, 16)
+                    .padding(.top, 10)
 
                 if wallet.items.isEmpty {
                     EmptyStage(text: "Nothing pocketed yet.\nSwipe right on anything in a feed to keep it.", color: Theme.yellow)
@@ -144,6 +148,67 @@ struct SavedCard: View {
     }
 }
 
+// Your X, connected. OAuth via the real login sheet — token lives in Keychain.
+struct XConnectRow: View {
+    @Environment(XAccount.self) private var x
+    @State private var busy = false
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Text("𝕏")
+                .font(.system(size: 18, weight: .black))
+                .frame(width: 34, height: 34)
+                .background(Theme.paper, in: Circle())
+                .foregroundStyle(Theme.ink)
+            if x.isConnected {
+                VStack(alignment: .leading, spacing: 1) {
+                    Text("@\(x.handle!)")
+                        .font(.system(size: 14, weight: .black, design: .rounded))
+                        .foregroundStyle(.white)
+                    Text("connected — you can share receipts as posts")
+                        .font(.system(size: 10, weight: .bold, design: .monospaced))
+                        .foregroundStyle(Theme.dim)
+                }
+                Spacer()
+                Button {
+                    x.disconnect(keepIdentity: false)
+                } label: {
+                    Text("disconnect")
+                        .font(.system(size: 11, weight: .black, design: .monospaced))
+                        .foregroundStyle(.white.opacity(0.6))
+                }
+                .buttonStyle(.plain)
+            } else {
+                VStack(alignment: .leading, spacing: 1) {
+                    Text("Connect your X")
+                        .font(.system(size: 14, weight: .black, design: .rounded))
+                        .foregroundStyle(.white)
+                    Text(x.lastError ?? "your login, your posts — read-only until you share")
+                        .font(.system(size: 10, weight: .bold, design: .monospaced))
+                        .foregroundStyle(Theme.dim)
+                        .lineLimit(1)
+                }
+                Spacer()
+                Button {
+                    busy = true
+                    Task { await x.connect(); busy = false }
+                } label: {
+                    Text(busy || x.isConnecting ? "…" : "connect")
+                        .font(.system(size: 12, weight: .black, design: .rounded))
+                        .foregroundStyle(Theme.bg)
+                        .padding(.horizontal, 14).padding(.vertical, 9)
+                        .background(Theme.cyan, in: Capsule())
+                }
+                .buttonStyle(SquishButton())
+                .disabled(busy || x.isConnecting || !x.isConfigured)
+            }
+        }
+        .padding(12)
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
+        .overlay(RoundedRectangle(cornerRadius: 16).stroke(.white.opacity(0.15), lineWidth: 1))
+    }
+}
+
 // The wallet button that lives in feed/story headers. Bounces when something lands in it.
 struct WalletButton: View {
     @Environment(Wallet.self) private var wallet
@@ -156,7 +221,7 @@ struct WalletButton: View {
             show = true
         } label: {
             HStack(spacing: 5) {
-                Text("👛")
+                Text("✉️")
                 if !wallet.items.isEmpty {
                     Text("\(wallet.items.count)")
                         .font(.system(size: 12, weight: .black, design: .monospaced))

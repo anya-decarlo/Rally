@@ -536,7 +536,10 @@ struct Triangle: Shape {
 struct PostPage: View {
     let post: Post
     let color: Color
+    @Environment(XAccount.self) private var x
     @Environment(\.openURL) private var openURL
+    @State private var posting = false
+    @State private var postedURL: String? = nil
 
     var body: some View {
         GeometryReader { geo in
@@ -626,6 +629,27 @@ struct PostPage: View {
                         Metric("arrow.2.squarepath", post.metrics.reposts)
                         Metric("bubble.left.fill", post.metrics.replies)
                         Spacer()
+                        if x.isConnected {
+                            Button {
+                                Haptic.tap()
+                                posting = true
+                                Task {
+                                    let words = String(post.text.prefix(180))
+                                    let draft = "\(words)\(post.text.count > 180 ? "…" : "")\n— @\(post.account.handle) via \(post.platformLabel)\n\(post.url.absoluteString)"
+                                    postedURL = try? await x.postReceipt(draft)
+                                    posting = false
+                                }
+                            } label: {
+                                Text(postedURL != nil ? "posted ✓" : posting ? "…" : "𝕏 post")
+                                    .font(.system(size: 12, weight: .black, design: .rounded))
+                                    .foregroundStyle(.white)
+                                    .padding(.horizontal, 12).padding(.vertical, 10)
+                                    .background(.ultraThinMaterial, in: Capsule())
+                                    .overlay(Capsule().stroke(.white.opacity(0.25), lineWidth: 1))
+                            }
+                            .buttonStyle(SquishButton())
+                            .disabled(posting || postedURL != nil)
+                        }
                         Button {
                             Haptic.tap()
                             openURL(post.url)
