@@ -541,6 +541,15 @@ struct PostPage: View {
     @State private var posting = false
     @State private var postedURL: String? = nil
 
+    // Post.openLink() walks the deep-link → App Store → web chain itself (UIKit).
+    private func openPost() {
+        #if canImport(UIKit)
+        post.openLink()
+        #else
+        openURL(post.url)
+        #endif
+    }
+
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -575,7 +584,7 @@ struct PostPage: View {
 
                     if post.image != nil || post.video != nil {
                         let n = post.media.filter { $0.type == "image" }.count
-                        Button { openURL(post.url) } label: {
+                        Button { openPost() } label: {
                             HStack(spacing: 8) {
                                 Text(post.video != nil ? "🎬" : "📷")
                                 Text(post.video != nil ? "has a video" : n == 1 ? "has a photo" : "has \(n) photos")
@@ -652,7 +661,7 @@ struct PostPage: View {
                         }
                         Button {
                             Haptic.tap()
-                            openURL(post.url)
+                            openPost()
                         } label: {
                             HStack(spacing: 6) {
                                 Text("@\(post.account.handle.replacingOccurrences(of: ".bsky.social", with: ""))")

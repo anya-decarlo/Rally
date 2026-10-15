@@ -1,4 +1,8 @@
 import Foundation
+import os
+#if canImport(UIKit)
+import UIKit
+#endif
 
 // Mirrors pipeline/schema.md exactly. The app reads only this shape.
 
@@ -45,7 +49,74 @@ struct Post: Identifiable, Codable, Hashable {
     var video: Media? { media.first { $0.type == "video" } }
     var link: Media? { media.first { $0.type == "link" } }
     var platformLabel: String { platform == "bluesky" ? "Bluesky" : platform == "x" ? "X" : platform }
+
 }
+
+#if canImport(UIKit)
+import StoreKit
+
+private let linkLog = Logger(subsystem: "com.anyadecarlo.Rally", category: "links")
+
+// The 🍎 button: opens the App Store. Tries the real App Store app first;
+// where that can't open (Simulator has no App Store app), shows the store
+// listing as an in-app sheet — never Safari.
+func openAppStore() {
+    let itms = URL(string: "itms-apps://apps.apple.com/app/id333903271")!
+    linkLog.info("[rally:link] 🍎 open \(itms.absoluteString)")
+    UIApplication.shared.open(itms) { ok in
+        linkLog.info("[rally:link] 🍎 itms-apps → \(ok)")
+        if !ok { presentAppStoreListing() }
+    }
+}
+
+// Opens X's App Store listing as a native in-app sheet — never goes through
+// Safari and never fires an itms-apps:// URL that can bounce back as an
+// "invalid address" error.
+func presentAppStoreListing() {
+    linkLog.info("[rally:link] presenting App Store sheet")
+    guard let scene = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene }).first,
+          let root = scene.windows.first(where: \.isKeyWindow)?.rootViewController else {
+        linkLog.error("[rally:link] no window for App Store sheet"); return
+    }
+    let store = SKStoreProductViewController()
+    var top = root
+    while let p = top.presentedViewController { top = p }
+    top.present(store, animated: true)
+    store.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier: 333903271]) { ok, err in
+        linkLog.info("[rally:link] App Store sheet load → \(ok) \(err?.localizedDescription ?? "")")
+    }
+}
+
+extension Post {
+    // X post: try the X app's deep link first; if no X app is installed, show
+    // the App Store listing in-app. Anything else opens its canonical URL.
+    // We *try* each deep link via open() completion — canOpenURL lies.
+    func openLink() {
+        guard platform == "x" else {
+            linkLog.info("[rally:link] \(self.platform) \(self.id) open \(self.url.absoluteString)")
+            UIApplication.shared.open(url)
+            return
+        }
+        let id = url.lastPathComponent
+        let deepLinks = ["x://status?id=\(id)", "twitter://status?id=\(id)"]
+            .compactMap(URL.init(string:))
+        linkLog.info("[rally:link] x \(self.id) deepLinks=\(deepLinks.map(\.absoluteString))")
+        func tryNext(_ i: Int) {
+            if i >= deepLinks.count {
+                linkLog.info("[rally:link] no X app — opening App Store")
+                openAppStore()
+                return
+            }
+            UIApplication.shared.open(deepLinks[i]) { ok in
+                linkLog.info("[rally:link] open \(deepLinks[i].absoluteString) → \(ok)")
+                if !ok { tryNext(i + 1) }
+            }
+        }
+        tryNext(0)
+    }
+}
+#endif
 
 // Timestamps arrive verbatim from each platform — with or without fractional seconds. Accept both.
 extension ISO8601DateFormatter {

@@ -47,6 +47,16 @@ struct WalletView: View {
                     .padding(.horizontal, 16)
                     .padding(.top, 10)
 
+                Button { openAppStore() } label: {
+                    Text("🍎")
+                        .font(.system(size: 22))
+                        .frame(width: 40, height: 40)
+                        .background(Theme.cyan, in: Circle())
+                }
+                .buttonStyle(SquishButton())
+                .padding(.horizontal, 16)
+                .padding(.top, 10)
+
                 if wallet.items.isEmpty {
                     EmptyStage(text: "Nothing pocketed yet.\nSwipe right on anything in a feed to keep it.", color: Theme.yellow)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -120,7 +130,13 @@ struct SavedCard: View {
                 .fixedSize(horizontal: false, vertical: true)
             HStack {
                 if let url = item.url {
-                    Button { openURL(url) } label: {
+                    Button {
+                        #if canImport(UIKit)
+                        if let post = item.post { post.openLink() } else { openURL(url) }
+                        #else
+                        openURL(url)
+                        #endif
+                    } label: {
                         HStack(spacing: 5) {
                             Image(systemName: "doc.text.magnifyingglass")
                             Text(item.source.uppercased()).lineLimit(1)
