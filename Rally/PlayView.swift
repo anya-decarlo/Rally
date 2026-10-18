@@ -9,6 +9,7 @@ struct PlayView: View {
     @State private var boothCandidate: Candidate?
     @State private var chaosCandidate: Candidate?
     @State private var boothPicker = false
+    @State private var exitPoll = false
 
     private var boothPlayers: [Candidate] {
         Ballot.allCandidates.filter { extras.portrait(for: $0) != nil }
@@ -90,6 +91,12 @@ struct PlayView: View {
                             }
                         }
                     }
+
+                    section("EXIT POLL") {
+                        ArcadeTile(emoji: "🚪", title: "EXIT POLL", sub: "just a quick question", color: Theme.yellow) {
+                            exitPoll = true
+                        }
+                    }
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 40)
@@ -123,6 +130,7 @@ struct PlayView: View {
         .fullScreenCoverCompat(item: $chaosCandidate) { c in
             ChaosView(candidate: c, clips: extras.clips(for: c))
         }
+        .fullScreenCoverCompat(isPresented: $exitPoll) { ExitPollView() }
     }
 
     private func section<C: View>(_ title: String, @ViewBuilder content: () -> C) -> some View {

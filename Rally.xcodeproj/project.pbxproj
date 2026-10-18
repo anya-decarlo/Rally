@@ -37,6 +37,11 @@
 		A100000100000000000001C /* Fashion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000200000000000001C /* Fashion.swift */; };
 		A100000100000000000001D /* FaceoffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000200000000000001D /* FaceoffView.swift */; };
 		A100000100000000000001E /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000200000000000001E /* PlayView.swift */; };
+		A1000001000000000000020 /* ExitPollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000021 /* ExitPollView.swift */; };
+		A1000001000000000000021 /* putin.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000022 /* putin.mp4 */; };
+		A1000001000000000000022 /* zelensky.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000023 /* zelensky.mp4 */; };
+		A1000001000000000000023 /* netanyahu.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000024 /* netanyahu.mp4 */; };
+		A1000001000000000000024 /* abbas.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000025 /* abbas.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +78,11 @@
 		A100000200000000000001E /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		A10000020000000000001F /* XAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAuth.swift; sourceTree = "<group>"; };
 		A1000002000000000000020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1000002000000000000021 /* ExitPollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitPollView.swift; sourceTree = "<group>"; };
+		A1000002000000000000022 /* putin.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = putin.mp4; path = ../data/clips/putin.mp4; sourceTree = "<group>"; };
+		A1000002000000000000023 /* zelensky.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = zelensky.mp4; path = ../data/clips/zelensky.mp4; sourceTree = "<group>"; };
+		A1000002000000000000024 /* netanyahu.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = netanyahu.mp4; path = ../data/clips/netanyahu.mp4; sourceTree = "<group>"; };
+		A1000002000000000000025 /* abbas.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = abbas.mp4; path = ../data/clips/abbas.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +122,7 @@
 				A100000200000000000001C /* Fashion.swift */,
 				A100000200000000000001D /* FaceoffView.swift */,
 				A100000200000000000001E /* PlayView.swift */,
+				A1000002000000000000021 /* ExitPollView.swift */,
 				A10000020000000000001F /* XAuth.swift */,
 				A1000002000000000000020 /* Info.plist */,
 				A100000200000000000000E /* posts.json */,
@@ -126,6 +137,10 @@
 				A1000002000000000000014 /* robert-white.jpg */,
 				A1000002000000000000016 /* ballot.json */,
 				A1000002000000000000017 /* janeese-lewis-george.jpg */,
+				A1000002000000000000022 /* putin.mp4 */,
+				A1000002000000000000023 /* zelensky.mp4 */,
+				A1000002000000000000024 /* netanyahu.mp4 */,
+				A1000002000000000000025 /* abbas.mp4 */,
 				A100000200000000000001B /* fashion */,
 				A1000002000000000000003 /* Assets.xcassets */,
 				A1000002000000000000004 /* Rally.entitlements */,
@@ -207,6 +222,10 @@
 				A1000001000000000000016 /* ballot.json in Resources */,
 				A1000001000000000000017 /* janeese-lewis-george.jpg in Resources */,
 				A100000100000000000001B /* fashion in Resources */,
+				A1000001000000000000021 /* putin.mp4 in Resources */,
+				A1000001000000000000022 /* zelensky.mp4 in Resources */,
+				A1000001000000000000023 /* netanyahu.mp4 in Resources */,
+				A1000001000000000000024 /* abbas.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +258,7 @@
 				A1000001000000000000018 /* Wallet.swift in Sources */,
 				A1000001000000000000010 /* ChaosView.swift in Sources */,
 				A1000001000000000000011 /* BoothView.swift in Sources */,
+				A1000001000000000000020 /* ExitPollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
