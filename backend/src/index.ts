@@ -109,14 +109,14 @@ async function crawlYoutubeChannels(
 ): Promise<SourceStatus> {
   let fetched = 0;
   let stored = 0;
-  let errors = 0;
+  const errors: string[] = [];
   for (const ch of channels) {
     try {
       const items = await fetchYoutube(ch.platform_id);
       fetched += items.length;
       stored += await storeItems(env, owner, ch.channel_key, "youtube", items);
-    } catch {
-      errors++;
+    } catch (e) {
+      errors.push(`${ch.label ?? ch.platform_id}: ${String(e)}`);
     }
   }
   if (channels.length === 0) {
@@ -124,9 +124,10 @@ async function crawlYoutubeChannels(
   }
   return {
     source: "youtube",
-    status: errors === channels.length ? "error" : "ok",
+    status: errors.length === channels.length ? "error" : "ok",
     fetched,
     stored,
+    ...(errors.length ? { note: errors.join("; ") } : {}),
   };
 }
 
@@ -202,12 +203,18 @@ async function crawlCandidate(
     if (xRows.length === 0) {
       sources.push({ source: "x", status: "skipped", fetched: 0, stored: 0, note: "no handle" });
     } else {
+      const { results: knownRows } = await env.DB.prepare(
+        "SELECT source_id FROM feed_items WHERE source = 'x' AND candidate_id = ?",
+      )
+        .bind(c.id)
+        .all<{ source_id: string }>();
+      const known = new Set(knownRows.map((r) => r.source_id));
       let fetched = 0;
       let stored = 0;
-      let errors = 0;
+      const errors: string[] = [];
       for (const row of xRows) {
         try {
-          const { items, profile } = await fetchXTimeline(row.handle);
+          const { items, profile } = await fetchXTimeline(row.handle, known);
           fetched += items.length;
           stored += await storeItems(
             env,
@@ -217,15 +224,16 @@ async function crawlCandidate(
             items,
             { displayName: profile.name, avatar: profile.avatar, kind: row.kind },
           );
-        } catch {
-          errors++;
+        } catch (e) {
+          errors.push(`${row.handle}: ${String(e)}`);
         }
       }
       sources.push({
         source: "x",
-        status: errors === xRows.length ? "error" : "ok",
+        status: errors.length === xRows.length ? "error" : "ok",
         fetched,
         stored,
+        ...(errors.length ? { note: errors.join("; ") } : {}),
       });
     }
   }

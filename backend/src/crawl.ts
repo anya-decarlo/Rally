@@ -248,10 +248,14 @@ export interface XResult {
   profile: { name?: string; avatar?: string };
 }
 
-export async function fetchXTimeline(handle: string): Promise<XResult> {
+export async function fetchXTimeline(
+  handle: string,
+  known: Set<string> = new Set(),
+): Promise<XResult> {
   // The logged-out profile page is server-rendered with the ~5 newest tweets
   // embedded. No auth. Bulk history is not available — run on the hourly cron
-  // and feed_items' INSERT OR IGNORE accumulates over time.
+  // and feed_items' INSERT OR IGNORE accumulates over time. Tweet ids in
+  // `known` are already stored, so their syndication lookup is skipped.
   const res = await fetch(`https://x.com/${encodeURIComponent(handle)}`, {
     headers: { "user-agent": UA, accept: "text/html" },
   });
@@ -261,7 +265,7 @@ export async function fetchXTimeline(handle: string): Promise<XResult> {
     ...new Set(
       [...html.matchAll(new RegExp(`/${handle}/status/(\\d{10,})`, "gi"))]
         .map((m) => m[1])
-        .filter((x): x is string => typeof x === "string"),
+        .filter((x): x is string => typeof x === "string" && !known.has(x)),
     ),
   ];
   const out: NormalizedItem[] = [];
@@ -320,11 +324,16 @@ export async function resolveYoutubeChannel(input: string): Promise<string> {
 }
 
 export async function fetchYoutube(channelId: string): Promise<NormalizedItem[]> {
-  const res = await fetch(
-    `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`,
-    { headers: { "user-agent": UA } },
-  );
-  if (!res.ok) throw new Error(`youtube RSS -> ${res.status}`);
+  // The RSS endpoint is flaky — it intermittently 404s/500s for valid
+  // channels (most attempts failed as of 2026-10-21) — so retry a few times.
+  let res: Response | null = null;
+  for (let attempt = 0; attempt < 6; attempt++) {
+    res = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`, {
+      headers: { "user-agent": UA },
+    });
+    if (res.ok) break;
+  }
+  if (!res?.ok) throw new Error(`youtube RSS -> ${res?.status}`);
   const xml = await res.text();
   const channelTitle = pick(xml, /<author>\s*<name>([\s\S]*?)<\/name>/) ?? "";
   const out: NormalizedItem[] = [];
