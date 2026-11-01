@@ -73,8 +73,9 @@ Everything federal (#1–5, 8–13, 16, 18) waits for the Delegate race.
 
 ## New sources queued (from the expansion review)
 
-First three are structured, public, and feed head-to-head directly. Full catalog
-with access/reliability/locality lives in `X_data_sources.md`.
+First three are structured, public, and feed head-to-head directly. Full landscape
+research (federal/state/local, access + cost, what's dead since 2024) lives in
+`ELECTION_DATA_RESEARCH.md`.
 
 | # | Source | Gives | Why now |
 |---|---|---|---|
@@ -85,5 +86,5 @@ with access/reliability/locality lives in `X_data_sources.md`.
 | 5 | **OpenStates API** | Legislators, bills, votes, all 50 states | LIMS-for-America; same vote cards everywhere |
 | 6 | **Ballotpedia (esp. ballot measures)** | Bios, results, measures DB | Highest-fun national format: yes/no + money for/against |
 | 7 | **Meta Ad Library + Google Transparency** | Digital ad spend by geography | "Who's paying to reach you" |
-| 8 | **ProPublica Congress API + eFD trades** | Votes, missed-vote rates, incumbent stock trades | Completes the federal side |
+| 8 | **eFD trades** (+ ~~ProPublica Congress API~~ — dead, archived Feb 2025; use Congress.gov API + clerk/senate vote XML) | Missed-vote rates, incumbent stock trades | Completes the federal side |
 | 9 | **Debate fact-checks, endorsements, polls** | Pre-verified claim↔record pairs, who-backs-whom, trends | Stance cards + context, always attributed |

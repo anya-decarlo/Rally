@@ -12,6 +12,7 @@ xcuserdata/
 # Python
 __pycache__/
 *.pyc
+.venv/
 
 # Scratch files from data pulls (keep the CSVs, drop the session junk)
 data/**/jar
