@@ -13,7 +13,11 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            if let place {
+            if let place, place.explorable, Government.available(place.id) {
+                ExploreView(place: place) { placeID = "" }
+                    .transition(.asymmetric(insertion: .move(edge: .trailing).combined(with: .opacity),
+                                            removal: .move(edge: .trailing).combined(with: .opacity)))
+            } else if let place, !Ballot.contests(for: place).isEmpty {
                 ForYouView(place: place) { placeID = "" }
                     .transition(.asymmetric(insertion: .move(edge: .trailing).combined(with: .opacity),
                                             removal: .move(edge: .trailing).combined(with: .opacity)))

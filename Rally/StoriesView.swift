@@ -20,13 +20,18 @@ struct StoriesView: View {
     private var currentIndex: Int {
         contests.firstIndex { $0.id == current } ?? 0
     }
-    private var currentGroup: ContestGroup { contests[currentIndex].group }
+    private var currentGroup: ContestGroup {
+        contests.isEmpty ? .federal : contests[currentIndex].group
+    }
 
     var body: some View {
         ZStack {
             LavaLamp(seed: Double(currentIndex))
                 .ignoresSafeArea()
 
+            if contests.isEmpty {
+                EmptyStage(text: "no ballot on file for \(place.id)", color: Theme.dim)
+            } else {
             VStack(spacing: 0) {
                 ProgressBar(count: contests.count, index: currentIndex, color: Theme.group(currentGroup))
                     .padding(.horizontal, 16)
@@ -88,6 +93,7 @@ struct StoriesView: View {
                 .scrollTargetBehavior(.paging)
                 .scrollPosition(id: $current)
                 .onChange(of: current) { Haptic.tick() }
+            }
             }
         }
         .background(Theme.bg)
@@ -367,10 +373,11 @@ struct SquishButton: ButtonStyle {
 
 struct LavaLamp: View {
     let seed: Double
+    var speed: Double = 1.0
 
     var body: some View {
         TimelineView(.animation) { tl in
-            let t = tl.date.timeIntervalSinceReferenceDate * 0.35 + seed * 1.7
+            let t = tl.date.timeIntervalSinceReferenceDate * 0.35 * speed + seed * 1.7
             ZStack {
                 Theme.bg
                 ForEach(0..<Theme.blobs.count, id: \.self) { i in

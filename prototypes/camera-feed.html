@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raw Camera Feed</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, sans-serif;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    #status {
+      position: fixed;
+      bottom: 12px;
+      left: 12px;
+      color: #fff;
+      background: rgba(0,0,0,.6);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-variant-numeric: tabular-nums;
+    }
+    #error {
+      color: #ff5555;
+      padding: 20px;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <video id="cam" autoplay playsinline muted></video>
+  <div id="status">starting…</div>
+  <div id="error"></div>
+
+  <script>
+    const video = document.getElementById('cam');
+    const status = document.getElementById('status');
+    const errBox = document.getElementById('error');
+
+    async function start() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { width: { ideal: 1920 }, height: { ideal: 1080 } },
+          audio: false
+        });
+        video.srcObject = stream;
+        const track = stream.getVideoTracks()[0];
+        const s = track.getSettings();
+        status.textContent = `${track.label} — ${s.width}x${s.height} @ ${Math.round(s.frameRate || 0)}fps`;
+      } catch (e) {
+        status.style.display = 'none';
+        errBox.style.display = 'block';
+        errBox.textContent = `Camera error: ${e.name} — ${e.message}`;
+      }
+    }
+
+    start();
+  </script>
+</body>
+</html>

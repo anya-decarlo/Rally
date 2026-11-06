@@ -10,6 +10,8 @@ struct PlayView: View {
     @State private var chaosCandidate: Candidate?
     @State private var boothPicker = false
     @State private var exitPoll = false
+    @State private var dealign = false
+    @State private var index = false
 
     private var boothPlayers: [Candidate] {
         Ballot.allCandidates.filter { extras.portrait(for: $0) != nil }
@@ -97,6 +99,18 @@ struct PlayView: View {
                             exitPoll = true
                         }
                     }
+
+                    section("DEALIGN") {
+                        ArcadeTile(emoji: "🚩", title: "DEALIGN", sub: "an interactive civics intervention", color: Theme.orange) {
+                            dealign = true
+                        }
+                    }
+
+                    section("THE INDEX") {
+                        ArcadeTile(emoji: "🧭", title: "THE INDEX", sub: "where do you land", color: Theme.violet) {
+                            index = true
+                        }
+                    }
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 40)
@@ -131,6 +145,8 @@ struct PlayView: View {
             ChaosView(candidate: c, clips: extras.clips(for: c))
         }
         .fullScreenCoverCompat(isPresented: $exitPoll) { ExitPollView() }
+        .fullScreenCoverCompat(isPresented: $dealign) { DealignView() }
+        .fullScreenCoverCompat(isPresented: $index) { IndexView() }
     }
 
     private func section<C: View>(_ title: String, @ViewBuilder content: () -> C) -> some View {

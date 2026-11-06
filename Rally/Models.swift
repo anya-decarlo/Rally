@@ -72,6 +72,9 @@ struct Contest: Identifiable, Hashable, Codable {
     let office: String
     let candidates: [Candidate]
     var note: String? = nil
+    var level: String? = nil        // federal|state|county|city|district
+    var jurisdiction: String? = nil // jurisdiction id; nil = the place itself
+    var district: String? = nil     // sub-district: "SD 24", "Ward 4", "Supt. Dist. 3"
 }
 
 struct BallotFile: Codable {

@@ -1,21 +1,23 @@
 import SwiftUI
 import AVKit
 
-// 🗳️ EXIT POLL — a fake agree/disagree poll that secretly sorts you onto a
-// side. You get the other guy, full screen, no warning. The hidden timer stops
-// when the clip ends or you find the little ✕. Clips are bundled mp4s in
-// data/clips/.
+// 🗳️ EXIT POLL — a fake agree/disagree poll. Each statement ambushes you with
+// a clip, full screen, no warning; the hidden timer stops when the clip ends or
+// you find the little ✕. You see every card once, then the assessment gives
+// everyone the same verdict. Clips are bundled mp4s in data/clips/.
 struct ExitPollView: View {
     @Environment(\.dismiss) private var dismiss
 
     enum Leader {
-        case putin, zelensky, netanyahu, abbas
+        case putin, zelensky, netanyahu, abbas, truman, hirohito
         var name: String {
             switch self {
             case .putin: "PUTIN"
             case .zelensky: "ZELENSKY"
             case .netanyahu: "NETANYAHU"
             case .abbas: "ABBAS"
+            case .truman: "TRUMAN"
+            case .hirohito: "HIROHITO"
             }
         }
         var face: String {
@@ -24,6 +26,8 @@ struct ExitPollView: View {
             case .zelensky: "🎤"
             case .netanyahu: "🪖"
             case .abbas: "🕊️"
+            case .truman: "🎩"
+            case .hirohito: "👑"
             }
         }
         var color: Color {
@@ -32,6 +36,8 @@ struct ExitPollView: View {
             case .zelensky: Theme.cyan
             case .netanyahu: Theme.violet
             case .abbas: Theme.lime
+            case .truman: Theme.yellow
+            case .hirohito: Theme.pink
             }
         }
         var clip: String {
@@ -40,6 +46,8 @@ struct ExitPollView: View {
             case .zelensky: "zelensky"
             case .netanyahu: "netanyahu"
             case .abbas: "abbas"
+            case .truman: "truman"
+            case .hirohito: "hirohito"
             }
         }
     }
@@ -50,6 +58,8 @@ struct ExitPollView: View {
         let text: String
         let agreeClip: Leader
         let disagreeClip: Leader
+        var agreeFile: String? = nil    // per-statement mp4 in data/clips/, overrides leader's
+        var disagreeFile: String? = nil
     }
 
     static let questions: [Question] = [
@@ -67,18 +77,36 @@ struct ExitPollView: View {
         .init(text: "If a child's home is rubble, the strategy already failed.", agreeClip: .netanyahu, disagreeClip: .abbas),
         .init(text: "A nation under attack doesn't owe anyone restraint.", agreeClip: .abbas, disagreeClip: .netanyahu),
         .init(text: "Land taken by force is never really yours.", agreeClip: .netanyahu, disagreeClip: .abbas),
+        // hiroshima — this deck gives you the leader your lean lands on; each
+        // statement carries its own clip pair (hiro-Na = agree, hiro-Nb = disagree)
+        .init(text: "The bomb saved more lives than it took.", agreeClip: .truman, disagreeClip: .hirohito,
+              agreeFile: "hiro-1a", disagreeFile: "hiro-1b"),
+        .init(text: "Some lines shouldn't be crossed, even to end a war.", agreeClip: .hirohito, disagreeClip: .truman,
+              agreeFile: "hiro-2a", disagreeFile: "hiro-2b"),
+        .init(text: "A demonstration over empty ocean would have made the same point.", agreeClip: .hirohito, disagreeClip: .truman,
+              agreeFile: "hiro-3a", disagreeFile: "hiro-3b"),
+        .init(text: "Truman made the only call available to a wartime president.", agreeClip: .truman, disagreeClip: .hirohito,
+              agreeFile: "hiro-4a", disagreeFile: "hiro-4b"),
+        .init(text: "The second bomb had no justification at all.", agreeClip: .hirohito, disagreeClip: .truman,
+              agreeFile: "hiro-5a", disagreeFile: "hiro-5b"),
+        .init(text: "History forgave Hiroshima because the winners wrote it.", agreeClip: .hirohito, disagreeClip: .truman,
+              agreeFile: "hiro-6a", disagreeFile: "hiro-6b"),
     ]
 
-    enum Phase { case pick, watch, result }
+    enum Phase { case pick, watch, result, assessment }
 
     @State private var phase: Phase = .pick
-    @State private var question = ExitPollView.questions.randomElement()!
+    @State private var deck = ExitPollView.questions.shuffled()
+    @State private var idx = 0
     @State private var agreed = false
     @State private var leader: Leader?
+    @State private var clipFile: String?
     @State private var start = Date()
     @State private var elapsed: TimeInterval = 0
     @State private var best: TimeInterval = UserDefaults.standard.double(forKey: "rally.exitpoll.best")
     @State private var newBest = false
+
+    private var question: Question { deck[idx] }
 
     var body: some View {
         ZStack {
@@ -86,7 +114,7 @@ struct ExitPollView: View {
                 watchLayer
                     .transition(.opacity)
             } else {
-                LavaLamp(seed: Double(abs(question.text.hashValue) % 10))
+                LavaLamp(seed: Double(abs(question.text.hashValue) % 10), speed: 0.12)
                     .ignoresSafeArea()
 
                 VStack(spacing: 0) {
@@ -109,6 +137,7 @@ struct ExitPollView: View {
                     switch phase {
                     case .pick: pickScreen
                     case .result: resultScreen
+                    case .assessment: assessmentScreen
                     case .watch: EmptyView()
                     }
                 }
@@ -151,12 +180,19 @@ struct ExitPollView: View {
             Spacer()
             answerButton(agree: true)
             answerButton(agree: false)
-            Text("your response is on the record.")
+            Text("your response is on the record. · ↑ swipe to pass")
                 .font(.system(size: 10, weight: .medium, design: .monospaced))
                 .foregroundStyle(Theme.dim.opacity(0.7))
             Spacer()
         }
         .padding(.horizontal, 24)
+        .contentShape(Rectangle())
+        .gesture(
+            DragGesture(minimumDistance: 40)
+                .onEnded { g in
+                    if g.translation.height < 0 { next() }
+                }
+        )
     }
 
     private func answerButton(agree: Bool) -> some View {
@@ -164,6 +200,8 @@ struct ExitPollView: View {
             Haptic.tap()
             agreed = agree
             leader = agree ? question.agreeClip : question.disagreeClip
+            clipFile = agree ? (question.agreeFile ?? question.agreeClip.clip)
+                             : (question.disagreeFile ?? question.disagreeClip.clip)
             start = Date()
             withAnimation(.bouncy(duration: 0.5)) { phase = .watch }
         } label: {
@@ -185,10 +223,10 @@ struct ExitPollView: View {
 
     private var watchLayer: some View {
         ZStack(alignment: .top) {
-            if let leader {
+            if let leader, let clipFile {
                 Group {
-                    if Bundle.main.url(forResource: leader.clip, withExtension: "mp4") != nil {
-                        BundledClipView(resource: leader.clip) { bail() }
+                    if Bundle.main.url(forResource: clipFile, withExtension: "mp4") != nil {
+                        BundledClipView(resource: clipFile) { bail() }
                     } else {
                         clipPlaceholder(leader)
                     }
@@ -271,9 +309,9 @@ struct ExitPollView: View {
             }
             Spacer()
             Button {
-                replay()
+                next()
             } label: {
-                Text("RUN IT BACK")
+                Text("CONTINUE")
                     .font(.system(size: 22, weight: .black, design: .rounded))
                     .foregroundStyle(Theme.bg)
                     .frame(maxWidth: .infinity)
@@ -283,7 +321,7 @@ struct ExitPollView: View {
             }
             .buttonStyle(SquishButton())
             .padding(.horizontal, 16)
-            Text("↑ swipe up for another question")
+            Text("↑ swipe up to continue")
                 .font(.system(size: 11, weight: .heavy, design: .monospaced))
                 .foregroundStyle(Theme.dim)
                 .padding(.bottom, 24)
@@ -292,9 +330,71 @@ struct ExitPollView: View {
         .gesture(
             DragGesture(minimumDistance: 40)
                 .onEnded { g in
-                    if g.translation.height < 0 { replay() }
+                    if g.translation.height < 0 { next() }
                 }
         )
+    }
+
+    // MARK: - The assessment — one result, presented like a real instrument
+
+    private var assessmentScreen: some View {
+        VStack(spacing: 24) {
+            Spacer()
+            Text("ASSESSMENT\nCOMPLETE")
+                .font(.system(size: 44, weight: .black, design: .serif))
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.white)
+
+            VStack(alignment: .leading, spacing: 12) {
+                HStack {
+                    Text("OFFICIAL RESULT")
+                        .font(.system(size: 10, weight: .bold, design: .monospaced))
+                        .tracking(2)
+                        .foregroundStyle(Theme.dim)
+                    Spacer()
+                    Text(String(format: "RESPONDENT Nº %04d", Int.random(in: 1...9999)))
+                        .font(.system(size: 10, weight: .bold, design: .monospaced))
+                        .tracking(2)
+                        .foregroundStyle(Theme.dim)
+                }
+                Text("You align with Russia, Iran, and the American decision to bomb Hiroshima.")
+                    .font(.system(size: 26, weight: .bold, design: .serif))
+                    .foregroundStyle(.white)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Divider().overlay(Theme.edge)
+                HStack {
+                    Text("alignment index 0.94 · 18 items")
+                    Spacer()
+                    Text("confidence 94%")
+                }
+                .font(.system(size: 10, weight: .medium, design: .monospaced))
+                .foregroundStyle(Theme.dim)
+            }
+            .padding(24)
+            .background(Theme.card, in: RoundedRectangle(cornerRadius: 8))
+            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Theme.edge, lineWidth: 1))
+
+            Text("Computed from recorded responses and viewing behavior. Respondents who disagree with their result are invited to retest.")
+                .font(.system(size: 10, weight: .medium, design: .monospaced))
+                .foregroundStyle(Theme.dim.opacity(0.7))
+                .multilineTextAlignment(.center)
+            Spacer()
+            Button {
+                retake()
+            } label: {
+                Text("RETAKE ASSESSMENT")
+                    .font(.system(size: 18, weight: .bold, design: .serif))
+                    .tracking(3)
+                    .foregroundStyle(Theme.ink)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 18)
+                    .background(Theme.paper, in: RoundedRectangle(cornerRadius: 4))
+            }
+            .buttonStyle(.plain)
+            .padding(.bottom, 32)
+        }
+        .padding(.horizontal, 24)
     }
 
     private var verdict: String {
@@ -307,11 +407,24 @@ struct ExitPollView: View {
         }
     }
 
-    private func replay() {
-        Haptic.tap()
-        question = Self.questions.filter { $0.text != question.text }.randomElement() ?? question
-        withAnimation(.bouncy(duration: 0.4)) { phase = .pick }
+    private func next() {
+        Haptic.tick()
         newBest = false
+        withAnimation(.bouncy(duration: 0.4)) {
+            if idx + 1 < deck.count {
+                idx += 1
+                phase = .pick
+            } else {
+                phase = .assessment
+            }
+        }
+    }
+
+    private func retake() {
+        Haptic.tap()
+        deck.shuffle()
+        idx = 0
+        withAnimation(.bouncy(duration: 0.4)) { phase = .pick }
     }
 
     private func bail() {

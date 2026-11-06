@@ -6,12 +6,13 @@ struct Place: Identifiable, Hashable {
     let id: String        // USPS code
     let name: String
     var live = false      // we have a ballot for it
+    var explorable = false // jurisdiction skeleton bundled (data/jurisdictions/)
 
     static let all: [Place] = [
         Place(id: "DC", name: "Washington, DC", live: true),
         Place(id: "AL", name: "Alabama"), Place(id: "AK", name: "Alaska"),
         Place(id: "AZ", name: "Arizona"), Place(id: "AR", name: "Arkansas"),
-        Place(id: "CA", name: "California"), Place(id: "CO", name: "Colorado"),
+        Place(id: "CA", name: "California", explorable: true), Place(id: "CO", name: "Colorado"),
         Place(id: "CT", name: "Connecticut"), Place(id: "DE", name: "Delaware"),
         Place(id: "FL", name: "Florida"), Place(id: "GA", name: "Georgia"),
         Place(id: "HI", name: "Hawaii"), Place(id: "ID", name: "Idaho"),
