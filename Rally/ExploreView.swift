@@ -81,7 +81,7 @@ struct ExploreView: View {
                         sessionBanner(leg)
                     }
 
-                    ForEach(JurisdictionKind.allCases, id: \.self) { kind in
+                    ForEach(file.levels.compactMap(JurisdictionKind.init(rawValue:)), id: \.self) { kind in
                         levelSection(kind)
                     }
 
@@ -117,8 +117,6 @@ struct ExploreView: View {
                 }
                 .buttonStyle(.plain)
                 Spacer()
-                Sticker("🧭 explore", color: Theme.violet)
-                    .rotationEffect(.degrees(2))
             }
             .padding(.top, 8)
 
@@ -149,12 +147,13 @@ struct ExploreView: View {
     }
 
     private func sectionHeader(_ kind: JurisdictionKind) -> some View {
-        VStack(alignment: .leading, spacing: 3) {
-            Text(kind.label)
+        let meta = file.levelsMeta?.first { $0.kind == kind.rawValue }
+        return VStack(alignment: .leading, spacing: 3) {
+            Text(meta?.label ?? kind.label)
                 .font(.system(size: 15, weight: .black, design: .rounded))
                 .tracking(1.5)
                 .foregroundStyle(levelColor(kind))
-            Text(kind.tagline)
+            Text(meta?.tagline ?? kind.tagline)
                 .font(.system(size: 11, weight: .medium, design: .monospaced))
                 .foregroundStyle(Theme.dim)
         }

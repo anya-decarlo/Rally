@@ -102,6 +102,20 @@ struct ForYouView: View {
         }
     }
 
+    private func topPill(_ emoji: String, _ text: String, _ color: Color) -> some View {
+        HStack(spacing: 6) {
+            Text(emoji)
+            Text(text)
+        }
+        .lineLimit(1)
+        .fixedSize()
+        .font(.system(size: 12, weight: .black, design: .rounded))
+        .foregroundStyle(.white)
+        .padding(.horizontal, 12).padding(.vertical, 9)
+        .background(.ultraThinMaterial, in: Capsule())
+        .overlay(Capsule().stroke(color.opacity(0.6), lineWidth: 1))
+    }
+
     var body: some View {
         ZStack(alignment: .top) {
             LavaLamp(seed: Double(index) * 0.7 + 3)
@@ -174,36 +188,12 @@ struct ForYouView: View {
                 Button {
                     Haptic.tap()
                     showPlay = true
-                } label: {
-                    HStack(spacing: 6) {
-                        Text("🎲")
-                        Text("PLAY")
-                    }
-                    .lineLimit(1)
-                    .fixedSize()
-                    .font(.system(size: 12, weight: .black, design: .rounded))
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 12).padding(.vertical, 9)
-                    .background(.ultraThinMaterial, in: Capsule())
-                    .overlay(Capsule().stroke(Theme.pink.opacity(0.6), lineWidth: 1))
-                }
+                } label: { topPill("🎲", "PLAY", Theme.pink) }
                 .buttonStyle(.plain)
                 Button {
                     Haptic.tap()
                     showBallot = true
-                } label: {
-                    HStack(spacing: 6) {
-                        Text("🗳️")
-                        Text("BALLOT")
-                    }
-                    .lineLimit(1)
-                    .fixedSize()
-                    .font(.system(size: 12, weight: .black, design: .rounded))
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 12).padding(.vertical, 9)
-                    .background(.ultraThinMaterial, in: Capsule())
-                    .overlay(Capsule().stroke(Theme.yellow.opacity(0.6), lineWidth: 1))
-                }
+                } label: { topPill("🗳️", "BALLOT", Theme.yellow) }
                 .buttonStyle(.plain)
                 WalletButton()
             }
