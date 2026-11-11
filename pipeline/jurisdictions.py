@@ -209,11 +209,61 @@ def build_ca():
     }
 
 
+def build_dc():
+    """DC is consolidated — one government, not four levels. The wards are
+    the only sub-geography; ANCs live under them (not enumerated yet)."""
+    wards = [{"id": f"dc-ward-{w}", "name": f"Ward {w}", "kind": "county",
+              "parent": "dc",
+              "seats": [
+                  {"office": "Councilmember", "seats": 1, "elected": "wide"},
+                  {"office": "State Board of Education member", "seats": 1,
+                   "elected": "wide"},
+                  {"office": "Advisory Neighborhood Commissioners", "seats": 0,
+                   "elected": "districts", "note": "single-member districts"},
+              ]} for w in range(1, 9)]
+    return {
+        "_generated": "pipeline/jurisdictions.py — do not edit",
+        "state": "DC",
+        "levels": ["state", "county", "district"],
+        "levelsMeta": [
+            {"kind": "state", "label": "DISTRICT GOVERNMENT",
+             "tagline": "Mayor · Council · AG · Congress-adjacent seats"},
+            {"kind": "county", "label": "WARDS",
+             "tagline": "Councilmember · SBOE member · ANCs"},
+            {"kind": "district", "label": "COMMISSIONS & BOARDS",
+             "tagline": "ANCs · school board · shadow seats"},
+        ],
+        "districtCatalog": [
+            {"kind": "ANC", "count": "~40",
+             "note": "advisory neighborhood commissions across 8 wards"},
+        ],
+        "jurisdictions": [{
+            "id": "dc", "name": "District of Columbia", "kind": "state",
+            "consolidated": True,
+            "seats": [
+                {"office": "Mayor", "seats": 1, "elected": "wide"},
+                {"office": "Attorney General", "seats": 1, "elected": "wide"},
+                {"office": "Council Chairman", "seats": 1, "elected": "wide"},
+                {"office": "Council At-Large", "seats": 2, "elected": "wide"},
+                {"office": "U.S. House Delegate", "seats": 1, "elected": "wide",
+                 "federal": True},
+                {"office": "U.S. Shadow Senator", "seats": 2, "elected": "wide",
+                 "federal": True},
+                {"office": "U.S. Shadow Representative", "seats": 1,
+                 "elected": "wide", "federal": True},
+                {"office": "State Board of Education At-Large", "seats": 1,
+                 "elected": "wide"},
+            ],
+        }] + wards,
+    }
+
+
 if __name__ == "__main__":
     OUT.mkdir(exist_ok=True)
-    doc = build_ca()
-    (OUT / "ca.json").write_text(json.dumps(doc, indent=2) + "\n")
-    kinds = {}
-    for j in doc["jurisdictions"]:
-        kinds[j["kind"]] = kinds.get(j["kind"], 0) + 1
-    print(f"ca.json: {kinds}")
+    for state, build in [("ca", build_ca), ("dc", build_dc)]:
+        doc = build()
+        (OUT / f"{state}.json").write_text(json.dumps(doc, indent=2) + "\n")
+        kinds = {}
+        for j in doc["jurisdictions"]:
+            kinds[j["kind"]] = kinds.get(j["kind"], 0) + 1
+        print(f"{state}.json: {kinds}")

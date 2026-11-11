@@ -11,6 +11,9 @@ struct LegislationView: View {
     @AppStorage("following") private var followingRaw = ""
     @State private var typeFilter = "all"
     @State private var statusFilter = "all"
+    @State private var profile: Legislator?
+
+    private var rosterFile: PeopleFile? { Government.people(place.id) }
 
     private var following: Set<String> {
         Set(followingRaw.split(separator: ",").map(String.init))
@@ -61,6 +64,13 @@ struct LegislationView: View {
                         .padding(.bottom, 40)
                 }
                 .padding(.horizontal, 22)
+            }
+        }
+        .fullScreenCover(item: $profile) { p in
+            ZStack {
+                Theme.bg.ignoresSafeArea()
+                LegislatorProfileView(person: p, bills: file.byId,
+                                      state: place.id) { profile = nil }
             }
         }
     }
@@ -176,21 +186,37 @@ struct LegislationView: View {
                         .tracking(2)
                         .foregroundStyle(Theme.dim)
                     ForEach(bill.people, id: \.name) { p in
-                        HStack(spacing: 8) {
-                            Text(p.role.uppercased())
-                                .font(.system(size: 8, weight: .black, design: .monospaced))
-                                .tracking(1)
-                                .foregroundStyle(p.role.contains("author") && !p.role.contains("co")
-                                                 ? chamberColor(bill) : Theme.dim)
-                                .frame(width: 92, alignment: .leading)
-                            Text(p.name)
-                                .font(.system(size: 13, weight: .bold, design: .rounded))
-                                .foregroundStyle(.white)
-                            Spacer()
-                            Text(p.seat)
-                                .font(.system(size: 9, weight: .medium, design: .monospaced))
-                                .foregroundStyle(Theme.dim)
+                        let who = p.pid.flatMap { rosterFile?.find($0) }
+                            ?? rosterFile?.find(name: p.name)
+                        Button {
+                            if let who {
+                                Haptic.tick()
+                                profile = who
+                            }
+                        } label: {
+                            HStack(spacing: 8) {
+                                Text(p.role.uppercased())
+                                    .font(.system(size: 8, weight: .black, design: .monospaced))
+                                    .tracking(1)
+                                    .foregroundStyle(p.role.contains("author") && !p.role.contains("co")
+                                                     ? chamberColor(bill) : Theme.dim)
+                                    .frame(width: 92, alignment: .leading)
+                                Text(p.name)
+                                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                                    .foregroundStyle(.white)
+                                if who != nil {
+                                    Image(systemName: "chevron.right")
+                                        .font(.system(size: 8, weight: .black))
+                                        .foregroundStyle(Theme.violet)
+                                }
+                                Spacer()
+                                Text(p.seat)
+                                    .font(.system(size: 9, weight: .medium, design: .monospaced))
+                                    .foregroundStyle(Theme.dim)
+                            }
                         }
+                        .buttonStyle(.plain)
+                        .disabled(who == nil)
                     }
                 }
             }

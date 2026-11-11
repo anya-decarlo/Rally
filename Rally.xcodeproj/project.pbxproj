@@ -63,6 +63,8 @@
 		A1000001000000000000038 /* activity in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000038 /* activity */; };
 		A1000001000000000000039 /* legislation in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000039 /* legislation */; };
 		A1000001000000000000040 /* LegislationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000040 /* LegislationView.swift */; };
+		A1000001000000000000041 /* LegislatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000041 /* LegislatorView.swift */; };
+		A1000001000000000000042 /* people in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000042 /* people */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +127,8 @@
 		A1000002000000000000038 /* activity */ = {isa = PBXFileReference; lastKnownFileType = folder; name = activity; path = ../data/activity; sourceTree = "<group>"; };
 		A1000002000000000000039 /* legislation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = legislation; path = ../data/legislation; sourceTree = "<group>"; };
 		A1000002000000000000040 /* LegislationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegislationView.swift; sourceTree = "<group>"; };
+		A1000002000000000000041 /* LegislatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegislatorView.swift; sourceTree = "<group>"; };
+		A1000002000000000000042 /* people */ = {isa = PBXFileReference; lastKnownFileType = folder; name = people; path = ../data/people; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 				A1000002000000000000036 /* Government.swift */,
 				A1000002000000000000037 /* ExploreView.swift */,
 				A1000002000000000000040 /* LegislationView.swift */,
+				A1000002000000000000041 /* LegislatorView.swift */,
+				A1000002000000000000042 /* people */,
 				A10000020000000000001F /* XAuth.swift */,
 				A1000002000000000000020 /* Info.plist */,
 				A100000200000000000000E /* posts.json */,
@@ -305,6 +311,7 @@
 				A1000001000000000000035 /* jurisdictions in Resources */,
 				A1000001000000000000038 /* activity in Resources */,
 				A1000001000000000000039 /* legislation in Resources */,
+				A1000001000000000000042 /* people in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +350,7 @@
 				A1000001000000000000036 /* Government.swift in Sources */,
 				A1000001000000000000037 /* ExploreView.swift in Sources */,
 				A1000001000000000000040 /* LegislationView.swift in Sources */,
+				A1000001000000000000041 /* LegislatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

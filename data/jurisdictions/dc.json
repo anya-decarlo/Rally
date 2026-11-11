@@ -1,0 +1,278 @@
+{
+  "_generated": "pipeline/jurisdictions.py \u2014 do not edit",
+  "state": "DC",
+  "levels": [
+    "state",
+    "county",
+    "district"
+  ],
+  "levelsMeta": [
+    {
+      "kind": "state",
+      "label": "DISTRICT GOVERNMENT",
+      "tagline": "Mayor \u00b7 Council \u00b7 AG \u00b7 Congress-adjacent seats"
+    },
+    {
+      "kind": "county",
+      "label": "WARDS",
+      "tagline": "Councilmember \u00b7 SBOE member \u00b7 ANCs"
+    },
+    {
+      "kind": "district",
+      "label": "COMMISSIONS & BOARDS",
+      "tagline": "ANCs \u00b7 school board \u00b7 shadow seats"
+    }
+  ],
+  "districtCatalog": [
+    {
+      "kind": "ANC",
+      "count": "~40",
+      "note": "advisory neighborhood commissions across 8 wards"
+    }
+  ],
+  "jurisdictions": [
+    {
+      "id": "dc",
+      "name": "District of Columbia",
+      "kind": "state",
+      "consolidated": true,
+      "seats": [
+        {
+          "office": "Mayor",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "Attorney General",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "Council Chairman",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "Council At-Large",
+          "seats": 2,
+          "elected": "wide"
+        },
+        {
+          "office": "U.S. House Delegate",
+          "seats": 1,
+          "elected": "wide",
+          "federal": true
+        },
+        {
+          "office": "U.S. Shadow Senator",
+          "seats": 2,
+          "elected": "wide",
+          "federal": true
+        },
+        {
+          "office": "U.S. Shadow Representative",
+          "seats": 1,
+          "elected": "wide",
+          "federal": true
+        },
+        {
+          "office": "State Board of Education At-Large",
+          "seats": 1,
+          "elected": "wide"
+        }
+      ]
+    },
+    {
+      "id": "dc-ward-1",
+      "name": "Ward 1",
+      "kind": "county",
+      "parent": "dc",
+      "seats": [
+        {
+          "office": "Councilmember",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "State Board of Education member",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "Advisory Neighborhood Commissioners",
+          "seats": 0,
+          "elected": "districts",
+          "note": "single-member districts"
+        }
+      ]
+    },
+    {
+      "id": "dc-ward-2",
+      "name": "Ward 2",
+      "kind": "county",
+      "parent": "dc",
+      "seats": [
+        {
+          "office": "Councilmember",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "State Board of Education member",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "Advisory Neighborhood Commissioners",
+          "seats": 0,
+          "elected": "districts",
+          "note": "single-member districts"
+        }
+      ]
+    },
+    {
+      "id": "dc-ward-3",
+      "name": "Ward 3",
+      "kind": "county",
+      "parent": "dc",
+      "seats": [
+        {
+          "office": "Councilmember",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "State Board of Education member",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "Advisory Neighborhood Commissioners",
+          "seats": 0,
+          "elected": "districts",
+          "note": "single-member districts"
+        }
+      ]
+    },
+    {
+      "id": "dc-ward-4",
+      "name": "Ward 4",
+      "kind": "county",
+      "parent": "dc",
+      "seats": [
+        {
+          "office": "Councilmember",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "State Board of Education member",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "Advisory Neighborhood Commissioners",
+          "seats": 0,
+          "elected": "districts",
+          "note": "single-member districts"
+        }
+      ]
+    },
+    {
+      "id": "dc-ward-5",
+      "name": "Ward 5",
+      "kind": "county",
+      "parent": "dc",
+      "seats": [
+        {
+          "office": "Councilmember",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "State Board of Education member",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "Advisory Neighborhood Commissioners",
+          "seats": 0,
+          "elected": "districts",
+          "note": "single-member districts"
+        }
+      ]
+    },
+    {
+      "id": "dc-ward-6",
+      "name": "Ward 6",
+      "kind": "county",
+      "parent": "dc",
+      "seats": [
+        {
+          "office": "Councilmember",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "State Board of Education member",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "Advisory Neighborhood Commissioners",
+          "seats": 0,
+          "elected": "districts",
+          "note": "single-member districts"
+        }
+      ]
+    },
+    {
+      "id": "dc-ward-7",
+      "name": "Ward 7",
+      "kind": "county",
+      "parent": "dc",
+      "seats": [
+        {
+          "office": "Councilmember",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "State Board of Education member",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "Advisory Neighborhood Commissioners",
+          "seats": 0,
+          "elected": "districts",
+          "note": "single-member districts"
+        }
+      ]
+    },
+    {
+      "id": "dc-ward-8",
+      "name": "Ward 8",
+      "kind": "county",
+      "parent": "dc",
+      "seats": [
+        {
+          "office": "Councilmember",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "State Board of Education member",
+          "seats": 1,
+          "elected": "wide"
+        },
+        {
+          "office": "Advisory Neighborhood Commissioners",
+          "seats": 0,
+          "elected": "districts",
+          "note": "single-member districts"
+        }
+      ]
+    }
+  ]
+}

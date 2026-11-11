@@ -614,9 +614,39 @@ struct JurisdictionView: View {
     let file: JurisdictionFile
     let onBack: () -> Void
 
+    @State private var roster: String?      // chamber being browsed
+    @State private var person: Legislator?
+
     private var children: [Jurisdiction] { file.children(of: jurisdiction.id) }
+    private var rosterFile: PeopleFile? { Government.people(file.state) }
+    private var billIndex: [String: Bill] {
+        Government.legislation(file.state)?.byId ?? [:]
+    }
 
     var body: some View {
+        ZStack {
+            if let person {
+                LegislatorProfileView(person: person, bills: billIndex,
+                                      state: file.state) {
+                    withAnimation(.snappy(duration: 0.3)) { self.person = nil }
+                }
+                .transition(.move(edge: .trailing).combined(with: .opacity))
+            } else if let roster, let rosterFile {
+                RosterView(chamber: roster, people: rosterFile.chamber(roster),
+                           onPick: { p in
+                               withAnimation(.snappy(duration: 0.3)) { person = p }
+                           }) {
+                    withAnimation(.snappy(duration: 0.3)) { self.roster = nil }
+                }
+                .transition(.move(edge: .trailing).combined(with: .opacity))
+            } else {
+                detail
+                    .transition(.move(edge: .leading).combined(with: .opacity))
+            }
+        }
+    }
+
+    private var detail: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
                 Button { onBack() } label: {
@@ -667,37 +697,63 @@ struct JurisdictionView: View {
             .foregroundStyle(color)
     }
 
+    // Chambers with a live roster become doors — tap "State Senate" →
+    // the 40 humans holding those seats.
+    private func rosterFor(_ s: Seat) -> String? {
+        guard jurisdiction.kind == .state, rosterFile != nil else { return nil }
+        switch s.office {
+        case "State Senate": return "senate"
+        case "State Assembly": return "assembly"
+        default: return nil
+        }
+    }
+
     private var seatsSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             blockHeader("THE SEATS")
             ForEach(jurisdiction.seats, id: \.office) { s in
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(s.office)
-                            .font(.system(size: 15, weight: .bold, design: .rounded))
-                            .foregroundStyle(.white)
-                        if let note = s.note {
-                            Text(note)
-                                .font(.system(size: 10, weight: .medium, design: .monospaced))
-                                .foregroundStyle(Theme.dim)
+                let chamber = rosterFor(s)
+                Button {
+                    if let chamber {
+                        Haptic.tick()
+                        withAnimation(.snappy(duration: 0.3)) { roster = chamber }
+                    }
+                } label: {
+                    HStack(alignment: .top) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(s.office)
+                                .font(.system(size: 15, weight: .bold, design: .rounded))
+                                .foregroundStyle(.white)
+                            if let note = s.note {
+                                Text(note)
+                                    .font(.system(size: 10, weight: .medium, design: .monospaced))
+                                    .foregroundStyle(Theme.dim)
+                            }
+                        }
+                        Spacer()
+                        VStack(alignment: .trailing, spacing: 2) {
+                            if s.seats > 0 {
+                                Text("\(s.seats)")
+                                    .font(.system(size: 16, weight: .black, design: .rounded))
+                                    .foregroundStyle(chamber != nil ? Theme.violet : Theme.cyan)
+                            }
+                            if !s.elected.isEmpty {
+                                Text(s.elected.uppercased())
+                                    .font(.system(size: 9, weight: .bold, design: .monospaced))
+                                    .tracking(1)
+                                    .foregroundStyle(Theme.dim)
+                            }
+                        }
+                        if chamber != nil {
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 11, weight: .black))
+                                .foregroundStyle(Theme.violet)
                         }
                     }
-                    Spacer()
-                    VStack(alignment: .trailing, spacing: 2) {
-                        if s.seats > 0 {
-                            Text("\(s.seats)")
-                                .font(.system(size: 16, weight: .black, design: .rounded))
-                                .foregroundStyle(Theme.cyan)
-                        }
-                        if !s.elected.isEmpty {
-                            Text(s.elected.uppercased())
-                                .font(.system(size: 9, weight: .bold, design: .monospaced))
-                                .tracking(1)
-                                .foregroundStyle(Theme.dim)
-                        }
-                    }
+                    .padding(.vertical, 6)
                 }
-                .padding(.vertical, 6)
+                .buttonStyle(.plain)
+                .disabled(chamber == nil)
                 if s.office != jurisdiction.seats.last?.office {
                     Divider().overlay(Theme.edge)
                 }

@@ -98,9 +98,18 @@ struct DistrictKind: Hashable, Codable {
     var note: String? = nil
 }
 
+// Per-place naming for the four levels — CA says COUNTY GOVERNMENT,
+// DC's wards aren't counties, so the file can override labels.
+struct LevelMeta: Hashable, Codable {
+    let kind: String
+    let label: String
+    let tagline: String
+}
+
 struct JurisdictionFile: Codable {
     let state: String
     let levels: [String]
+    var levelsMeta: [LevelMeta]? = nil
     let districtCatalog: [DistrictKind]
     let jurisdictions: [Jurisdiction]
 
@@ -201,6 +210,7 @@ struct BillPerson: Hashable, Codable {
     let name: String
     let role: String           // author · principal coauthor · coauthor · sponsor
     let seat: String           // "State Senate · D-11 · SF"
+    var pid: String? = nil     // ocd-person/… — joins to the roster
 }
 
 struct BillAction: Hashable, Codable {
@@ -269,12 +279,75 @@ struct LegislationFile: Codable {
     let session: String
     let stages: [String]
     let bills: [Bill]
+
+    var byId: [String: Bill] { Dictionary(bills.map { ($0.id, $0) }) { _, last in last } }
+}
+
+// MARK: - People — who holds the seats
+// data/people/<state>.json = the roster (light, loads at once).
+// data/people/<state>/<person-id>.json = one member's full vote history,
+// loaded on demand when their profile opens — 600k rows can't decode at launch.
+
+struct PersonVote: Hashable, Codable {
+    let bill: String           // our bill id — joins LegislationFile
+    let option: String         // yes | no | other
+    let date: String
+}
+
+struct Legislator: Identifiable, Hashable, Codable {
+    let id: String             // ocd-person/…
+    let name: String
+    let seat: String           // "State Senate · D-11"
+    let chamber: String        // senate | assembly
+    let district: String
+    let party: String          // D | R | I | …
+    var photo: String? = nil
+    var email: String? = nil
+    var site: String? = nil
+    var authored: [String] = []
+    var coauthored: [String] = []
+    var voteCount = 0
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, seat, chamber, district, party, photo, email, site,
+             authored, coauthored, voteCount
+    }
+
+    init(from d: Decoder) throws {
+        let c = try d.container(keyedBy: CodingKeys.self)
+        id = try c.decode(String.self, forKey: .id)
+        name = try c.decode(String.self, forKey: .name)
+        seat = try c.decode(String.self, forKey: .seat)
+        chamber = try c.decode(String.self, forKey: .chamber)
+        district = try c.decode(String.self, forKey: .district)
+        party = try c.decode(String.self, forKey: .party)
+        photo = try c.decodeIfPresent(String.self, forKey: .photo)
+        email = try c.decodeIfPresent(String.self, forKey: .email)
+        site = try c.decodeIfPresent(String.self, forKey: .site)
+        authored = try c.decodeIfPresent([String].self, forKey: .authored) ?? []
+        coauthored = try c.decodeIfPresent([String].self, forKey: .coauthored) ?? []
+        voteCount = try c.decodeIfPresent(Int.self, forKey: .voteCount) ?? 0
+    }
+}
+
+struct PeopleFile: Codable {
+    let state: String
+    let session: String
+    let people: [Legislator]
+
+    func find(_ id: String) -> Legislator? { people.first { $0.id == id } }
+    func find(name: String) -> Legislator? {
+        people.first { $0.name.caseInsensitiveCompare(name) == .orderedSame }
+    }
+    func chamber(_ c: String) -> [Legislator] { people.filter { $0.chamber == c } }
 }
 
 enum Government {
     private static var cache: [String: JurisdictionFile] = [:]
     private static var activityCache: [String: ActivityFile] = [:]
     private static var legislationCache: [String: LegislationFile] = [:]
+    private static var peopleCache: [String: PeopleFile] = [:]
+    private static var votesCache: [String: [PersonVote]] = [:]
 
     // Bundled in data/jurisdictions/<state>.json — subdirectory lookup so all
     // 50 states can share one folder reference in the project.
@@ -314,4 +387,34 @@ enum Government {
         legislationCache[stateID] = file
         return file
     }
+
+    // Bundled in data/people/<state>.json — the roster.
+    static func people(_ stateID: String) -> PeopleFile? {
+        if let f = peopleCache[stateID] { return f }
+        let key = stateID.lowercased()
+        guard let url = Bundle.main.url(forResource: key, withExtension: "json", subdirectory: "people"),
+              let data = try? Data(contentsOf: url),
+              let file = try? JSONDecoder().decode(PeopleFile.self, from: data)
+        else { return nil }
+        peopleCache[stateID] = file
+        return file
+    }
+
+    // Bundled in data/people/<state>/<short-id>.json — one member's roll calls.
+    static func votes(for personID: String, in stateID: String) -> [PersonVote] {
+        if let v = votesCache[personID] { return v }
+        let short = String(personID.split(separator: "/").last ?? "")
+        guard let url = Bundle.main.url(forResource: short, withExtension: "json",
+                                        subdirectory: "people/\(stateID.lowercased())"),
+              let data = try? Data(contentsOf: url),
+              let file = try? JSONDecoder().decode(PersonVotesFile.self, from: data)
+        else { return [] }
+        votesCache[personID] = file.votes
+        return file.votes
+    }
+}
+
+private struct PersonVotesFile: Codable {
+    let id: String
+    let votes: [PersonVote]
 }
