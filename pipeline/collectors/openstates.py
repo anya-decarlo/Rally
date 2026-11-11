@@ -27,14 +27,15 @@ JURISDICTION = "CA"
 API_SESSION = "20252026"       # OpenStates session id format
 STATE_SESSION = "2025-2026"    # our display format
 PER_PAGE = 20  # API caps at 20
-MAX_PAGES = 25   # 500 most-recently-updated bills; full sync is a later run
+MAX_PAGES = 260  # full session (~5,041 bills); incremental syncs come later
 DELAY = 2.0      # polite seconds between requests — OpenStates rate-limits
+CHECKPOINT = Path("/tmp/ca_bills_checkpoint.json")
 
 
 def api(path, **params):
     params["apikey"] = os.environ["OPENSTATES_API_KEY"]
     url = f"{API}{path}?{urlencode(params, doseq=True)}"
-    for attempt in range(4):
+    for attempt in range(8):
         try:
             with urlopen(Request(url, headers={"User-Agent": "Rally/1.0"})) as r:
                 return json.loads(r.read())
@@ -126,6 +127,10 @@ def stage_of(status):
 
 def fetch_all_bills():
     bills, page = [], 1
+    if CHECKPOINT.exists():
+        cp = json.loads(CHECKPOINT.read_text())
+        bills, page = cp["bills"], cp["page"]
+        print(f"resuming at page {page} ({len(bills)} bills already fetched)")
     while page <= MAX_PAGES:
         res = api("/bills", jurisdiction=JURISDICTION, session=API_SESSION,
                   sort="updated_desc", per_page=PER_PAGE, page=page,
@@ -133,9 +138,10 @@ def fetch_all_bills():
         results = res.get("results", [])
         bills += results
         print(f"  page {page}: {len(results)} bills ({len(bills)} total)")
+        page += 1
+        CHECKPOINT.write_text(json.dumps({"page": page, "bills": bills}))
         if len(results) < PER_PAGE:
             break
-        page += 1
         time.sleep(DELAY)
     return bills
 
