@@ -19,6 +19,9 @@ ROOT = Path(__file__).resolve().parent.parent
 CA = ROOT / "data" / "jurisdictions" / "ca.json"
 SOCRATA = "https://bythenumbers.sco.ca.gov/resource/nkv3-m73r.json"
 FISCAL_YEAR = "2025"
+# CDE school-district areas (ArcGIS) — geometry included for address lookup later
+ARCGIS = ("https://services3.arcgis.com/fdvHcZVgB2QSRNkL/arcgis/rest/services/"
+          "DistrictAreas2526/FeatureServer/0/query")
 
 # Socrata activity → our districtKind (broad lanes for the catalog)
 KIND_RULES = [
@@ -61,6 +64,16 @@ def fetch():
         return json.loads(r.read())
 
 
+def fetch_schools():
+    q = {"where": "1=1",
+         "outFields": "CDSCode,CountyName,DistrictName,DistrictType,"
+                      "GradeLow,GradeHigh,EnrollTotal",
+         "returnGeometry": "false", "f": "json"}
+    url = f"{ARCGIS}?{urlencode(q)}"
+    with urlopen(Request(url, headers={"User-Agent": "Rally/1.0"})) as r:
+        return [f["attributes"] for f in json.loads(r.read())["features"]]
+
+
 def main():
     doc = json.loads(CA.read_text())
     county_ids = {j["name"].replace(" County", "").lower(): j["id"]
@@ -85,29 +98,49 @@ def main():
                        "elected": "districts"}],
         })
 
-    # Keep school-district seeds (CDE enumerates those); replace the rest.
+    # School districts — CDE GIS layer (936 real records replace the seeds).
+    schools = fetch_schools()
+    for s in schools:
+        name = s["DistrictName"].strip()
+        if not name.lower().endswith(("unified", "elementary", "high", "joint")):
+            name += " " + s["DistrictType"].title()
+        county = s["CountyName"].strip().lower()
+        parent = county_ids.get(county, "ca")
+        base = f"ca-{slug(name)}"
+        jid = base if base not in seen_ids else f"{base}-{slug(county)}"
+        seen_ids[jid] = True
+        enroll = s.get("EnrollTotal") or 0
+        districts.append({
+            "id": jid, "name": name + " School District"
+            if "district" not in name.lower() else name,
+            "kind": "district", "districtKind": "school",
+            "covers": s["CountyName"],
+            "parent": parent,
+            "note": f"{s['DistrictType']} · {s['GradeLow']}–{s['GradeHigh']} · "
+                    f"{enroll:,} students · CDS {s['CDSCode']}",
+            "seats": [{"office": "Governing Board", "seats": 0,
+                       "elected": "districts"}],
+        })
+
     doc["jurisdictions"] = [j for j in doc["jurisdictions"]
-                            if j["kind"] != "district"
-                            or j.get("districtKind") == "school"] + districts
+                            if j["kind"] != "district"] + districts
 
     # Rebuild the catalog from real counts.
     by_kind = {}
     for d in districts:
-        by_kind.setdefault(d["districtKind"], 0)
-        by_kind[d["districtKind"]] += 1
-    school_n = sum(1 for j in doc["jurisdictions"]
-                   if j.get("districtKind") == "school")
-    doc["districtCatalog"] = (
-        [{"kind": "school", "count": "~940",
-          "note": "unified, elementary & high school districts — CDE directory pending"}]
-        + [{"kind": k, "count": str(n)} for k, n in
-           sorted(by_kind.items(), key=lambda kv: -kv[1])]
-    )
-    doc["districtTotal"] = len(districts) + school_n
+        by_kind[d["districtKind"]] = by_kind.get(d["districtKind"], 0) + 1
+    doc["districtCatalog"] = [
+        {"kind": k, "count": str(n),
+         **({"note": "unified, elementary & high school districts — CDE GIS"}
+            if k == "school" else {})}
+        for k, n in sorted(by_kind.items(), key=lambda kv: -kv[1])
+    ]
+    doc["districtTotal"] = len(districts)
 
     CA.write_text(json.dumps(doc, indent=2) + "\n")
-    n_kinds = len(by_kind)
-    print(f"done: {len(districts)} special districts across {n_kinds} kinds → {CA.name}")
+    print(f"done: {len(districts)} districts "
+          f"({len(schools)} school · {len(districts)-len(schools)} special) "
+          f"across {len(by_kind)} kinds → {CA.name}")
 
 
 if __name__ == "__main__":
