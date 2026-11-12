@@ -74,10 +74,25 @@ def fetch_schools():
         return [f["attributes"] for f in json.loads(r.read())["features"]]
 
 
+# Fields added by enrichment passes (roster/district_sites/lafco) that a
+# regeneration must preserve.
+ENRICHED = ("website", "email", "officials", "meeting",
+            "legislativeDistricts", "governedBy")
+
+
 def main():
     doc = json.loads(CA.read_text())
     county_ids = {j["name"].replace(" County", "").lower(): j["id"]
                   for j in doc["jurisdictions"] if j["kind"] == "county"}
+    county_name = {v: k.title() for k, v in county_ids.items()}
+    # preserve enrichment across regenerations, keyed by id and name
+    prior = {}
+    for j in doc["jurisdictions"]:
+        if j["kind"] != "district":
+            continue
+        keep = {k: j[k] for k in ENRICHED if k in j}
+        if keep:
+            prior[j["id"]] = prior[j["name"]] = keep
 
     rows = fetch()
     districts, seen_ids = [], {}
@@ -88,15 +103,23 @@ def main():
         base = f"ca-{slug(name)}"
         jid = base if base not in seen_ids else f"{base}-{slug(county)}"
         seen_ids[jid] = True
-        districts.append({
+        dtype = r.get("district_type", "")
+        rec = {
             "id": jid, "name": name, "kind": "district",
             "districtKind": kind_of(r.get("activity", "")),
+            "districtType": dtype,
             "covers": r.get("city_state", ""),
             "parent": parent,
             "note": r.get("activity", ""),
             "seats": [{"office": "Governing Board", "seats": 0,
                        "elected": "districts"}],
-        })
+        }
+        if dtype == "Dependent":
+            rec["governedBy"] = f"{county_name.get(parent, county.title())} County"
+        elif dtype.startswith("Joint Powers") or dtype == "Nonprofit Corporation":
+            rec["governedBy"] = "member agencies"
+        rec.update(prior.get(jid) or prior.get(name) or {})
+        districts.append(rec)
 
     # School districts — CDE GIS layer (936 real records replace the seeds).
     schools = fetch_schools()
@@ -121,6 +144,7 @@ def main():
             "seats": [{"office": "Governing Board", "seats": 0,
                        "elected": "districts"}],
         })
+        districts[-1].update(prior.get(jid) or prior.get(name) or {})
 
     doc["jurisdictions"] = [j for j in doc["jurisdictions"]
                             if j["kind"] != "district"] + districts
